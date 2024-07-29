@@ -1,0 +1,96 @@
+{% for block in entry.pageSections.level(1).all() %}
+    {% switch block.type.handle %}
+        {% case 'grid' %}
+            {% if block.children.all() is not empty %}
+                {% for child in block.children %}
+                    {% switch child.type.handle %}
+                        {% case 'gridHeader' %}
+                            <div class="grid-header">
+                                {% if child.children.all() is not empty %}
+                                    {% for grandChild in child.children %}
+                                        {% switch grandChild.type.handle %}
+                                            {% case 'description' %}
+                                                {{ grandChild.description }}
+                                        {% endswitch %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                    {% endswitch %}
+                {% endfor %}
+            {% endif %}
+
+            <div class="outer grid">
+                {% if block.children.all() is not empty %}
+                    {% for child in block.children %}
+                        {% switch child.type.handle %}
+                            {% case 'gridItem' %}
+                                <div class="grid-item {% if not child.children | filter(grandChild => grandChild.type.handle == 'background') %}no-background{% endif %} {% if not child.children | filter(grandChild => grandChild.type.handle == 'description') %}no-description{% endif %}" {% if block.backgroundColor %}style="background-color:{{ block.backgroundColor }}"{% endif %}>
+                                    {% if child.children.all() is not empty %}
+                                        <div class="text">
+                                            {% for grandChild in child.children %}
+                                                {% switch grandChild.type.handle %}
+                                                    {% case 'description' %}
+                                                        {{ grandChild.description }}
+                                                {% endswitch %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    {% if child.children.all() is not empty %}
+                                        {% for grandChild in child.children %}
+                                            {% switch grandChild.type.handle %}
+                                                {% case 'buttons' %}
+                                                    <div class="buttons">
+                                                        {% for buttonBlock in grandChild.buttons.all() %}
+                                                            {% switch buttonBlock.type.handle %}
+                                                                {% case 'button' %}
+                                                                    <a class="btn white" href="{{ buttonBlock.buttonLink }}">{{ buttonBlock.buttonText }}</a>
+                                                                {% case 'arrowButton' %}
+                                                                    <a  target="_blank" class="arrow arrow-next" href="{{ buttonBlock.buttonLink }}">
+                                                                        {% include "_includes/_svg/arrow.svg" %}
+                                                                    </a>
+                                                            {% endswitch %}
+                                                        {% endfor %}
+                                                    </div>
+                                            {% endswitch %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if child.children.all() is not empty %}
+                                        {% for grandChild in child.children %}
+                                            {% switch grandChild.type.handle %}
+                                                {% case 'background' %}
+                                                    <div class="background">
+                                                        {% set img = grandChild.backgroundImage.one() %}
+                                                        {% set transform = 
+                                                            [
+                                                                {
+                                                                    asset: img,
+                                                                    transform: {
+                                                                        width: 500,
+                                                                        height: 500,
+                                                                        mode: 'fit',
+                                                                        format: 'webp'
+                                                                    }
+                                                                }      
+                                                            ]
+                                                         %}
+
+                                                        {% set attributes = {
+                                                            quality: 90,
+                                                        } %}
+
+                                                        {{ craft.images.pictureMultiple(transform, attributes) }}
+                                                    </div>
+                                            {% endswitch %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                        {% endswitch %}
+                    {% endfor %}
+                {% endif %}
+            </div>     
+        {% case 'iframe' %}
+            <div class="outer">
+                {{ block.iframe | raw }}
+            </div>
+    {% endswitch %}
+{% endfor %}

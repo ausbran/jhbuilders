@@ -1,0 +1,26 @@
+{% if asset.kind == 'video' %}
+    <video autoplay loop muted preload="metadata" playsinline webkit-playsinline>
+        <source src="{{ asset.url }}" type="video/{{ asset.getExtension() }}">
+    </video>
+{% else %}
+    {% set img = asset %}
+    {% set transform = 
+        [
+            {
+                asset: img,
+                transform: {
+                    width: 1200,
+                    height: 800,
+                    mode: 'fit',
+                    format: 'webp'
+                }
+            }      
+        ]
+     %}
+
+    {% set attributes = {
+        quality: 100,
+    } %}
+
+    {{ craft.images.pictureMultiple(transform, attributes) }}
+{% endif %}

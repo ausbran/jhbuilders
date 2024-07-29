@@ -1,0 +1,33 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - b69ca9aa-2103-404c-9ad9-0180d7f93a67 # Home
+  - 5745b537-efa3-4b6b-a36f-dece4156446f # Story
+  - 95938bac-52e2-41d4-91d7-2f3d9ff6ce70 # Company
+  - 25d582ed-58cf-4a18-bc5d-941362b87054 # Contact
+handle: pages
+maxAuthors: 1
+name: Pages
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - refresh
+        - '1'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  6974ec26-6de3-4cbe-87a2-c5363298442b: # JH Builders
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: 515ce209-3ed0-4c3a-9ed8-09c49c97034e
+type: structure

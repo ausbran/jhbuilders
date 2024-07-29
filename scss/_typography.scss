@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('/assets/fonts/HelveticaNowDisplay-Regular.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNowDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('/assets/fonts/HelveticaNowDisplay-Italic.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNowDisplay-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('/assets/fonts/HelveticaNowDisplay-Md.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNowDisplay-Md.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('/assets/fonts/HelveticaNowDisplay-MdIt.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNowDisplay-MdIt.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('/assets/fonts/HelveticaNowDisplay-Bd.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNowDisplay-Bd.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('/assets/fonts/HelveticaNowDisplay-BdIt.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNowDisplay-BdIt.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  font-family: $base;
+}
+h1, p {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+h1,h2,h3, h4, h5, h6 {
+  margin: unset;
+  color: $black;
+  line-height: 1em;
+}
+h1, h2, h3 {
+  font-weight: 700;
+}
+h1, h2 {
+  line-height: .9em;
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 1.75em;
+}
+p {
+  font-weight: 500;
+  font-size: .9375em;
+  line-height: 2em;
+  letter-spacing: .01em;
+}
+a {
+  color: inherit;
+}
+.top-left {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.top-center {
+  text-align: center;
+  justify-content: center;
+  align-items: flex-start;
+  .text {
+    align-items: center;
+  }
+}
+.top-right {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.center-left {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+}
+.center-center {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  .text {
+    align-items: center;
+  }
+}
+.center-right {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: center;
+}
+.bottom-left {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.bottom-center {
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+  .text {
+    align-items: center;
+  }
+}
+.bottom-right {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.landing-section {
+  .top-left,
+  .top-center,
+  .top-right {
+    padding-top: calc($padding-large * 2) !important;
+  }
+}
+@include respond-to-max($desktop-large) {
+  p {
+    font-size: .875em;
+  }
+}
+@include respond-to-max($desktop) {
+  h1 {
+    font-size: 3.5em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  .landing-section {
+  .top-left,
+  .top-center,
+  .top-right {
+      padding-top: calc($padding-large * 1.5) !important;
+    }
+  }
+}
+@include respond-to-max($tablet) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
+  .landing-section {
+  .top-left,
+  .top-center,
+  .top-right {
+      padding-top: calc($padding-large) !important;
+    }
+  }
+}
+@include respond-to-max($mobile) {
+  p {
+    font-size: .8em;
+  }
+}

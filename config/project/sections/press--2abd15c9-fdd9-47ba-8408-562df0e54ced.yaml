@@ -1,0 +1,30 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 88e330b5-199c-4dee-a8f3-d5f391f8df20 # Press
+handle: press
+maxAuthors: 1
+name: Press
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - refresh
+        - '1'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  6974ec26-6de3-4cbe-87a2-c5363298442b: # JH Builders
+    enabledByDefault: true
+    hasUrls: true
+    template: press/_entry
+    uriFormat: 'press/{slug}'
+structure:
+  maxLevels: null
+  uid: 5a73b1e3-c993-468c-ac71-b272cdbd956e
+type: structure

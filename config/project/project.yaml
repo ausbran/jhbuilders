@@ -1,0 +1,231 @@
+dateModified: 1722273607
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: true
+      key: '*'
+      tableAttributes:
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: true
+      key: singles
+      tableAttributes:
+        - status
+        - link
+      type: native
+    -
+      heading: Global
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: 3f52b80d-7ae0-4340-95b7-3245da5ab4be
+            values:
+              - cf50c102-65ae-48ac-aaf0-9b2db2d768cd # Navigation
+              - 52813dfd-9354-4a05-8131-1611ab549142 # Footer
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:e47419ca-4e68-49a0-8322-fb10556be085'
+      label: Navigation
+      tableAttributes: '-'
+      type: custom
+    -
+      heading: Projects
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:d7bc45f1-f1c6-4fe7-aad5-a83242f68d4c' # Projects
+      tableAttributes:
+        - status
+        - 'field:9b9cd007-b263-4d95-821d-014590cc1f0f' # Project Images
+        - link
+      type: native
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\fields\conditions\OptionsFieldConditionRule
+            fieldUid: 1d1719d0-caff-4e5a-8f9c-6a29d3d7d336
+            layoutElementUid: 6b74708b-0a74-4152-ace3-2ead102d9b45
+            operator: in
+            uid: c524844f-cd1b-42e9-9c17-54f75e89b855
+            values:
+              - remodel
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:6390376f-80cf-4094-8c0f-dc002226fda1'
+      label: Remodels
+      tableAttributes:
+        - status
+        - postDate
+        - 'field:1d1719d0-caff-4e5a-8f9c-6a29d3d7d336'
+        - 'field:9b9cd007-b263-4d95-821d-014590cc1f0f' # Project Images
+        - link
+      type: custom
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\fields\conditions\OptionsFieldConditionRule
+            fieldUid: 1d1719d0-caff-4e5a-8f9c-6a29d3d7d336
+            layoutElementUid: 6b74708b-0a74-4152-ace3-2ead102d9b45
+            operator: in
+            uid: 36291100-2c56-4865-b439-be597e0ebf81
+            values:
+              - newBuild
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - dateCreated
+        - desc
+      key: 'custom:6883adfb-473b-43ff-b0c4-2cae05bcc537'
+      label: 'New Builds'
+      tableAttributes:
+        - status
+        - postDate
+        - 'field:1d1719d0-caff-4e5a-8f9c-6a29d3d7d336'
+        - 'field:9b9cd007-b263-4d95-821d-014590cc1f0f' # Project Images
+        - link
+      type: custom
+    -
+      heading: 'Main Content'
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:f80c270d-499c-47df-990c-8e0b690c6f00' # Pages
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:2abd15c9-fdd9-47ba-8408-562df0e54ced' # Press
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:4ba31d02-8cc5-4c7c-8863-dd0825e666e9' # Jobs
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+email:
+  fromEmail: ausbranham@gmail.com
+  fromName: 'JH Builders'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  uploads:
+    hasUrls: true
+    name: Uploads
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: /uploads/
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+meta:
+  __names__:
+    0df67807-28de-4196-83d0-7659095a96c0: Projects # Projects
+    1cc8dda7-e3e2-4988-abfd-d613509a99cd: Image # Image
+    2a474d4a-c4ce-4af9-8df0-20b69b317f1c: Button # Button
+    2abd15c9-fdd9-47ba-8408-562df0e54ced: Press # Press
+    2ae65e6b-281d-4313-9f2c-00364554ee33: Project # Project
+    4ba31d02-8cc5-4c7c-8863-dd0825e666e9: Jobs # Jobs
+    4e18f1d5-2eaa-4991-92ac-5b50d48d27c7: Location # Location
+    4f214814-db96-4951-a3b1-03392ef7ef4d: Entries # Entries
+    5a4ca78e-efcf-4c8c-81c1-2464038d63b8: 'Button Link' # Button Link
+    5e876e9e-c27f-47f3-ade9-0e2b65433348: Text # Text
+    6c885d7a-6b76-47fe-b30b-a5fbd86efff7: 'JH Builders' # JH Builders
+    7e4b4add-061e-4eab-92df-597242f18a90: 'Primary Links' # Primary Links
+    8b433bb6-cab9-45f3-bac0-0eecc02c1cd0: 'Navigation Content' # Navigation Content
+    8d161ed5-75a9-4d91-b362-2a70c13a7337: Projects # Projects
+    9b9cd007-b263-4d95-821d-014590cc1f0f: 'Project Images' # Project Images
+    15f01c47-3842-4ce9-9ab5-b6757399910b: 'New Builds Image' # New Builds Image
+    25d582ed-58cf-4a18-bc5d-941362b87054: Contact # Contact
+    88e330b5-199c-4dee-a8f3-d5f391f8df20: Press # Press
+    383a4b26-b5d4-4ff4-ba3f-591bb58a8b66: Offices # Offices
+    489ad90c-f81e-41c8-a312-7e1b0b7cd6fd: Employees # Employees
+    0524ce74-5809-4227-9995-c07e31fcd67f: General # General
+    895f0ba6-d32c-45c5-825c-884326ca8672: Job # Job
+    3285dc39-a847-478b-b879-dea4891400c6: Remodel # Remodel
+    3586fc06-c1c0-4c1e-b303-909b88cf3f84: Videos # Videos
+    5745b537-efa3-4b6b-a36f-dece4156446f: Story # Story
+    6974ec26-6de3-4cbe-87a2-c5363298442b: 'JH Builders' # JH Builders
+    37391c35-7f8d-4a6c-a7e6-a05b2cd60b2c: Press # Press
+    52813dfd-9354-4a05-8131-1611ab549142: Footer # Footer
+    95938bac-52e2-41d4-91d7-2f3d9ff6ce70: Company # Company
+    976665db-132f-4fa0-9943-2252890ebedf: 'New Build' # New Build
+    a4d89015-cc42-4dfe-9b5d-4709925e659f: 'Remodels Image' # Remodels Image
+    a8f5f4f5-00ed-4701-a12b-eda576eb0326: Date # Date
+    a29a748c-48f5-4036-80ab-2ac52e338956: Footer # Footer
+    ae97b4e4-7938-4735-b734-84f98ec34af2: Buttons # Buttons
+    b69ca9aa-2103-404c-9ad9-0180d7f93a67: Home # Home
+    b7977904-1581-4bf1-a440-242e4c34840a: 'Button Label' # Button Label
+    bf7baa7d-910a-4443-9588-fb0cddc5a28d: Navigation # Navigation
+    cf50c102-65ae-48ac-aaf0-9b2db2d768cd: Navigation # Navigation
+    d7bc45f1-f1c6-4fe7-aad5-a83242f68d4c: Projects # Projects
+    e1c930be-4e19-4db0-ad0a-3c422934e22c: Magazines # Magazines
+    f0cae902-01a5-4303-b53a-94b99bdeec25: Simple # Simple
+    f80c270d-499c-47df-990c-8e0b690c6f00: Pages # Pages
+    f577c317-518c-4dac-aac8-808524984505: 'Project Category' # Project Category
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: SWPESDAK81TU4OJSVM530JWK
+    schemaVersion: 3.0.12
+system:
+  edition: solo
+  live: true
+  name: 'JH Builders'
+  schemaVersion: 5.0.0.21
+  timeZone: America/Los_Angeles

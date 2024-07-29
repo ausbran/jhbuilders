@@ -1,0 +1,65 @@
+color: null
+fieldLayouts:
+  fa07811d-05d3-4b05-879b-b1b0cef520ef:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e37ee6e4-e180-470e-84bd-0c1932f9a139
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1cc8dda7-e3e2-4988-abfd-d613509a99cd # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3be76ded-6019-497b-985e-d6c697c32274
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: df689217-6255-4a2b-964a-82da2cf9cdab
+        userCondition: null
+handle: press
+hasTitleField: true
+icon: null
+name: Press
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

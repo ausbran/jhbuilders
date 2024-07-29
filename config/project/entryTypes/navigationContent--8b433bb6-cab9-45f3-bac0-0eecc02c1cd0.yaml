@@ -1,0 +1,95 @@
+color: null
+fieldLayouts:
+  96c89509-557b-476f-b466-179ae404911c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a29e346f-9935-48e0-8f34-f2f8f4d11a46
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7e4b4add-061e-4eab-92df-597242f18a90 # Primary Links
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3ca7c8e8-9294-46f1-933b-46b64221e09b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4f214814-db96-4951-a3b1-03392ef7ef4d # Entries
+            handle: featuredProjects
+            includeInCards: false
+            instructions: null
+            label: 'Featured Projects'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10de34d9-75b9-4db6-a7d3-f1460da816c2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: brandText
+            includeInCards: false
+            instructions: null
+            label: 'Brand Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b3e74108-532d-48f0-9b89-6e1a6bb19228
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d5fe727c-2e6e-48ff-858d-b76e27d80522
+        userCondition: null
+handle: navigationContent
+hasTitleField: true
+icon: null
+name: 'Navigation Content'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,18 @@
+{% extends '_layouts/base' %}
+
+{% block content %}
+  <section class="featured-projects">
+    {% for project in craft.entries.section('projects').limit(3).all() %}
+      <div class="project">
+        <h2>{{ project.title }}</h2>
+        <img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
+        <p>{{ project.projectDescription }}</p>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="cta">
+    <h2>Contact Us</h2>
+    <a href="{{ url('contact') }}">Get in Touch</a>
+  </section>
+{% endblock %}

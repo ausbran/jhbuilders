@@ -1,0 +1,31 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 2ae65e6b-281d-4313-9f2c-00364554ee33 # Project
+  - f577c317-518c-4dac-aac8-808524984505 # Project Category
+handle: projects
+maxAuthors: 1
+name: Projects
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  6974ec26-6de3-4cbe-87a2-c5363298442b: # JH Builders
+    enabledByDefault: true
+    hasUrls: true
+    template: _projects/_entry
+    uriFormat: 'projects/{slug}'
+structure:
+  maxLevels: 2
+  uid: 5b13be73-3dfe-4b1f-8ca1-092ff29110fb
+type: structure

@@ -1,0 +1,235 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  &.dark {
+    background: $red;
+  }
+}
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+*::-webkit-scrollbar { 
+    display: none !important;
+    width: 0;
+    background: transparent;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.no-footer footer {
+  display: none;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+a, a:hover {
+  text-decoration: none;
+}
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+.scroll {
+  overflow: scroll;
+}
+.lock {
+  overflow: hidden;
+}
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+.btn {
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 40px;
+  background: $red;
+  transition: $transition;
+  cursor: pointer;
+  &.border {
+    border: 2px solid $white;
+    background: transparent;
+    &:hover {
+      background: $white;
+      color: $red;
+    }
+  }
+  &.white {
+    background: $white;
+    color: $red;
+  }
+  &:hover {
+    filter: brightness(1.2);
+    @include translate(0,-1px,0);
+  }
+}
+.close,
+.arrow {
+  background-color: $red;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 30px;
+  @include flex-center;
+  transition: $transition;
+  cursor: pointer;
+}
+.close {
+  &:hover {
+    filter: brightness(1.5);
+  }
+  &:before {
+    display: block;
+    content: "";
+    background: url("/images/icons/close.svg") no-repeat 0 0/contain;
+    height: 12px;
+    width: 12px;
+  }
+}
+.arrows {
+  display: flex;
+  gap: $gap;
+  margin: $margin-small;
+}
+.arrow {
+  svg {
+    width: 15px;
+    transition: $transition;
+  }
+  &.disabled {
+    opacity: .2;
+
+  }
+  &.arrow-prev svg {
+    transform: rotate(-180deg);
+  }
+  &.arrow-next svg {
+    transform: rotate(0deg);
+  }
+  &.dark {
+    background-color: $white;
+    svg {
+      fill: $red;
+    }
+  }
+  &:not(.disabled):hover {
+    &.arrow-prev svg {
+      transform: rotate(-180deg) translateX(2px);
+    }
+    &.arrow-next svg {
+      transform: rotate(0deg)  translateX(2px);
+    }
+  }
+}
+.outer {
+  box-sizing: content-box;
+  margin: $margin auto;
+  width: $width;
+  max-width: $max-width;
+}
+.gradient:before {
+  opacity: .5;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+.can-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  &.shadow:before,
+  .can {
+    transition: $transition-long;
+  }
+  &.shadow:before {
+    will-change: filter;
+    border-radius: 5%;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    filter: blur(30px);
+    background: #000;
+    opacity: .3;
+    mix-blend-mode: multiply;
+    bottom: 8%;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  .can {
+    position: relative;
+    z-index: 2;
+    will-change: transform;
+    cursor: pointer;
+  }
+  &:hover {
+    .can {
+      @include translate(0,-3px,0);
+    }
+    &.shadow:before {
+      opacity: .6;
+      filter: blur(40px);
+    }
+  }
+}
+.background {
+  img, video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+@include respond-to-max($desktop-large) {
+  .btn {
+    padding: 18px 30px;
+  }
+}
+@include respond-to-max($desktop) {
+  .outer {
+    width: $width-medium;
+    margin: $margin-medium;
+  }
+}
+@include respond-to-max($tablet) {
+  .slider-nav {
+    display: none !important;
+  }
+}
+@include respond-to-max($mobile) {
+  .outer {
+    width: $width-small;
+    margin: $margin-small;
+  }
+}

@@ -1,0 +1,50 @@
+.landing-video.about {
+  z-index: -2 !important;
+  mix-blend-mode: multiply;
+  opacity: .2;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover !important;
+}
+.about {
+  .text-wrapper {
+    position: fixed;
+    width: 90vw;
+    max-width: 500px;
+    right: 8vw;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    * {
+      color: #fff;
+    }
+    h1 {
+      font-size: 50px;
+      line-height: .9em;
+      font-weight: normal !important;
+      margin: 20px 0;
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.75em;
+      max-width: 300px;
+    }
+    .contact {
+      @include small-headers;
+      a:first-of-type {
+        margin-right: 30px;
+      }
+      a {
+        display: inline-block;
+        transition: .28s $ease;
+        &:hover {
+          opacity: .7; 
+          @include translate(0,-2px,0);
+        }
+      }
+    }
+  }
+}
