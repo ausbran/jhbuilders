@@ -1,0 +1,46 @@
+.projects {
+    width: $width;
+    max-width: $max-width;
+    margin: auto;
+    margin-top: $margin-xlarge;
+    img {
+        width: 100%;
+    }
+    .project {
+        height: calc(100vh - 250px);
+        &:first-of-type {
+            border-top-left-radius: $box-radius;
+            border-top-right-radius: $box-radius;
+            overflow: hidden;
+        }
+        .text {
+            padding: $padding;
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            display: flex;
+            align-items: flex-end;
+            gap: $gap-medium;
+            * {
+                color: $white;
+            }
+        }
+    }
+}
+.project-images {
+    position: absolute;
+}
+
+.project-category {
+    width: 50%;
+    height: 100%;
+    padding: $padding-large;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: $gap-small;
+    * {
+        color: $white;
+    }
+}

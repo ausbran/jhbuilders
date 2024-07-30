@@ -1,0 +1,10 @@
+<h2>{{ entry.title }}</h2>
+{% set location = entry.projectLocation.one() %}
+{% if location %}
+    <h2>
+        {{ location.locality }}, {{ location.administrativeArea }}
+    </h2>
+{% endif %}
+{% if entry.projectDate %}
+    <h2>{{ entry.projectDate | date('Y') }}</h2>
+{% endif %}

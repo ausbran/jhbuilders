@@ -7,22 +7,15 @@
   overflow: hidden;
   background: $red;
   .inner {
+    max-width: $max-width;
     display: flex;
+    align-items: flex-end;
     width: 100%;
     height: 100%;
     z-index: 2;
     font-size: 1em;
     padding: $padding-large;
-    .text {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: $gap;
-      img {
-        width:80%;
-        max-width:450px;
-      }
-    }
+    gap: $gap;
     * {
       color: $white;
     }
@@ -33,7 +26,6 @@
 			display: flex;
 			gap: $gap;
 		}
-    .description-wrapper,
     .iframe-wrapper {
       width: 100%;
       display: flex;
@@ -57,130 +49,15 @@
       z-index: 1;
     }
   }
-  &.series {
-    .inner {
-      gap: $gap-large;
-      .can-container {
-        margin: unset;
-        height: 90%;
-        max-height: 700px;
-        .can-video,
-        .can-image {
-          height: 100%;
-          width: 100%;
-          video,
-          img,
-          picture {
-            height: inherit;
-            max-height:600px;
-            max-width:350px;
-          }
-        }
-      }
-      .text {
-        gap: $gap;
-        text-align: left;
-        max-width: 500px;
-        align-items: flex-start;
-        p {
-          max-width: 400px;
-          margin-left: $margin-small;
-        }
-        img {
-          max-height: 180px;
-        }
-      }
-    }
-  }
-  &.contact {
-    .text {
-      max-width: unset;
-      .buttons {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .btn {
-        background: $white;
-        color: $red;
-      }
-    }
-  }
-  &.the-mothership,
-  &.madness-days {
-    .inner img {
-      width: unset;
-      max-width: unset;
-    }
-  }
-  &.our-awards {
-    height: unset;
-    max-height: unset;
-    .arrow {
-      background: $white !important;
-      svg * {
-        fill: $red !important;
-      }
-    }
-    .inner .text p {
-      max-width: 650px;
-    }
-  }
   @include respond-to-max($desktop) {
-    &.series {
-      .inner .can-container {
-        height: 75%;
-        max-height: 500px;
-        max-width: 250px;
-      }
-      .inner .text {
-        img {
-          max-height: 120px;
-          width: unset;
-        }
-        p {
-          width: 100%;
-          max-width: unset;
-          margin-left: unset;
-        }
-      }
-    }
     .inner {
       padding: $padding;
     }
   } // end $desktop
   @include respond-to-max($tablet) {
-    &.series {
-      .inner {
-        padding: $padding-medium;
-        padding-bottom: $padding-large;
-      }
-    }
+
   } // end $tablet
   @include respond-to-max($mobile) {
-    &.series {
-      height: unset;
-      .inner .can-container {
-        max-height: 600px;
-        max-width: 350px;
-      }
-      .inner .text img {
-        max-width: 90%;
-        position: absolute;
-        top: 85px;
-        right: 0;
-        left: 0;
-        margin: auto;
-        max-height: 100px;
-      }
-      .inner .text p {
-        text-align: center;
-      }
-      .inner {
-        flex-direction: column;
-        padding: $padding-small;
-        padding-top: 230px;
-      }
-    }
     .inner {
       padding: $padding-small;
     }

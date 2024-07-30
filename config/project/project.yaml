@@ -1,4 +1,4 @@
-dateModified: 1722273607
+dateModified: 1722300584
 elementSources:
   craft\elements\Entry:
     -
@@ -36,15 +36,15 @@ elementSources:
             operator: in
             uid: 3f52b80d-7ae0-4340-95b7-3245da5ab4be
             values:
-              - cf50c102-65ae-48ac-aaf0-9b2db2d768cd # Navigation
               - 52813dfd-9354-4a05-8131-1611ab549142 # Footer
+              - cf50c102-65ae-48ac-aaf0-9b2db2d768cd # Navigation
         elementType: craft\elements\Entry
         fieldContext: global
       defaultSort:
         - title
         - asc
       key: 'custom:e47419ca-4e68-49a0-8322-fb10556be085'
-      label: Navigation
+      label: 'Navigation & Footer'
       tableAttributes: '-'
       type: custom
     -
@@ -164,10 +164,6 @@ fs:
       path: '@webroot/uploads'
     type: craft\fs\Local
     url: /uploads/
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 meta:
   __names__:
     0df67807-28de-4196-83d0-7659095a96c0: Projects # Projects
@@ -182,11 +178,13 @@ meta:
     5e876e9e-c27f-47f3-ade9-0e2b65433348: Text # Text
     6c885d7a-6b76-47fe-b30b-a5fbd86efff7: 'JH Builders' # JH Builders
     7e4b4add-061e-4eab-92df-597242f18a90: 'Primary Links' # Primary Links
+    8ac4d7b6-bd32-48e1-87b0-2989497fd49d: 'Project Overview' # Project Overview
     8b433bb6-cab9-45f3-bac0-0eecc02c1cd0: 'Navigation Content' # Navigation Content
     8d161ed5-75a9-4d91-b362-2a70c13a7337: Projects # Projects
     9b9cd007-b263-4d95-821d-014590cc1f0f: 'Project Images' # Project Images
     15f01c47-3842-4ce9-9ab5-b6757399910b: 'New Builds Image' # New Builds Image
     25d582ed-58cf-4a18-bc5d-941362b87054: Contact # Contact
+    42d902fc-110b-469b-9510-c2d1cebc50cc: 'Public Schema' # Public Schema
     88e330b5-199c-4dee-a8f3-d5f391f8df20: Press # Press
     383a4b26-b5d4-4ff4-ba3f-591bb58a8b66: Offices # Offices
     489ad90c-f81e-41c8-a312-7e1b0b7cd6fd: Employees # Employees
@@ -196,6 +194,7 @@ meta:
     3586fc06-c1c0-4c1e-b303-909b88cf3f84: Videos # Videos
     5745b537-efa3-4b6b-a36f-dece4156446f: Story # Story
     6974ec26-6de3-4cbe-87a2-c5363298442b: 'JH Builders' # JH Builders
+    12099acd-6fe1-4370-87e0-eba9eef7a315: 'Project Category' # Project Category
     37391c35-7f8d-4a6c-a7e6-a05b2cd60b2c: Press # Press
     52813dfd-9354-4a05-8131-1611ab549142: Footer # Footer
     95938bac-52e2-41d4-91d7-2f3d9ff6ce70: Company # Company
@@ -224,8 +223,9 @@ plugins:
     licenseKey: SWPESDAK81TU4OJSVM530JWK
     schemaVersion: 3.0.12
 system:
-  edition: solo
+  edition: pro
   live: true
   name: 'JH Builders'
+  retryDuration: null
   schemaVersion: 5.0.0.21
-  timeZone: America/Los_Angeles
+  timeZone: America/Denver

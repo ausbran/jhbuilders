@@ -2,6 +2,22 @@ function isMobileDevice() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
+barba.init({
+  transitions: [{
+    name: 'opacity-transition',
+    leave(data) {
+      return gsap.to(data.current.container, {
+        opacity: 0
+      });
+    },
+    enter(data) {
+      return gsap.from(data.next.container, {
+        opacity: 0
+      });
+    }
+  }]
+});
+
 // Universal function to check browser capabilities
 function supportsHEVCAlpha() {
   const navigator = window.navigator;
@@ -14,7 +30,7 @@ function supportsHEVCAlpha() {
 document.addEventListener('DOMContentLoaded', function () {
   var links = document.querySelector('.primary-links');
   var secondaryContainer = document.querySelector('.secondary-container');
-  var hamburger = document.querySelector('.hamburger');
+  var hamburger = document.querySelector('.icon.nav-js');
   var nav = document.querySelector('nav');
   var body = document.querySelector('body');
 
@@ -41,9 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to close the menu
   function closeMenu() {
-    links.querySelectorAll('.secondary-links.visible').forEach(function (otherSecondaryLinks) {
-      otherSecondaryLinks.classList.remove('visible');
-    });
     secondaryContainer.classList.remove('visible');
     body.classList.remove('no-scroll');
     nav.classList.remove('visible');
@@ -51,17 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.body.addEventListener('click', function(event) {
     if (event.target.closest('.close')) {
-      closeMenu();
-    }
-  });
-
-  // Event listener for link clicks using event delegation
-  links.addEventListener('click', function (event) {
-    var link = event.target.closest('.link');
-    var secondaryLinks = link.querySelector('.secondary-links');
-    if (link && secondaryLinks) {
-      openMenu(link);
-    } else {
       closeMenu();
     }
   });
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Handle scroll with throttle
   function handleScroll() {
     var scrolledClass = 'scrolled';
-    if (window.scrollY > 100) {
+    if (window.scrollY > 10) {
       nav.classList.add(scrolledClass);
     } else {
       nav.classList.remove(scrolledClass);

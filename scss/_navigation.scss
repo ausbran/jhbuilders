@@ -13,7 +13,7 @@ nav {
   &:before,
   &:after {
     content: '';
-    background: $red;
+    background: $white;
     position: fixed;
     top: 0;
     left: 0;
@@ -35,6 +35,7 @@ nav {
     &:before {
       opacity: 1;
       visibility: visible;
+      border-bottom: 1px solid $grey;
     }
   }
   &.visible {
@@ -46,29 +47,31 @@ nav {
   .wrapper {
     top: 0;
     width: $width;
-    @include flex-center;
+    margin: auto;
+    max-width: $max-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     &:before {
       opacity: 0;
       visibility: hidden;
       transition: $transition;
       content: '';
-      background: $red;
+      background: $white;
       position: absolute;
       width: 100%;
       top: 0;
       z-index: 2;
     }
   }
-  .logo {
-    width: 115px;
-    height: 24px;
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: -3px;
-    margin: auto;
+  .logo,
+  .icon {
     transition: $transition;
+  }
+  .logo {
+    height: 60px;
+    z-index: 2;
     img {
       width: 100%;
       height: 100%;
@@ -76,6 +79,9 @@ nav {
     }
     &:hover {
       opacity: .6;
+    }
+    svg {
+      height: 100%;
     }
   }
   .primary-links {
@@ -104,213 +110,11 @@ nav {
       }
     }
   }
-  .secondary-container,
-  .secondary-links {
-    transition: $transition-medium;
-    @include flex-center;
-    min-height: 500px;
-    height: 70vh;
-    max-height: 650px;
-    position: fixed;
-    width: $width;
-    left: 0;
-    right: 0;
-    top: 100px;
-  }
-  &.scrolled {
-    .secondary-container,
-    .secondary-links {
-      top: 130px;
-    }
-  }
-  .secondary-links {
-    align-items: flex-end;
-    font-size: 16px;
-    opacity: 0;
-    visibility: hidden;
-    text-align: left;
-    padding: 60px 0;
-    margin: auto;
-    .description {
-      max-width: 550px;
-      padding: 0 60px 30px;
-      gap: $gap;
-      display: flex;
-      flex-direction: column;
-      .close {
-        position: absolute;
-        top: 60px;
-        @include scale(.8);
-        transition: $transition;
-      }
-      .arrows {
-        margin: unset;
-        .arrow {
-          position: static;
-          background: $white;
-          svg * {
-            fill: $red;
-          }
-        }
-      }
-      h2, p {
-        text-transform: none;
-        letter-spacing: 0;
-        color: $white;
-      }
-      h2 {
-        font-size: 2.5em;
-      }
-      p {
-        font-size: .9em;
-        max-width: 70%;
-      }
-    }
-    .secondary-link {
-      overflow: scroll;
-      display: flex;
-      gap: $gap-large;
-      height: 100%;
-      padding-top: 2px; // for hover transform to not get cut off
-    }
-      a {
-        position: absolute;
-        color: $white;
-        height: 100%;
-        width: 100%;
-      }
-      .slide {
-        will-change: blur;
-        height: inherit;
-        position: relative;
-        border-radius: $box-radius;
-        overflow: hidden;
-        min-width: 340px;
-        transition: $transition-medium;
-        opacity: 0;
-        visibility: hidden;
-        @include translate(30px,0,0);
-        &:nth-child(1) {
-          transition-delay: 0;
-        }
-        &:nth-child(2) {
-          transition-delay: .1s;
-        }
-        &:nth-child(3) {
-          transition-delay: .2s;
-        }
-        &:nth-child(4) {
-          transition-delay: .3s;
-        }
-         img {
-          height:100%;
-          width: 100%;
-          object-fit: cover;
-         }
-         .link-title {
-          position: absolute;
-          left: 35px;
-          bottom: 35px;
-          color: $white;
-          text-transform: capitalize;
-          letter-spacing: 0;
-          font-size: 1.75em;
-          line-height: 1em;
-          max-width: 120px;
-          font-weight: 700;
-          z-index: 2;
-         }
-         &:last-of-type {
-          margin-right: 60px;
-         }
-      }
-      &.visible {
-        .slide {
-          opacity: 1;
-          visibility: visible;
-          @include translate(0,0,0);
-          filter: brightness(1) blur(0);
-          &:hover {
-            @include translate(0,-2px,0);
-            filter: brightness(1.2);
-          }
-        }
-        .close {
-          @include scale(1);
-        }
-      }
-      &.no-scroll {
-        justify-content: space-between;
-        .secondary-link {
-          justify-content: flex-end;
-          width: 70%;
-          .slide {
-            width: 50%;
-            max-width: 440px;
-          }
-        }
-      }
-      &.one {
-        .secondary-link {
-          .slide {
-            width: 100% !important;
-          }
-        }
-      }
-  }
-  .secondary-container {
-    opacity: 0;
-    visibility: hidden;
-    background: #383E42;
-    margin: auto;
-    border-radius: $box-radius;
-    padding: 4vw;
-    box-shadow: $box-shadow;
-  }
   ul {
     list-style: none;
   }
-  .hamburger {
-    height: 17px;
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 3;
-    flex-direction: column;
-    gap: 5px;
-    span {
-      display: inline-block;
-      width: 35px;
-      height: 2px;
-      background-color: $white;
-    }
-  }
   &.menu-opened {
-    .hamburger {
-      display: flex;
-      span {
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(1) {
-          @include rotate(45);
-        }
-        &:nth-child(3) {
-          @include rotate(-45);
-        }
-        &:nth-child(1),
-        &:nth-child(3) {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-        }
-      }
-    }
     text-align: left;
-    height: 100vh;
     width: 100vw;
     margin: unset;
     background: $red;
@@ -348,41 +152,8 @@ nav {
         }
       }
     }
-    .secondary-links {
-      width: 100vw;
-      overflow: scroll;
-      padding: unset;
-      font-size: .935em;
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      .slide {
-          opacity: 1;
-          visibility: visible;
-          @include translate(0,0,0);
-          filter: brightness(1) blur(0);
-          &:hover {
-            @include translate(0,-2px,0);
-            filter: brightness(1.2);
-          }
-        }
-      .secondary-link,
-      &.no-scroll .secondary-link {
-        gap: $gap;
-      }
-      &.no-scroll .secondary-link {
-        width: 100%;
-      }
-    }
   }
   @include respond-to-max($desktop-xlarge) {
-    .secondary-links {
-      &.no-scroll {
-        .secondary-link {
-          justify-content: flex-start;
-        }
-      }
-    }
   }
   @include respond-to-max($desktop) {
     height: 82px;
@@ -396,18 +167,6 @@ nav {
     .logo {
       top: 0;
     }
-    .secondary-container {
-      display: none !important;
-    }
-    .secondary-links .slide .link-title {
-      font-size: 20px;
-      left: 25px;
-      bottom: 25px;
-    }
-    .hamburger {
-      display: flex;
-    }
-    .hamburger,
     .logo {
       margin-top: $margin-medium;
     }
@@ -424,41 +183,18 @@ nav {
         padding-bottom: $margin;
       }
     }
-    .secondary-links {
-      min-height: 450px;
-      height: 50vh;
-      transition: opacity $transition;
-      .slide {
-        min-width: 38vw;
-      }
-    }
     .primary-links .link a:not(.gradient) {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 0;
       text-transform: capitalize;
     }
-    .primary-links .link a:not(.gradient),
-    .secondary-links .inner:first-of-type {
+    .primary-links .link a:not(.gradient) {
       margin-left: $margin-medium;
     }
     &.menu-opened {
       .logo {
         margin-left: $margin-medium;
-      }
-      .hamburger,
-      .slide:last-of-type {
-        margin-right: $margin-medium;
-      }
-      .slide:last-of-type {
-        position: relative;
-        &:after {
-          content: '';
-          width: $margin-medium;
-          left: 100%;
-          position: absolute;
-          display: block;
-        }
       }
     }
   }
@@ -467,12 +203,6 @@ nav {
     .logo {
       width: 90px;
       height: 19px;
-    }
-    .hamburger {
-      gap: 4px;
-      height: 14px;
-    }
-    .logo {
       top: -2px;
     }
     .wrapper {
@@ -481,42 +211,22 @@ nav {
         height: 70px;
       }
     }
-    .secondary-links.no-scroll .secondary-link .slide,
-    .secondary-links .slide {
-        min-width: calc(50vw - 40px);
-    }
     .hamburger,
     .logo {
       margin-top: 25px;
     }
-    .primary-links .link a:not(.gradient),
-    .secondary-links .inner:first-of-type {
+    .primary-links .link a:not(.gradient) {
       margin-left: 25px;
     }
     &.menu-opened {
       .logo {
         margin-left: 25px;
       }
-      .hamburger,
-      .slide:last-of-type {
-        margin-right: 25px;
-      }
     }
   }
   @include respond-to-max($mobile) {
-    .secondary-links.no-scroll .secondary-link .slide,
-    .secondary-links .slide {
-        min-width: calc(80vw - 60px);
-    }
-    .secondary-links {
-      min-height: unset;
-      height: 350px;
-    }
+
   }
   @include respond-to-max($mobile-small) {
-    .secondary-links.no-scroll .secondary-link .slide,
-    .secondary-links .slide {
-        min-width: calc(90vw - 60px);
-    }
   }
 }

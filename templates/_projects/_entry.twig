@@ -1,8 +1,4 @@
-{% extends "_layouts/base" %}
-
-{% if entry.type == 'project' %}
-    {% set bodyClass = 'no-footer' %}
-{% endif %}
+{% extends "index" %}
 
 {% block content %}
     {% include [

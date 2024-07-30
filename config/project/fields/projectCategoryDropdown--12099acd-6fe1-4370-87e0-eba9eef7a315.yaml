@@ -1,0 +1,32 @@
+columnSuffix: null
+handle: projectCategoryDropdown
+instructions: null
+name: 'Project Category'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'New Builds'
+        -
+          - value
+          - newBuilds
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Remodels
+        -
+          - value
+          - remodels
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

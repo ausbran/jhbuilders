@@ -1,20 +1,18 @@
 {% block content %}
 
-<h1>This is the Project LIST page.</h1>
-{% if entry.title %}
-    Project Name: <h1>{{ entry.title }}</h1>
-{% endif %}
-
 <div class="projects">
-      {% for project in craft.entries.section('projects').type('project').all() %}
+    {% for project in craft.entries.section('projects').type('project').all() %}
         <div class="project">
-          <h2>{{ project.title }}</h2>
-          <img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
-          <p>{{ project.projectLocation }}</p>
-          <p>{{ project.projectDate | date('M d, Y') }}</p>
-          <a href="{{ project.url }}">View Project</a>
+            <div class="text">
+                {% include '_projects/_partials/projectInfo' with { entry: project } %}
+                <a class="btn" href="{{ project.url }}">View Project</a>
+            </div>
+            {% set image = project.projectImages.one() %}
+            {% if image %}
+                <img src="{{ image.url }}" alt="{{ project.title }}">
+            {% endif %}
         </div>
-      {% endfor %}
-    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

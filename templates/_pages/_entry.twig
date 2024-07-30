@@ -1,0 +1,10 @@
+{% extends "index" %}
+
+{% block content %}
+    {% if entry.type == 'home' %}
+        {% include '_pages/home.twig' %}
+    {% else %}
+        {% include '_includes/landing' %}
+        {% include '_includes/pageSections' %}
+    {% endif %}
+{% endblock %}

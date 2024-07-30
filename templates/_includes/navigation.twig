@@ -1,15 +1,14 @@
 <nav>
 	<div class="wrapper">
-		<a href="{{ currentSite.baseUrl }}" class="logo">
-			<img src="" alt="{{ siteName }} Logo">
-		</a>
-		<div class="hamburger">
-		  <span></span>
-		  <span></span>
-		  <span></span>
-		</div>
-		<ul class="primary-links">
-		    <li></li>
-		</ul>
+		{% if craft.rebrand.isLogoUploaded() %}
+			<a href="{{ currentSite.baseUrl }}" class="logo">
+			    <img src="{{ craft.rebrand.getLogo().url }}" alt="{{ siteName }} Logo">
+		    </a>
+		{% else %}
+			<a href="{{ currentSite.baseUrl }}" class="logo">
+				{% include '_includes/_svg/logo-vertical.svg' %}
+			</a>
+		{% endif %}
+		<button class="btn icon nav-js">{% include '_includes/_svg/nav.svg' %}</button>
 	</div>
 </nav>

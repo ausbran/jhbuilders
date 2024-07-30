@@ -1,0 +1,110 @@
+color: blue
+fieldLayouts:
+  6f79cc8c-b1c9-4aa9-855b-c1716747f716:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 460b09aa-cb5b-476c-8d93-35a338de547e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: newBuildsText
+            includeInCards: false
+            instructions: null
+            label: 'New Builds Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0239c639-4f89-47a1-b3cd-66afd54777d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 15f01c47-3842-4ce9-9ab5-b6757399910b # New Builds Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3363f082-5c73-446c-9e32-2eab9e31b35e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: remodelsText
+            includeInCards: false
+            instructions: null
+            label: 'Remodels Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 39fb1d2b-90bc-4073-9246-eb372275bc2d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a4d89015-cc42-4dfe-9b5d-4709925e659f # Remodels Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab5f90bd-eb20-448f-9e5d-8299ac9ba2c7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d304e0af-a06a-4a3c-9207-407025758056
+        userCondition: null
+handle: projectOverview
+hasTitleField: true
+icon: globe
+name: 'Project Overview'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

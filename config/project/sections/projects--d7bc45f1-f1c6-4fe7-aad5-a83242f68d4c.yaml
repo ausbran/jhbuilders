@@ -1,8 +1,9 @@
-defaultPlacement: end
+defaultPlacement: beginning
 enableVersioning: true
 entryTypes:
   - 2ae65e6b-281d-4313-9f2c-00364554ee33 # Project
   - f577c317-518c-4dac-aac8-808524984505 # Project Category
+  - 8ac4d7b6-bd32-48e1-87b0-2989497fd49d # Project Overview
 handle: projects
 maxAuthors: 1
 name: Projects

@@ -1,8 +1,15 @@
 {% block content %}
 
-<h1>This is the Indidivual Project page.</h1>
-{% if entry.title %}
-    Project Name: <h1>{{ entry.title }}</h1>
-{% endif %}
+<div class="project landing-section">
+    <div class="inner">
+        {% include '_projects/_partials/projectInfo' with { entry: entry } %}
+        <button class="btn">
+    </div>
+    <div class="background">
+        {% for image in entry.projectImages.all() %}
+            <img src="{{ image.url }}" alt="{{ entry.title }}">
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
