@@ -30,12 +30,20 @@ nav {
     bottom: 0;
     height: 100vh;
     width: 100vw;
+    z-index: -1;
   }
   &.scrolled {
     &:before {
       opacity: 1;
       visibility: visible;
       border-bottom: 1px solid $grey;
+    }
+    .icon {
+      border: 1px solid $grey;
+    }
+    .logo {
+      height: 60px;
+      top: 0;
     }
   }
   &.visible {
@@ -53,24 +61,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    &:before {
-      opacity: 0;
-      visibility: hidden;
-      transition: $transition;
-      content: '';
-      background: $white;
-      position: absolute;
-      width: 100%;
-      top: 0;
-      z-index: 2;
-    }
   }
   .logo,
   .icon {
     transition: $transition;
   }
   .logo {
-    height: 60px;
+    position: relative;
+    top: 10px;
+    will-change: height;
+    height: 80px;
     z-index: 2;
     img {
       width: 100%;
@@ -117,15 +117,22 @@ nav {
     text-align: left;
     width: 100vw;
     margin: unset;
-    background: $red;
+    background: transparent;
     transition: background-color $transition;
     .wrapper {
       height: inherit;
       width: inherit;
+    }
+    &:after {
+      opacity: .8;
+      visibility: visible;
+    }
+    &.scrolled {
       &:before {
-        transition-delay: .28s;
-        visibility: visible;
-        opacity: 1;
+        opacity: 0;
+      }
+      .icon {
+        border: unset;
       }
     }
     .primary-links {

@@ -1,10 +1,9 @@
 {% extends "index" %}
 
 {% block content %}
-    {% if entry.type == 'home' %}
-        {% include '_pages/home.twig' %}
-    {% else %}
-        {% include '_includes/landing' %}
-        {% include '_includes/pageSections' %}
-    {% endif %}
+    {% set blocks = entry.pageBuilder %}
+
+    {% for block in blocks %}
+        {% include '_includes/blocks/' ~ block.type %}
+    {% endfor %}
 {% endblock %}

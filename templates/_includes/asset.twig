@@ -1,0 +1,29 @@
+{% set asset = asset ?? null %}
+{% set loopVideo = loopVideo ?? false %}
+{% set overlayOpacity = overlayOpacity ?? null %}
+
+{% if asset %}
+    {% if asset.kind == 'video' %}
+        <video autoplay {{ loopVideo ? 'loop' }} muted preload="metadata" playsinline webkit-playsinline>
+            <source src="{{ asset.url }}" type="{{ asset.mimeType }}">
+        </video>
+    {% elseif asset.kind == 'image' %}
+        {% set transform = [
+            {
+                asset: asset,
+                transform: {
+                    width: 1920,
+                    height: 1080,
+                    mode: 'crop',
+                    format: 'webp'
+                }
+            }
+        ] %}
+        {% set attributes = { quality: 90 } %}
+        {{ craft.images.pictureMultiple(transform, attributes) }}
+    {% endif %}
+    
+    {% if overlayOpacity %}
+        <div class="overlay" style="opacity: {{ overlayOpacity }};"></div>
+    {% endif %}
+{% endif %}

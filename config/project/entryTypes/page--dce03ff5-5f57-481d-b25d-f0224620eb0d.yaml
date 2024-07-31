@@ -1,6 +1,6 @@
-color: null
+color: purple
 fieldLayouts:
-  fa338e7a-bec9-458b-a318-0dabf9a7707d:
+  5d95bd99-c43f-43d8-9318-e6a20adf6ac7:
     tabs:
       -
         elementCondition: null
@@ -30,21 +30,21 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 5fa19e80-3556-451f-9309-6ca0860bb207
+            uid: f6c4e4e4-6b58-4da5-9777-ac08feb5c4a8
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 938680a8-e9b1-4961-b7cd-a3d23650e3b0
+        uid: e453496a-62da-4272-8066-8c64f38d6032
         userCondition: null
-handle: story
+handle: page
 hasTitleField: true
-icon: null
-name: Story
+icon: file
+name: Page
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

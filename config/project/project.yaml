@@ -1,4 +1,4 @@
-dateModified: 1722300584
+dateModified: 1722448744
 elementSources:
   craft\elements\Entry:
     -
@@ -22,6 +22,18 @@ elementSources:
       key: singles
       tableAttributes:
         - status
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: true
+      key: 'section:f80c270d-499c-47df-990c-8e0b690c6f00' # Pages
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
         - link
       type: native
     -
@@ -117,17 +129,28 @@ elementSources:
       heading: 'Main Content'
       type: heading
     -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: 11fc5c50-038a-480a-908a-32fad5f6f01e
+            values:
+              - 7902c53a-ac15-4749-9375-dc82e08df5a9 # Home
+              - 49e14f42-e959-489c-a975-b946c8f2f728 # Story
+              - 8d69b932-6760-468b-b554-88ef24907083 # Company
+              - d9d53f60-09db-447e-beb7-1f567a40fa3a # Contact
+              - f80c270d-499c-47df-990c-8e0b690c6f00 # Pages
+        elementType: craft\elements\Entry
+        fieldContext: global
       defaultSort:
-        - structure
+        - title
         - asc
-      disabled: false
-      key: 'section:f80c270d-499c-47df-990c-8e0b690c6f00' # Pages
-      tableAttributes:
-        - status
-        - postDate
-        - expiryDate
-        - link
-      type: native
+      key: 'custom:44118ca4-f9c4-4fbc-a66e-ecd64444c339'
+      label: Pages
+      tableAttributes: '-'
+      type: custom
     -
       defaultSort:
         - structure
@@ -166,11 +189,13 @@ fs:
     url: /uploads/
 meta:
   __names__:
+    0c8d7d7c-aebb-4952-8ce2-9d8b1459542b: 'Remodels Button' # Remodels Button
     0df67807-28de-4196-83d0-7659095a96c0: Projects # Projects
     1cc8dda7-e3e2-4988-abfd-d613509a99cd: Image # Image
     2a474d4a-c4ce-4af9-8df0-20b69b317f1c: Button # Button
     2abd15c9-fdd9-47ba-8408-562df0e54ced: Press # Press
     2ae65e6b-281d-4313-9f2c-00364554ee33: Project # Project
+    2e6345b3-c242-4919-be0a-11f0e6afc8c6: Company # Company
     4ba31d02-8cc5-4c7c-8863-dd0825e666e9: Jobs # Jobs
     4e18f1d5-2eaa-4991-92ac-5b50d48d27c7: Location # Location
     4f214814-db96-4951-a3b1-03392ef7ef4d: Entries # Entries
@@ -178,37 +203,50 @@ meta:
     5e876e9e-c27f-47f3-ade9-0e2b65433348: Text # Text
     6c885d7a-6b76-47fe-b30b-a5fbd86efff7: 'JH Builders' # JH Builders
     7e4b4add-061e-4eab-92df-597242f18a90: 'Primary Links' # Primary Links
+    7fe80a9d-2822-4ed3-8d83-f89f27f75731: Asset # Asset
     8ac4d7b6-bd32-48e1-87b0-2989497fd49d: 'Project Overview' # Project Overview
     8b433bb6-cab9-45f3-bac0-0eecc02c1cd0: 'Navigation Content' # Navigation Content
+    8b656877-6f15-45aa-87d7-feb1d95ce5c2: 'Plain Text' # Plain Text
+    8d69b932-6760-468b-b554-88ef24907083: Company # Company
     8d161ed5-75a9-4d91-b362-2a70c13a7337: Projects # Projects
     9b9cd007-b263-4d95-821d-014590cc1f0f: 'Project Images' # Project Images
     15f01c47-3842-4ce9-9ab5-b6757399910b: 'New Builds Image' # New Builds Image
-    25d582ed-58cf-4a18-bc5d-941362b87054: Contact # Contact
+    34eabfa9-2dfb-43ea-9fa1-466ad575a728: iFrame # iFrame
     42d902fc-110b-469b-9510-c2d1cebc50cc: 'Public Schema' # Public Schema
+    49e14f42-e959-489c-a975-b946c8f2f728: Story # Story
     88e330b5-199c-4dee-a8f3-d5f391f8df20: Press # Press
+    94cb9947-273b-4b08-994c-6ef6402b164b: Home # Home
     383a4b26-b5d4-4ff4-ba3f-591bb58a8b66: Offices # Offices
     489ad90c-f81e-41c8-a312-7e1b0b7cd6fd: Employees # Employees
     0524ce74-5809-4227-9995-c07e31fcd67f: General # General
     895f0ba6-d32c-45c5-825c-884326ca8672: Job # Job
     3285dc39-a847-478b-b879-dea4891400c6: Remodel # Remodel
     3586fc06-c1c0-4c1e-b303-909b88cf3f84: Videos # Videos
-    5745b537-efa3-4b6b-a36f-dece4156446f: Story # Story
+    4986ae78-9ffa-41e9-ab3b-91e866576fd5: 'Max Width' # Max Width
     6974ec26-6de3-4cbe-87a2-c5363298442b: 'JH Builders' # JH Builders
+    7902c53a-ac15-4749-9375-dc82e08df5a9: Home # Home
     12099acd-6fe1-4370-87e0-eba9eef7a315: 'Project Category' # Project Category
     37391c35-7f8d-4a6c-a7e6-a05b2cd60b2c: Press # Press
     52813dfd-9354-4a05-8131-1611ab549142: Footer # Footer
-    95938bac-52e2-41d4-91d7-2f3d9ff6ce70: Company # Company
     976665db-132f-4fa0-9943-2252890ebedf: 'New Build' # New Build
     a4d89015-cc42-4dfe-9b5d-4709925e659f: 'Remodels Image' # Remodels Image
     a8f5f4f5-00ed-4701-a12b-eda576eb0326: Date # Date
     a29a748c-48f5-4036-80ab-2ac52e338956: Footer # Footer
     ae97b4e4-7938-4735-b734-84f98ec34af2: Buttons # Buttons
-    b69ca9aa-2103-404c-9ad9-0180d7f93a67: Home # Home
+    b41a2277-6577-4a6a-85b1-34d09f682df9: Story # Story
     b7977904-1581-4bf1-a440-242e4c34840a: 'Button Label' # Button Label
+    bda53640-24b3-44f4-8c8b-ee991f1addba: 'Text Alignment' # Text Alignment
     bf7baa7d-910a-4443-9588-fb0cddc5a28d: Navigation # Navigation
     cf50c102-65ae-48ac-aaf0-9b2db2d768cd: Navigation # Navigation
+    d1d4eee9-782f-49a3-bd3a-5b3a375a21f7: Contact # Contact
     d7bc45f1-f1c6-4fe7-aad5-a83242f68d4c: Projects # Projects
+    d9d53f60-09db-447e-beb7-1f567a40fa3a: Contact # Contact
+    dce03ff5-5f57-481d-b25d-f0224620eb0d: Page # Page
+    e0af700b-4828-4cae-ad17-75056547e835: Landing # Landing
     e1c930be-4e19-4db0-ad0a-3c422934e22c: Magazines # Magazines
+    e6b912d1-5313-4b23-b098-f3ef208c3d70: Asset # Asset
+    ea3fb6de-e06e-4078-a66e-62058977442f: Landing # Landing
+    eb9d1d8f-1b0d-49d5-ac31-989030b31e32: 'New Builds Button' # New Builds Button
     f0cae902-01a5-4303-b53a-94b99bdeec25: Simple # Simple
     f80c270d-499c-47df-990c-8e0b690c6f00: Pages # Pages
     f577c317-518c-4dac-aac8-808524984505: 'Project Category' # Project Category
@@ -217,6 +255,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  image-toolbox:
+    edition: lite
+    enabled: true
+    schemaVersion: 1.0.0
   seomatic:
     edition: standard
     enabled: true

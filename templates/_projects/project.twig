@@ -2,12 +2,17 @@
 
 <div class="project landing-section">
     <div class="inner">
-        {% include '_projects/_partials/projectInfo' with { entry: entry } %}
-        <button class="btn">
+        <div class="project-info">
+            {% include '_projects/_partials/projectInfo' with { entry: entry } %}
+        </div> 
+        <div class="project-buttons">
+            {% include '_includes/arrows' %}  
+            {% include '_includes/magnify' %}       
+        </div> 
     </div>
-    <div class="background">
-        {% for image in entry.projectImages.all() %}
-            <img src="{{ image.url }}" alt="{{ entry.title }}">
+    <div class="background gradient">
+        {% for asset in entry.projectImages.all() %}
+            {% include '_includes/asset' with { asset: asset, loopVideo: true } %}
         {% endfor %}
     </div>
 </div>

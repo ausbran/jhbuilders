@@ -1,6 +1,6 @@
-color: null
+color: cyan
 fieldLayouts:
-  96460d80-e1d9-419c-9c2d-7329e4bda218:
+  bccc2625-684a-44f1-8069-6f2f46a11b2b:
     tabs:
       -
         elementCondition: null
@@ -16,7 +16,7 @@ fieldLayouts:
             includeInCards: false
             inputType: null
             instructions: null
-            label: __blank__
+            label: null
             max: null
             min: null
             name: null
@@ -30,13 +30,34 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: a7225539-898e-4815-bb24-10d3df8bd34d
+            uid: 8bbce30c-2ec5-489f-8b46-1947ed34ab36
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: b7977904-1581-4bf1-a440-242e4c34840a # Button Label
+            fieldUid: 8b656877-6f15-45aa-87d7-feb1d95ce5c2 # Plain Text
+            handle: iframe
+            includeInCards: false
+            instructions: 'Paste your iFrame code.'
+            label: iFrame
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 18c77283-c9cb-40b1-8dd5-b87f5dfaf324
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a5efe924-45f3-4af7-941e-758c770d2b73
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
             handle: null
             includeInCards: false
             instructions: null
@@ -45,36 +66,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 17b60cc2-60cf-466c-89c0-841caf8816a6
+            uid: 2d384d14-faf5-4c8e-afa3-1758c28a87ce
             userCondition: null
             warning: null
             width: 100
-          -
-            elementCondition: null
-            fieldUid: 4f214814-db96-4951-a3b1-03392ef7ef4d # Entries
-            handle: buttonLink
-            includeInCards: false
-            instructions: null
-            label: 'Button Link'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 662cda34-873b-45b8-a99f-6a9e288bd17b
-            userCondition: null
-            warning: null
-            width: 100
-        name: Content
-        uid: 31f76bc5-7752-4029-b740-d90649b0dce1
+        name: Settings
+        uid: f3129c59-b608-4318-b02a-8dc31c146951
         userCondition: null
-handle: button
+handle: iframe
 hasTitleField: false
-icon: ''
-name: Button
+icon: crop
+name: iFrame
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{buttonLabel}'
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

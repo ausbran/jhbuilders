@@ -5,7 +5,11 @@
 @import "typography";
 @import "navigation";
 @import "footer";
-@import "home";
-@import "landing";
-@import "story";
-@import "projects";
+@import "pages/home";
+@import "pages/story";
+@import "pages/company";
+@import "pages/contact";
+@import "pages/projectCategory";
+@import "pages/project";
+@import "blocks/landing";
+@import "blocks/textBlock";

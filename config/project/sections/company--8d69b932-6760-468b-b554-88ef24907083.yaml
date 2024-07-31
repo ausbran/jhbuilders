@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - dce03ff5-5f57-481d-b25d-f0224620eb0d # Page
-handle: pages
+  - 2e6345b3-c242-4919-be0a-11f0e6afc8c6 # Company
+handle: company
 maxAuthors: 1
-name: Pages
+name: Company
 previewTargets:
   -
     __assoc__:
@@ -22,9 +22,6 @@ siteSettings:
   6974ec26-6de3-4cbe-87a2-c5363298442b: # JH Builders
     enabledByDefault: true
     hasUrls: true
-    template: _pages/_entry
-    uriFormat: '{slug}'
-structure:
-  maxLevels: null
-  uid: 515ce209-3ed0-4c3a-9ed8-09c49c97034e
-type: structure
+    template: _pages/company
+    uriFormat: company
+type: single

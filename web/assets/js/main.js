@@ -18,46 +18,21 @@ barba.init({
   }]
 });
 
-// Universal function to check browser capabilities
-function supportsHEVCAlpha() {
-  const navigator = window.navigator;
-  const ua = navigator.userAgent.toLowerCase();
-  const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo);
-  const isSafari = ua.includes('safari') && !ua.includes('chrome') && ua.includes('version/');
-  return isSafari && hasMediaCapabilities;
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-  var links = document.querySelector('.primary-links');
-  var secondaryContainer = document.querySelector('.secondary-container');
-  var hamburger = document.querySelector('.icon.nav-js');
-  var nav = document.querySelector('nav');
-  var body = document.querySelector('body');
+  var links = document.querySelector('.primary-links'),
+      hamburger = document.querySelector('.icon.nav-js'),
+      nav = document.querySelector('nav'),
+      body = document.querySelector('body');
 
-  // Function to open the menu for a specific link
-  function openMenu(link) {
-    links.querySelectorAll('.secondary-links.visible').forEach(function (otherSecondaryLinks) {
-      otherSecondaryLinks.classList.remove('visible');
-    });
-
-    if (isMobileDevice()) {
-      body.classList.add('no-scroll');
-    }
-
-    if (!isMobileDevice()) {
-      nav.classList.add('visible');
-    }
-
-    var secondaryLinks = link.querySelector('.secondary-links');
-    if (secondaryLinks) {
-      secondaryLinks.classList.add('visible');
-      secondaryContainer.classList.add('visible');
-    }
-  }
-
-  // Function to close the menu
+  // open menu
+  hamburger.addEventListener('click', function () {
+    nav.classList.toggle('menu-opened');
+    // links.classList.toggle('menu-opened');
+    body.classList.toggle('no-scroll');
+  });
+  
+  // close menu
   function closeMenu() {
-    secondaryContainer.classList.remove('visible');
     body.classList.remove('no-scroll');
     nav.classList.remove('visible');
   }
@@ -66,12 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.target.closest('.close')) {
       closeMenu();
     }
-  });
-
-  // Event listener for hamburger click
-  hamburger.addEventListener('click', function () {
-    nav.classList.toggle('menu-opened');
-    links.classList.toggle('menu-opened');
   });
 
   // Throttle scroll event to improve performance
@@ -100,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       nav.classList.remove(scrolledClass);
     }
-    closeMenu();
+    // closeMenu();
   }
 
   // Attach the throttled function to the scroll event

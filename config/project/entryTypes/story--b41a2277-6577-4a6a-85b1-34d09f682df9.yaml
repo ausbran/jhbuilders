@@ -1,6 +1,6 @@
 color: null
 fieldLayouts:
-  96460d80-e1d9-419c-9c2d-7329e4bda218:
+  679a1860-4797-4cca-a899-0dbd3621b37e:
     tabs:
       -
         elementCondition: null
@@ -16,7 +16,7 @@ fieldLayouts:
             includeInCards: false
             inputType: null
             instructions: null
-            label: __blank__
+            label: null
             max: null
             min: null
             name: null
@@ -30,13 +30,13 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: a7225539-898e-4815-bb24-10d3df8bd34d
+            uid: f5cf5234-aa86-43e8-a6b7-1e14d59c59b3
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: b7977904-1581-4bf1-a440-242e4c34840a # Button Label
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
             handle: null
             includeInCards: false
             instructions: null
@@ -45,36 +45,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 17b60cc2-60cf-466c-89c0-841caf8816a6
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 4f214814-db96-4951-a3b1-03392ef7ef4d # Entries
-            handle: buttonLink
-            includeInCards: false
-            instructions: null
-            label: 'Button Link'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 662cda34-873b-45b8-a99f-6a9e288bd17b
+            uid: adc53e28-d70f-4b64-84d7-cf065287e04a
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 31f76bc5-7752-4029-b740-d90649b0dce1
+        uid: 864a130e-644b-4264-9ac7-d547c861ffa2
         userCondition: null
-handle: button
-hasTitleField: false
+handle: story
+hasTitleField: true
 icon: ''
-name: Button
+name: Story
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{buttonLabel}'
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

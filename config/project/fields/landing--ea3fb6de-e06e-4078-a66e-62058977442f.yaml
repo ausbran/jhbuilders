@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: landing
+instructions: null
+name: Landing
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 34eabfa9-2dfb-43ea-9fa1-466ad575a728 # iFrame
+    - e6b912d1-5313-4b23-b098-f3ef208c3d70 # Asset
+  includeTableView: false
+  maxEntries: 1
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

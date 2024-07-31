@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: remodelsImage
+handle: asset
 instructions: null
-name: 'Remodels Image'
+name: Asset
 searchable: false
 settings:
   allowSelfRelations: false
@@ -11,21 +11,21 @@ settings:
     - image
     - video
   branchLimit: null
-  defaultUploadLocationSource: 'volume:0df67807-28de-4196-83d0-7659095a96c0' # Projects
+  defaultUploadLocationSource: 'volume:0524ce74-5809-4227-9995-c07e31fcd67f' # General
   defaultUploadLocationSubpath: null
   localizeRelations: false
   maintainHierarchy: false
-  maxRelations: 1
+  maxRelations: null
   minRelations: null
   previewMode: full
   restrictFiles: true
-  restrictLocation: true
+  restrictLocation: false
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:0df67807-28de-4196-83d0-7659095a96c0' # Projects
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: true
-  showSiteMenu: true
+  showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'

@@ -1,0 +1,17 @@
+// individual project page
+.project {
+    .project-info,
+    .project-buttons {
+        display: flex;
+    }
+    .project-info {
+        gap: $gap;
+    }
+    .project-buttons {
+        gap: $gap-medium;
+    }
+    .spacer {
+        width: 20px;
+        background: $white;
+    }
+}

@@ -62,37 +62,66 @@ ul {
   visibility: visible;
 }
 .btn {
-  font-size: .9em;
-  font-weight: 600;
-  border: none;
-  display: inline-block;
-  transition: $transition;
-  color: $red;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: $red;
+  transition: $transition;
+  border: none;
   &.icon {
     padding: 21px;
-    border: 1px solid $grey;
+    // border: 1px solid $grey;
     @include flex-center;
     border-radius: $btn-radius;
-    border: 1px solid $grey;
     background: $white;
-    &:hover {
+  }
+  // arrows that are to the right of text on all buttons
+  .btn-arrow {
+    position: relative;
+    bottom: -2px;
+    right: -10px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    svg {
+      position: absolute;
+      transition: $transition;
+      &:first-of-type {
+        @include translate(0,0,0);
+      }
+      &:last-of-type {
+        @include translate(-115%,0,0);
+      }
+      * {
+        stroke: $white;
+      }
+      &.red-arrow * {
+        stroke: $red;
+      }
+      &.white-arrow * {
+        stroke: $white;
+      }
+      &.black-arrow * {
+        stroke: $black;
+      }
     }
   }
   &:hover {
-    filter: brightness(.9);
-    @include translate(0,-1px,0);
+    svg {
+      &:first-of-type {
+        @include translate(115%,0,0);
+      }
+      &:last-of-type {
+        @include translate(0,0,0);
+      }
+    }
   }
-}
-.close,
-.arrow {
-  background-color: $red;
-  width: 60px !important;
-  height: 60px !important;
-  border-radius: 30px;
-  @include flex-center;
-  transition: $transition;
-  cursor: pointer;
 }
 .close {
   &:hover {
@@ -106,19 +135,20 @@ ul {
     width: 12px;
   }
 }
+// arrows that are used for carousels
 .arrows {
   display: flex;
-  gap: $gap;
-  margin: $margin-small;
+  .arrow-prev {
+    border-radius: $btn-radius 0 0 $btn-radius;
+  }
+  .arrow-next {
+    border-radius: 0 $btn-radius $btn-radius 0;
+  }
 }
 .arrow {
   svg {
     width: 15px;
     transition: $transition;
-  }
-  &.disabled {
-    opacity: .2;
-
   }
   &.arrow-prev svg {
     transform: rotate(-180deg);
@@ -148,7 +178,8 @@ ul {
   max-width: $max-width;
 }
 .gradient:before {
-  opacity: .5;
+  z-index: 1;
+  opacity: .4;
   content: "";
   position: absolute;
   bottom: 0;
@@ -166,6 +197,9 @@ ul {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    top: 0;
+    position: absolute;
+    left: 0;
   }
 }
 @include respond-to-max($desktop-large) {

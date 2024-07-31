@@ -1,18 +1,72 @@
 {% block content %}
 
 <div class="projects">
-    {% for project in craft.entries.section('projects').type('project').all() %}
-        <div class="project">
-            <div class="text">
-                {% include '_projects/_partials/projectInfo' with { entry: project } %}
-                <a class="btn" href="{{ project.url }}">View Project</a>
+    {% set projects = entry.getDescendants().all() %}
+    
+    {% if projects | length %}
+        {% for project in projects %}
+            <div class="project gradient">
+                <div class="text">
+                    {% include '_projects/_partials/projectInfo' with { entry: project } %}
+                    {% include '_includes/button' with { link: project.url, label: 'Explore Project', secondArrow: 'white-arrow' } %}
+                </div>
+                {% set image = project.projectImages.one() %}
+                {% if image %}
+                    <div class="overlay"></div>
+                    <img src="{{ image.url }}" alt="{{ project.title }}">
+                {% endif %}
             </div>
-            {% set image = project.projectImages.one() %}
-            {% if image %}
-                <img src="{{ image.url }}" alt="{{ project.title }}">
-            {% endif %}
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% else %}
+        <p>No projects found for the selected category.</p>
+    {% endif %}
 </div>
 
 {% endblock %}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const projects = document.querySelectorAll(".project");
+    const nav = document.querySelector('nav');
+
+    function updateObserver() {
+        const navHeight = nav.offsetHeight;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: `-${navHeight}px 0px -${navHeight}px 0px`,
+            threshold: buildThresholdList()
+        };
+
+        const observer = new IntersectionObserver(handleIntersect, observerOptions);
+        projects.forEach((project) => observer.observe(project));
+    }
+
+    function buildThresholdList() {
+        let thresholds = [];
+        let numSteps = 100; // number of animation steps
+        for (let i = 1.0; i <= numSteps; i++) {
+            thresholds.push(i / numSteps);
+        }
+        thresholds.push(0);
+        return thresholds;
+    }
+
+    function handleIntersect(entries) {
+        entries.forEach((entry) => {
+            const overlay = entry.target.querySelector('.overlay');
+            const text = entry.target.querySelector('.text');
+
+            const opacity = 0.8 - (entry.intersectionRatio * 1);
+            overlay.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+
+            text.style.opacity = `${entry.intersectionRatio}`;
+        });
+    }
+
+    updateObserver();
+
+    window.addEventListener('resize', updateObserver);
+});
+
+</script>

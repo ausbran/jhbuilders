@@ -6,16 +6,16 @@
   @include flex-center;
   overflow: hidden;
   background: $red;
+  padding: 75px 50px;
   .inner {
     max-width: $max-width;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     z-index: 2;
     font-size: 1em;
-    padding: $padding-large;
-    gap: $gap;
     * {
       color: $white;
     }
