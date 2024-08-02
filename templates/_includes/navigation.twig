@@ -1,14 +1,48 @@
-<nav>
-	<div class="wrapper">
-		{% if craft.rebrand.isLogoUploaded() %}
-			<a href="{{ currentSite.baseUrl }}" class="logo">
-			    <img src="{{ craft.rebrand.getLogo().url }}" alt="{{ siteName }} Logo">
-		    </a>
-		{% else %}
-			<a href="{{ currentSite.baseUrl }}" class="logo">
-				{% include '_includes/_svg/logo-vertical.svg' %}
-			</a>
-		{% endif %}
-		<button class="btn icon nav-js">{% include '_includes/_svg/nav.svg' %}</button>
-	</div>
+<nav class="{% if navigation.colorScheme == 'red' %}nav-red{% else %}nav-white{% endif %}">
+
+	{# top bar #}
+    <div class="bar">
+        {% if craft.rebrand.isLogoUploaded() %}
+            <a href="{{ currentSite.baseUrl }}" class="logo">
+                <img src="{{ craft.rebrand.getLogo().url }}" alt="{{ siteName }} Logo">
+            </a>
+        {% else %}
+            <a href="{{ currentSite.baseUrl }}" class="logo">
+                {% include '_includes/_svg/logo-vertical.svg' %}
+            </a>
+        {% endif %}
+        <button class="btn icon nav-js">{% include '_includes/_svg/nav.svg' %}</button>
+    </div>
+
+	{# slide out menu #}
+    <div class="menu">
+        <div class="primary-links">
+            {% set primaryLinks = navigation.primaryLinks.all() %}
+            {% for link in primaryLinks %}
+                <a href="{{ link.getUrl() }}" class="link">
+                    {{ link.title }}
+                </a>
+            {% endfor %}
+        </div>
+        <div class="featured-projects-outer">
+			<h3 class="header">Recent Projects</h3>
+			<div class="featured-projects">
+				{% set featuredProjects = navigation.featuredProjects.all() %}
+				{% for project in featuredProjects %}
+					<div class="featured-project">
+						<a href="{{ project.getUrl() }}">
+							<div class="img-wrapper">
+								<img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
+							</div>
+							{% include '_includes/button' with { link: project.url, label: project.title, secondArrow: 'white-arrow' } %}
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+        </div>
+        <div class="brand-text">
+            {{ navigation.brandText }}
+        </div>
+    </div>
+
 </nav>

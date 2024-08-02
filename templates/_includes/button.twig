@@ -1,7 +1,7 @@
 <a href="{{ link }}" class="btn">
   {{ label }}
   <span class="btn-arrow">
-    {% include "_includes/_svg/arrow.svg" with { class: firstArrow is defined ? firstArrow : null } %}
-    {% include "_includes/_svg/arrow.svg" with { class: secondArrow is defined ? secondArrow : null } %}
+    {% include "_includes/_svg/arrow.svg" with { class: firstArrow is defined ? firstArrow : 'white-arrow' } %}
+    {% include "_includes/_svg/arrow.svg" with { class: secondArrow is defined ? secondArrow : 'red-arrow' } %}
   </span>
 </a>

@@ -14,7 +14,7 @@ settings:
   purifyHtml: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  showWordCount: true
+  showWordCount: false
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

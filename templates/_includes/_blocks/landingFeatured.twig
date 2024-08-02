@@ -1,0 +1,21 @@
+{% extends '_includes/_blocks/landingBase' %}
+
+{% block content %}
+    <p>{{ entry.text }}</p>
+    {% set buttonLabel = 'Explore ' ~ featuredProject.title %}
+    {% include '_includes/button' with {
+        link: featuredProject.url,
+        label: buttonLabel
+        }
+    %}
+{% endblock %}
+
+{% block background %}
+    <div class="carousel">
+        {% for asset in featuredProject.projectImages.all() %}
+            <div class="carousel-item">
+                {% include '_includes/asset' %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -6,9 +6,39 @@ headingLevels:
   - 5
   - 6
 name: Simple
+options:
+  alignment:
+    options:
+      - left
+      - right
+  style:
+    definitions:
+      -
+        classes:
+          - red-heading
+        element: h2
+        name: 'Red heading'
+      -
+        classes:
+          - vibrant-code
+        element: pre
+        name: 'Vibrant code'
+      -
+        classes:
+          - marker
+        element: span
+        name: Marker
 toolbar:
   - heading
   - '|'
+  - alignment
   - bold
+  - underline
   - italic
+  - fontColor
   - link
+  - insertImage
+  - mediaEmbed
+  - bulletedList
+  - numberedList
+  - style

@@ -1,7 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 8b433bb6-cab9-45f3-bac0-0eecc02c1cd0 # Navigation Content
+  - 8b433bb6-cab9-45f3-bac0-0eecc02c1cd0 # Navigation
 handle: navigation
 maxAuthors: 1
 name: Navigation

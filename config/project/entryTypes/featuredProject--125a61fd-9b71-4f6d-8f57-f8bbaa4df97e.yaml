@@ -1,6 +1,6 @@
 color: null
 fieldLayouts:
-  679a1860-4797-4cca-a899-0dbd3621b37e:
+  0ffa2798-4acb-406d-84c4-e72c592c7e08:
     tabs:
       -
         elementCondition: null
@@ -30,13 +30,13 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: f5cf5234-aa86-43e8-a6b7-1e14d59c59b3
+            uid: 7c0946b2-b1a9-4274-a5e0-82ab7ef71630
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: ea3fb6de-e06e-4078-a66e-62058977442f # Landing
+            fieldUid: 6c962d78-ae5d-46be-9d3e-8c3869dff3ce # Featured Project
             handle: null
             includeInCards: false
             instructions: null
@@ -45,17 +45,47 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e3e93f43-766b-48f3-a974-73d91b1257dd
+            uid: d85926a3-d127-420c-9d8f-32ecb27fd33a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6768cf1c-b340-494b-8c86-366ccff94e5f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ae97b4e4-7938-4735-b734-84f98ec34af2 # Buttons
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7475cd3-b9dc-4608-b279-ee2ba2a5cb90
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 864a130e-644b-4264-9ac7-d547c861ffa2
+        uid: c43e04ab-eae2-4536-b580-06e667e61fac
         userCondition: null
-handle: story
-hasTitleField: true
+handle: featuredProject
+hasTitleField: false
 icon: ''
-name: Story
+name: 'Featured Project'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

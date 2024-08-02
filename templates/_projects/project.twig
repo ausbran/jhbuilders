@@ -1,6 +1,6 @@
 {% block content %}
 
-<div class="project landing-section">
+<div class="project landing">
     <div class="inner">
         <div class="project-info">
             {% include '_projects/_partials/projectInfo' with { entry: entry } %}
@@ -12,7 +12,7 @@
     </div>
     <div class="background gradient">
         {% for asset in entry.projectImages.all() %}
-            {% include '_includes/asset' with { asset: asset, loopVideo: true } %}
+            {% include '_includes/asset' %}
         {% endfor %}
     </div>
 </div>

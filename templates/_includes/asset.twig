@@ -1,6 +1,11 @@
 {% set asset = asset ?? null %}
+{% set width = width ?? 2560 %}
+{% set height = height ?? 1440 %}
+{% set format = format ?? 'webp' %}
+{% set quality = quality ?? 100 %}
+{% set mode = mode ?? 'crop' %}
 {% set loopVideo = loopVideo ?? false %}
-{% set overlayOpacity = overlayOpacity ?? null %}
+{% set overlay = overlay ?? null %}
 
 {% if asset %}
     {% if asset.kind == 'video' %}
@@ -12,18 +17,18 @@
             {
                 asset: asset,
                 transform: {
-                    width: 1920,
-                    height: 1080,
-                    mode: 'crop',
-                    format: 'webp'
+                    width: width,
+                    height: height,
+                    mode: mode,
+                    format: format
                 }
             }
         ] %}
-        {% set attributes = { quality: 90 } %}
+        {% set attributes = { quality: quality } %}
         {{ craft.images.pictureMultiple(transform, attributes) }}
     {% endif %}
     
-    {% if overlayOpacity %}
-        <div class="overlay" style="opacity: {{ overlayOpacity }};"></div>
+    {% if overlay %}
+        <div class="overlay" style="opacity: {{ overlay }};"></div>
     {% endif %}
 {% endif %}

@@ -1,10 +1,5 @@
 {% extends "index" %}
 
 {% block content %}
-
-<div class="landing-section">
-    <h1>{{ entry.title }}</h1>
-    <p>{{ entry.text }}</p>
-</div>
-
+    {% include '_includes/_blocks/landingGeneral' %}
 {% endblock %}

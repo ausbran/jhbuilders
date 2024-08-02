@@ -12,7 +12,7 @@ settings:
           - 'Top Left'
         -
           - value
-          - topLeft
+          - top-left
         -
           - default
           - ''
@@ -23,7 +23,7 @@ settings:
           - 'Top Center'
         -
           - value
-          - topCenter
+          - top-center
         -
           - default
           - ''
@@ -34,7 +34,7 @@ settings:
           - 'Top Right'
         -
           - value
-          - topRight
+          - top-right
         -
           - default
           - ''
@@ -45,7 +45,7 @@ settings:
           - 'Center Left'
         -
           - value
-          - centerLeft
+          - center-left
         -
           - default
           - ''
@@ -53,10 +53,10 @@ settings:
       __assoc__:
         -
           - label
-          - Center
+          - 'Center Center'
         -
           - value
-          - center
+          - center-center
         -
           - default
           - ''
@@ -67,7 +67,7 @@ settings:
           - 'Center Right'
         -
           - value
-          - centerRight
+          - center-right
         -
           - default
           - ''
@@ -78,7 +78,7 @@ settings:
           - 'Bottom Left'
         -
           - value
-          - bottomLeft
+          - bottom-left
         -
           - default
           - ''
@@ -89,7 +89,7 @@ settings:
           - 'Bottom Center'
         -
           - value
-          - bottomCenter
+          - bottom-center
         -
           - default
           - ''
@@ -100,7 +100,7 @@ settings:
           - 'Bottom Right'
         -
           - value
-          - bottomRight
+          - bottom-right
         -
           - default
           - ''

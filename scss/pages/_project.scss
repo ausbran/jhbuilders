@@ -1,5 +1,13 @@
 // individual project page
 .project {
+    .inner {
+        padding: unset !important;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: unset;
+        max-width: $max-width;
+        font-size: 1em;
+    }
     .project-info,
     .project-buttons {
         display: flex;

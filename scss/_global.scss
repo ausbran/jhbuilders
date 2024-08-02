@@ -30,6 +30,13 @@ body {
   visibility: hidden;
   opacity: 0;
 }
+.error-text {
+  margin: 100px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  @include flex-center;
+}
 .no-footer footer {
   display: none;
 }

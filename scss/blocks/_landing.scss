@@ -1,4 +1,4 @@
-.landing-section {
+.landing {
 	position: relative;
   height: 100dvh;
   width: 100vw;
@@ -10,22 +10,29 @@
   .inner {
     max-width: $max-width;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
     width: 100%;
     height: 100%;
     z-index: 2;
     font-size: 1em;
+    z-index: 2;
+    font-size: 1em;
+    .text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      img {
+        width:80%;
+        max-width:450px;
+      }
+    }
     * {
       color: $white;
     }
     p {
       max-width: 1000px;
     }
-		.buttons {
-			display: flex;
-			gap: $gap;
-		}
+    .description-wrapper,
     .iframe-wrapper {
       width: 100%;
       display: flex;
@@ -38,16 +45,16 @@
   	position: absolute;
     height: 100%;
     width: 100%;
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $black;
-      opacity: 0;
-      z-index: 1;
-    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 1;
   }
   @include respond-to-max($desktop) {
     .inner {
@@ -62,4 +69,4 @@
       padding: $padding-small;
     }
   } // end $mobile
-} // end landing-section
+} // end landing

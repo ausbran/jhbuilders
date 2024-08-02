@@ -1,5 +1,11 @@
 {% extends "index" %}
 
 {% block content %}
-    {% include '_blocks/landing' %}
+    {% set featuredProject = entry.featuredProject.one() %}
+    {% if featuredProject %}
+        {% include '_includes/_blocks/landingFeatured' %}
+    {% else %}
+        <p class="error-text">No featured project selected.</p>
+    {% endif %}
+    {% include '_includes/_blocks/banner' with { block: entry } %}
 {% endblock %}

@@ -27,14 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // open menu
   hamburger.addEventListener('click', function () {
     nav.classList.toggle('menu-opened');
-    // links.classList.toggle('menu-opened');
     body.classList.toggle('no-scroll');
   });
   
   // close menu
   function closeMenu() {
+    nav.classList.remove('menu-opened');
     body.classList.remove('no-scroll');
-    nav.classList.remove('visible');
   }
 
   document.body.addEventListener('click', function(event) {
@@ -91,10 +90,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
   adjustFontSize();
   window.addEventListener('resize', adjustFontSize);
+
+  // projectOverview scroll animation
+  const projects = document.querySelectorAll(".project");
+
+  function updateObserver() {
+      const navHeight = nav.offsetHeight;
+
+      const observerOptions = {
+          root: null,
+          rootMargin: `-${navHeight}px 0px -${navHeight}px 0px`,
+          threshold: buildThresholdList()
+      };
+
+      const observer = new IntersectionObserver(handleIntersect, observerOptions);
+      projects.forEach((project) => observer.observe(project));
+  }
+
+  function buildThresholdList() {
+      let thresholds = [];
+      let numSteps = 100; // number of animation steps
+      for (let i = 1.0; i <= numSteps; i++) {
+          thresholds.push(i / numSteps);
+      }
+      thresholds.push(0);
+      return thresholds;
+  }
+
+  function handleIntersect(entries) {
+      entries.forEach((entry) => {
+          const overlay = entry.target.querySelector('.overlay');
+          const text = entry.target.querySelector('.text');
+
+          if (overlay) {
+            const opacity = 0.8 - (entry.intersectionRatio * 1);
+            overlay.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+          }
+
+          text.style.opacity = `${entry.intersectionRatio}`;
+      });
+  }
+
+  updateObserver();
+
+  window.addEventListener('resize', updateObserver);
 });
 
-
-// Additional document ready functions...
 
 // Universal slider with arrow functionality
 var instances = document.querySelectorAll(".slider");

@@ -1,0 +1,23 @@
+columnSuffix: null
+handle: featuredProject
+instructions: null
+name: 'Featured Project'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: true
+  showSiteMenu: true
+  sources:
+    - 'section:d7bc45f1-f1c6-4fe7-aad5-a83242f68d4c' # Projects
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries
