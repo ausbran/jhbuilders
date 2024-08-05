@@ -1,4 +1,4 @@
-dateModified: 1722480721
+dateModified: 1722877012
 elementSources:
   craft\elements\Entry:
     -
@@ -139,11 +139,11 @@ elementSources:
             operator: in
             uid: 11fc5c50-038a-480a-908a-32fad5f6f01e
             values:
-              - 7902c53a-ac15-4749-9375-dc82e08df5a9 # Home
-              - 49e14f42-e959-489c-a975-b946c8f2f728 # Story
               - 8d69b932-6760-468b-b554-88ef24907083 # Company
               - d9d53f60-09db-447e-beb7-1f567a40fa3a # Contact
+              - 7902c53a-ac15-4749-9375-dc82e08df5a9 # Home
               - f80c270d-499c-47df-990c-8e0b690c6f00 # Pages
+              - 49e14f42-e959-489c-a975-b946c8f2f728 # Story
         elementType: craft\elements\Entry
         fieldContext: global
       defaultSort:
@@ -176,6 +176,18 @@ elementSources:
         - postDate
         - expiryDate
         - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:68cbee1c-920f-40db-8ed7-12382fc9e585' # Staff
+      tableAttributes:
+        - status
+        - link
+        - 'field:77cbce15-f8f2-447c-9110-cb36d641174d' # Image
+        - type
       type: native
 email:
   fromEmail: ausbranham@gmail.com
@@ -211,17 +223,17 @@ meta:
     8b433bb6-cab9-45f3-bac0-0eecc02c1cd0: Navigation # Navigation
     8b656877-6f15-45aa-87d7-feb1d95ce5c2: 'Plain Text' # Plain Text
     8d69b932-6760-468b-b554-88ef24907083: Company # Company
-    8d161ed5-75a9-4d91-b362-2a70c13a7337: Projects # Projects
     8f0d2001-1c75-4b9a-8e74-b7e48dbc58bf: 'Loop Video' # Loop Video
     9b9cd007-b263-4d95-821d-014590cc1f0f: 'Project Images' # Project Images
     15f01c47-3842-4ce9-9ab5-b6757399910b: 'New Builds Image' # New Builds Image
     34eabfa9-2dfb-43ea-9fa1-466ad575a728: iFrame # iFrame
     42d902fc-110b-469b-9510-c2d1cebc50cc: 'Public Schema' # Public Schema
     49e14f42-e959-489c-a975-b946c8f2f728: Story # Story
+    68cbee1c-920f-40db-8ed7-12382fc9e585: Staff # Staff
+    77cbce15-f8f2-447c-9110-cb36d641174d: Image # Image
     84b49fbd-67b9-4021-9790-4d862971a1fb: Text # Text
     88e330b5-199c-4dee-a8f3-d5f391f8df20: Press # Press
-    94cb9947-273b-4b08-994c-6ef6402b164b: Home # Home
-    125a61fd-9b71-4f6d-8f57-f8bbaa4df97e: 'Featured Project' # Featured Project
+    94cb9947-273b-4b08-994c-6ef6402b164b: 'Featured Project' # Featured Project
     383a4b26-b5d4-4ff4-ba3f-591bb58a8b66: Offices # Offices
     451ebed9-368d-4404-a7f4-1c565c0dfc4a: 'Color Scheme' # Color Scheme
     489ad90c-f81e-41c8-a312-7e1b0b7cd6fd: Employees # Employees
@@ -238,6 +250,7 @@ meta:
     37391c35-7f8d-4a6c-a7e6-a05b2cd60b2c: Press # Press
     52813dfd-9354-4a05-8131-1611ab549142: Footer # Footer
     976665db-132f-4fa0-9943-2252890ebedf: 'New Build' # New Build
+    08212732-97cb-4fe1-80d5-22da0da1d83a: Partner # Partner
     98531642-0cb8-4a38-a70c-ddd5f537d751: Buttons # Buttons
     a4d89015-cc42-4dfe-9b5d-4709925e659f: 'Remodels Image' # Remodels Image
     a8f5f4f5-00ed-4701-a12b-eda576eb0326: Date # Date
@@ -259,6 +272,7 @@ meta:
     f0cae902-01a5-4303-b53a-94b99bdeec25: Simple # Simple
     f80c270d-499c-47df-990c-8e0b690c6f00: Pages # Pages
     f577c317-518c-4dac-aac8-808524984505: 'Project Category' # Project Category
+    fc6ef365-7b24-4504-a826-07dae12b991c: Employee # Employee
 plugins:
   ckeditor:
     edition: standard

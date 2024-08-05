@@ -3,19 +3,25 @@
 {% block content %}
     <p>{{ entry.text }}</p>
     {% set buttonLabel = 'Explore ' ~ featuredProject.title %}
-    {% include '_includes/button' with {
-        link: featuredProject.url,
-        label: buttonLabel
-        }
-    %}
+    <div class="buttons">
+        {% include '_includes/button' with {
+            link: featuredProject.url,
+            label: buttonLabel
+            }
+        %}
+        {% include '_includes/buttons' with { buttons: entry.buttons.all() } %}
+    </div>
 {% endblock %}
 
 {% block background %}
-    <div class="carousel">
+    <div class="carousel gradient">
         {% for asset in featuredProject.projectImages.all() %}
             <div class="carousel-item">
                 {% include '_includes/asset' %}
             </div>
         {% endfor %}
+    </div>
+    <div class="progress-bar">
+        <div class="progress"></div>
     </div>
 {% endblock %}

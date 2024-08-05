@@ -1,3 +1,6 @@
 <div class="banner {{ block.textAlignment }}">
-     {% include '_includes/_blocks/text' %}
+     {% include '_includes/_blocks/text' with {
+        text: block.bannerText,
+        maxWidth: entry.bannerMaxWidth
+    } %}
 </div>

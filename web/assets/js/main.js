@@ -134,6 +134,32 @@ document.addEventListener('DOMContentLoaded', function () {
   updateObserver();
 
   window.addEventListener('resize', updateObserver);
+
+  (function() {
+    var carousel = document.querySelector('.carousel');
+    var items = carousel.querySelectorAll('.carousel-item');
+    var progressBar = document.querySelector('.progress-bar .progress');
+    var index = 0;
+
+    function showNextImage() {
+        items[index].classList.remove('active');
+        index = (index + 1) % items.length;
+        items[index].classList.add('active');
+
+        // Reset and animate the progress bar
+        progressBar.style.width = '0';
+        setTimeout(() => {
+            progressBar.style.transition = 'width 5s linear';
+            progressBar.style.width = '100%';
+        }, 10);
+    }
+
+    setInterval(showNextImage, 5000); // Change image every 1 second
+
+    // Initial setup
+    items[index].classList.add('active');
+    progressBar.style.width = '100%';
+})();
 });
 
 

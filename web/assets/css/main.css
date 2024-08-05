@@ -163,13 +163,6 @@ ul {
 .close:hover {
   filter: brightness(1.5);
 }
-.close:before {
-  display: block;
-  content: "";
-  background: url("/images/icons/close.svg") no-repeat 0 0/contain;
-  height: 12px;
-  width: 12px;
-}
 
 .arrows {
   display: flex;
@@ -544,6 +537,29 @@ nav .bar {
   align-items: center;
   position: relative;
 }
+nav .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+nav .icons .icon.close {
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: #ED3127;
+  position: absolute;
+  top: 0;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+nav .icons .icon.close * {
+  stroke: #FFFFFF;
+}
 nav .logo,
 nav .icon {
   transition: 0.28s cubic-bezier(0.23, 1, 0.32, 1);
@@ -720,6 +736,13 @@ nav.menu-opened .bar {
 nav.menu-opened:after {
   opacity: 0.8;
   visibility: visible;
+}
+nav.menu-opened .icons .icon.close {
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 nav.menu-opened.scrolled:before {
   opacity: 0;
@@ -1354,7 +1377,7 @@ footer .footer-links li:hover {
   height: 100%;
   z-index: 2;
   font-size: 1em;
-  z-index: 2;
+  z-index: 5;
   font-size: 1em;
 }
 .landing .inner .text {
@@ -1380,11 +1403,38 @@ footer .footer-links li:hover {
   flex-direction: column;
   gap: 30px;
 }
-.landing .background {
+.landing .background,
+.landing .carousel {
   top: 0;
+  left: 0;
   position: absolute;
   height: 100%;
   width: 100%;
+}
+.landing .carousel.gradient:before {
+  z-index: 4;
+}
+.landing .carousel .carousel-item {
+  height: inherit;
+  width: inherit;
+  position: inherit;
+  z-index: 2;
+  transition: 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.landing .carousel .carousel-item.active {
+  z-index: 3;
+}
+.landing .progress-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: #E5E5E5;
+  z-index: 4;
+}
+.landing .progress-bar .progress {
+  height: 100%;
+  background: #ED3127;
 }
 .landing .overlay {
   position: absolute;

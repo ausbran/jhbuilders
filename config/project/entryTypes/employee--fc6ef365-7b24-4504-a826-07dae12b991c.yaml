@@ -1,6 +1,6 @@
-color: null
+color: sky
 fieldLayouts:
-  b68ae164-c29f-4a5e-a83a-61a4da8bf4f6:
+  dfcb504a-408a-4635-bc46-da2a9a4a274f:
     tabs:
       -
         elementCondition: null
@@ -16,7 +16,7 @@ fieldLayouts:
             includeInCards: false
             inputType: null
             instructions: null
-            label: null
+            label: Name
             max: null
             min: null
             name: null
@@ -30,28 +30,28 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 981c0f3c-3269-4c6e-9d6f-e639bd0bf1f7
+            uid: 40351363-f7af-4bad-924a-a38f80751251
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
-            handle: newBuildsText
+            fieldUid: 8b656877-6f15-45aa-87d7-feb1d95ce5c2 # Plain Text
+            handle: position
             includeInCards: false
             instructions: null
-            label: 'New Builds Text'
+            label: Position
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 817cf32b-e4db-4908-be2c-608d5edd5199
+            uid: d18a0177-59d7-4b25-be48-f3f6c3f5458f
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 15f01c47-3842-4ce9-9ab5-b6757399910b # New Builds Image
+            fieldUid: 77cbce15-f8f2-447c-9110-cb36d641174d # Image
             handle: null
             includeInCards: false
             instructions: null
@@ -60,51 +60,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c00efcde-8555-437e-913f-f3a5a9eb4385
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
-            handle: remodelsText
-            includeInCards: false
-            instructions: null
-            label: 'Remodels Text'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4f6b28c0-0d5f-43a5-aa03-7d74b098e3bb
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: a4d89015-cc42-4dfe-9b5d-4709925e659f # Remodels Image
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 72a50a07-244b-4281-a64d-77e0276752b4
+            uid: 750ea2e7-f40c-42de-a4d2-a1e7f8a8131d
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: e4c194a1-ec7b-48c4-ac57-b083ab42e821
+        uid: 8ec55fb3-93d6-4367-9e44-53b7057e7e7c
         userCondition: null
-handle: projects
-hasTitleField: false
-icon: null
-name: Projects
+handle: employee
+hasTitleField: true
+icon: user-helmet-safety
+name: Employee
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: Projects
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

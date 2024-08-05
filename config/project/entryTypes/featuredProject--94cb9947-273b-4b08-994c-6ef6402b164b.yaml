@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   c2f35092-fa59-4bca-a5b9-d6d6148dd85b:
     tabs:
@@ -52,7 +52,7 @@ fieldLayouts:
           -
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
-            handle: null
+            handle: text
             includeInCards: false
             instructions: null
             label: null
@@ -118,10 +118,10 @@ fieldLayouts:
         name: Settings
         uid: 54cf1a9c-133c-4034-8794-53619b16bc02
         userCondition: null
-handle: home
+handle: featuredProject
 hasTitleField: true
-icon: ''
-name: Home
+icon: star
+name: 'Featured Project'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

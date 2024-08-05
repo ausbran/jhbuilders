@@ -82,6 +82,25 @@ nav {
     align-items: center;
     position: relative;
   }
+  .icons {
+    @include flex-center;
+    overflow: hidden;
+    position: relative;
+    .icon {
+      &.close {
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        background: $red;
+        position: absolute;
+        top: 0;
+        @include translate(-100%,0,0);
+        * {
+          stroke: $white;
+        }
+      }
+    }
+  }
   .logo,
   .icon {
     transition: $transition;
@@ -233,6 +252,13 @@ nav {
     &:after {
       opacity: .8;
       visibility: visible;
+    }
+    .icons {
+      .icon {
+        &.close {
+          @include translate(0,0,0);
+        }
+      }
     }
     &.scrolled {
       &:before {
