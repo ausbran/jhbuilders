@@ -1,27 +1,79 @@
 {% extends '_includes/_blocks/landingBase' %}
 
+{% set projects = entry.featuredProject.all() ?? [] %}
+{% if projects|length > 0 %}
+    {% set featuredProject = random(projects) %}
+{% else %}
+    {% set featuredProject = null %}
+{% endif %}
+
 {% block content %}
-    <p>{{ entry.text }}</p>
-    {% set buttonLabel = 'Explore ' ~ featuredProject.title %}
-    <div class="buttons">
-        {% include '_includes/button' with {
-            link: featuredProject.url,
-            label: buttonLabel
-            }
-        %}
-        {% include '_includes/buttons' with { buttons: entry.buttons.all() } %}
-    </div>
+    {% if featuredProject %}
+        {{ entry.text }}
+        {% set buttonLabel = 'Explore ' ~ featuredProject.title %}
+        <div class="buttons">
+            {% include '_includes/_blocks/button' with {
+                link: featuredProject.url,
+                label: buttonLabel
+            } %}
+            {% include '_includes/_blocks/buttons' with { buttons: entry.buttons.all() } %}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block background %}
-    <div class="carousel gradient">
-        {% for asset in featuredProject.projectImages.all() %}
-            <div class="carousel-item">
-                {% include '_includes/asset' %}
-            </div>
-        {% endfor %}
-    </div>
-    <div class="progress-bar">
-        <div class="progress"></div>
-    </div>
+    {% if featuredProject %}
+        <div class="carousel gradient">
+            {% for asset in featuredProject.projectImages.all()|slice(0, 5) %}
+                <div class="carousel-item">
+                    {% include '_includes/_blocks/asset' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    {% endif %}
 {% endblock %}
+
+
+{% js %}
+    {% set slideTime = entry.slideTime ?? 15 %}
+
+    (function() {
+        var carousel = document.querySelector('.carousel');
+        var items = carousel.querySelectorAll('.carousel-item');
+        var progressBar = document.querySelector('.progress-bar .progress');
+        var index = 0;
+        var slideTime = {{ slideTime * 1000 }}; // Dynamic interval time in milliseconds
+        var pauseTime = 400; // 1-second pause before switching to the next image
+    
+        function showNextImage() {
+            items[index].classList.remove('active');
+            index = (index + 1) % items.length;
+            items[index].classList.add('active');
+
+            // Reset and animate the progress bar
+            progressBar.style.transition = 'none'; // Remove transition to reset
+            progressBar.style.width = '0%'; // Reset width to 0
+            setTimeout(() => {
+                progressBar.style.transition = `width ${slideTime}ms linear`; // Reapply transition for animation
+                progressBar.style.width = '100%'; // Animate to full width
+            }, 50); // Timeout to allow DOM update
+        }
+
+        function startCarousel() {
+            showNextImage(); // Show the initial image
+            setInterval(() => {
+                showNextImage();
+            }, slideTime + pauseTime); // Change image after slideTime + pauseTime
+        }
+
+        // Initial setup
+        items[index].classList.add('active');
+        progressBar.style.transition = `width ${slideTime}ms linear`;
+        progressBar.style.width = '100%';
+
+        startCarousel(); // Start the carousel
+    })();
+{% endjs %}

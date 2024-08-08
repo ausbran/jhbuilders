@@ -6,7 +6,7 @@
             {% case 'text' %}
                 {% include '_includes/_blocks/text' %}
             {% case 'buttons' %}
-                {% include '_includes/buttons' with { buttons: block.buttons.all() } %}
+                {% include '_includes/_blocks/buttons' with { buttons: block.buttons.all() } %}
             {% case 'iframe' %}
                 {% include '_includes/_blocks/iframe' %}
         {% endswitch %}
@@ -16,7 +16,7 @@
 {% block background %}
     {% for block in blocks %}
         {% if block.type.handle == 'asset' %}
-            {% include '_includes/asset' with { asset: block.asset.one() } %}
+            {% include '_includes/_blocks/asset' with { asset: block.asset.one() } %}
         {% endif %}
     {% endfor %}
 {% endblock %}

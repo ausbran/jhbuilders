@@ -202,6 +202,67 @@ ul {
     left: 0;
   }
 }
+/* Define margin classes */
+.margin-xs {
+  margin: 8px;
+}
+.margin-sm {
+  margin: 16px;
+}
+.margin-md {
+  margin: 24px;
+}
+.margin-lg {
+  margin: 32px;
+}
+.margin-xl {
+  margin: 40px;
+}
+
+/* Margin top and bottom */
+.margin-y-xs {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.margin-y-sm {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.margin-y-md {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.margin-y-lg {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.margin-y-xl {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Margin left and right */
+.margin-x-xs {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.margin-x-sm {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.margin-x-md {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.margin-x-lg {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.margin-x-xl {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 @include respond-to-max($desktop-large) {
   .btn {
     padding: 18px 30px;

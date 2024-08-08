@@ -1,0 +1,10 @@
+.pdf-viewer {
+    width: 100%;
+    background-color: $white;
+}
+canvas {
+    box-shadow: $box-shadow;
+    display: block;
+    height: calc(100vh - 150px);
+    margin: 0 auto $margin-small auto;
+}

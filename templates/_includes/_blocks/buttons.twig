@@ -5,7 +5,7 @@
             {% set link = link.getUrl() %}
             {% set firstArrow = firstArrow is defined ? firstArrow : 'white-arrow' %}
             {% set secondArrow = secondArrow is defined ? secondArrow : 'red-arrow' %}
-            {% include '_includes/button' with { 
+            {% include '_includes/_blocks/button' with { 
                 link: link, 
                 label: button.buttonLabel, 
                 firstArrow: firstArrow, 

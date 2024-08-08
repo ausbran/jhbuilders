@@ -59,7 +59,7 @@
 .project-images {
     position: absolute;
 }
-.project-category {
+.project-overview {
     width: 50%;
     height: 100%;
     padding: $padding-large;
@@ -67,9 +67,20 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    gap: $gap-small;
+    overflow: hidden;
+    position: relative;
+    .text {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: $gap-medium;
+    }
     * {
         color: $white;
+    }
+    .background {
+        z-index: 0;
     }
 }
 

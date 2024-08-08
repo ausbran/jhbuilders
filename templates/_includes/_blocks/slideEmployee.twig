@@ -1,0 +1,14 @@
+<div class="slide general">
+    <div class="image">
+        {% if slide.staffImage is defined %}
+            {% set asset = slide.staffImage.one() %}
+            {% if asset %}
+                {% include '_includes/_blocks/asset' with { asset: asset } %}
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="text">
+        <h3 class="name">{{ slide.title }}</h3>
+        <h3 class="position">{{ slide.position }}</h3>
+    </div>
+</div>

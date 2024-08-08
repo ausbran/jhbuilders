@@ -1,5 +1,28 @@
 {% extends "index" %}
 
 {% block content %}
-    {% include '_includes/_blocks/landingGeneral' %}
+    {% include '_includes/_blocks/landingGeneral' with { blocks: story.landing.all() } %}
+
+    {% set partners = craft.entries.section('staff').type('partner').all() %}
+    {% set employees = craft.entries.section('staff').type('employee').all() %}
+
+    <div class="slider-outer margin-y-xl">
+        <h2>Partners</h2>
+        {% include '_includes/_blocks/slider' with { 
+            slides: partners, 
+            height: 'medium', 
+            visibleCards: 2, 
+            slideTemplate: '_includes/_blocks/slideEmployee' 
+        } %}
+    </div>
+
+    <div class="slider-outer margin-y-xl">
+        <h2>Employees</h2>
+        {% include '_includes/_blocks/slider' with { 
+            slides: employees, 
+            height: 'medium', 
+            visibleCards: 3, 
+            slideTemplate: '_includes/_blocks/slideEmployee' 
+        } %}
+    </div>
 {% endblock %}

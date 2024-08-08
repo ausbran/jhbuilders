@@ -13,9 +13,8 @@ settings:
   branchLimit: null
   defaultUploadLocationSource: 'volume:489ad90c-f81e-41c8-a312-7e1b0b7cd6fd' # Employees
   defaultUploadLocationSubpath: null
-  localizeRelations: false
   maintainHierarchy: false
-  maxRelations: null
+  maxRelations: 1
   minRelations: null
   previewMode: full
   restrictFiles: true
@@ -33,5 +32,5 @@ settings:
   validateRelatedElements: false
   viewMode: cards
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Assets

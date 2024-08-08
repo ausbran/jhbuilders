@@ -78,7 +78,12 @@ fieldLayouts:
             uid: 3363f082-5c73-446c-9e32-2eab9e31b35e
             userCondition: null
             warning: null
-            width: 50
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: f65a908d-708b-40da-a07a-f689de2a181f
+            userCondition: null
           -
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
@@ -123,18 +128,18 @@ fieldLayouts:
             uid: ab5f90bd-eb20-448f-9e5d-8299ac9ba2c7
             userCondition: null
             warning: null
-            width: 50
+            width: 100
         name: Content
         uid: d304e0af-a06a-4a3c-9207-407025758056
         userCondition: null
 handle: projectOverview
-hasTitleField: true
+hasTitleField: false
 icon: globe
 name: 'Project Overview'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: Projects
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -57,9 +57,11 @@
       width: inherit;
       position: inherit;
       z-index: 2;
+      opacity: 0;
       transition: $transition;
       &.active {
         z-index: 3;
+        opacity: 1;
       }
     }
   }
@@ -71,8 +73,10 @@
     background: $grey;
     z-index: 4;
     .progress {
+      will-change: width;
+      width: 0%;
       height: 100%;
-      background: $red;
+      background-color: $red;
     }
   }
   .overlay {
@@ -84,6 +88,9 @@
     background-color: #000;
     opacity: 0;
     z-index: 1;
+  }
+  &.project-gate {
+    padding: unset;
   }
   @include respond-to-max($desktop) {
     .inner {

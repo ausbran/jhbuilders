@@ -1,0 +1,14 @@
+ <div class="slide job">
+    <div class="text">
+        <h3>{{ slide.title }}</h3>
+        {# <h3>{{ slide.location }}</h3> #}
+        {{ slide.text }}
+        {% include '_includes/_blocks/button' with {
+            link: slide.url,
+            label: 'See Position',
+            firstArrow: 'red-arrow',
+            secondArrow: 'black-arrow'
+            }
+        %}
+    </div>
+</div>

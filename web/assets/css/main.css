@@ -229,6 +229,79 @@ ul {
   left: 0;
 }
 
+/* Define margin classes */
+.margin-xs {
+  margin: 8px;
+}
+
+.margin-sm {
+  margin: 16px;
+}
+
+.margin-md {
+  margin: 24px;
+}
+
+.margin-lg {
+  margin: 32px;
+}
+
+.margin-xl {
+  margin: 40px;
+}
+
+/* Margin top and bottom */
+.margin-y-xs {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.margin-y-sm {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.margin-y-md {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.margin-y-lg {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.margin-y-xl {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Margin left and right */
+.margin-x-xs {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.margin-x-sm {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.margin-x-md {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.margin-x-lg {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.margin-x-xl {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 @media (max-width: 1200px) {
   .btn {
     padding: 18px 30px;
@@ -1315,7 +1388,7 @@ footer .footer-links li:hover {
   position: absolute;
 }
 
-.project-category {
+.project-overview {
   width: 50%;
   height: 100%;
   padding: 100px;
@@ -1323,10 +1396,21 @@ footer .footer-links li:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: 10px;
+  overflow: hidden;
+  position: relative;
 }
-.project-category * {
+.project-overview .text {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.project-overview * {
   color: #FFFFFF;
+}
+.project-overview .background {
+  z-index: 0;
 }
 
 .project-info,
@@ -1356,6 +1440,18 @@ footer .footer-links li:hover {
 .project .spacer {
   width: 20px;
   background: #FFFFFF;
+}
+
+.pdf-viewer {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+canvas {
+  box-shadow: 0px 5px 30px rgba(85, 85, 85, 0.1);
+  display: block;
+  height: calc(100vh - 150px);
+  margin: 0 auto 20px auto;
 }
 
 .landing {
@@ -1419,10 +1515,12 @@ footer .footer-links li:hover {
   width: inherit;
   position: inherit;
   z-index: 2;
+  opacity: 0;
   transition: 0.28s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .landing .carousel .carousel-item.active {
   z-index: 3;
+  opacity: 1;
 }
 .landing .progress-bar {
   position: absolute;
@@ -1433,8 +1531,10 @@ footer .footer-links li:hover {
   z-index: 4;
 }
 .landing .progress-bar .progress {
+  will-change: width;
+  width: 0%;
   height: 100%;
-  background: #ED3127;
+  background-color: #ED3127;
 }
 .landing .overlay {
   position: absolute;
@@ -1446,6 +1546,9 @@ footer .footer-links li:hover {
   opacity: 0;
   z-index: 1;
 }
+.landing.project-gate {
+  padding: unset;
+}
 @media (max-width: 992px) {
   .landing .inner {
     padding: 75px;
@@ -1455,6 +1558,82 @@ footer .footer-links li:hover {
   .landing .inner {
     padding: 20px;
   }
+}
+
+.slider-outer h2 {
+  margin-bottom: 20px;
+}
+
+.slider-outer h2,
+.slider {
+  padding-left: 75px;
+}
+
+.slider-container.small {
+  height: 400px;
+}
+.slider-container.medium {
+  height: 800px;
+}
+.slider-container.large {
+  height: 1000px;
+}
+.slider-container .slider {
+  height: 100%;
+  display: flex;
+  overflow-x: scroll;
+}
+.slider-container .slide {
+  height: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.slider-container .slide:first-of-type .image {
+  border-radius: 15px 0 0 15px;
+}
+.slider-container .slide:last-of-type .image {
+  border-radius: 0 15px 15px 0;
+}
+.slider-container .slide .image {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slider-container .slide .image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.slider-container .slide .text {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+.slider-container .slide .text .name {
+  color: #ED3127;
+}
+.slider-container .slide .text .position {
+  color: #555555;
+}
+.slider-container .slide.job {
+  border: 1px solid #ED3127;
+  border-right: unset;
+  padding: 75px;
+}
+.slider-container .slide.job:first-of-type {
+  border-radius: 15px 0 0 15px;
+}
+.slider-container .slide.job:last-of-type {
+  border-radius: 0 15px 15px 0;
+}
+.slider-container .slide.job .text {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
 }
 
 @keyframes marquee {

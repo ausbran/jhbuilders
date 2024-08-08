@@ -1,14 +1,14 @@
 columnSuffix: null
-handle: remodelsButton
+handle: slider
 instructions: null
-name: 'Remodels Button'
+name: Slider
 searchable: false
 settings:
-  createButtonLabel: 'New Button'
+  createButtonLabel: null
   entryTypes:
-    - 2a474d4a-c4ce-4af9-8df0-20b69b317f1c # Button
+    - 29b40ffa-789b-4a79-92c0-9e36437ed3d8 # Slide
   includeTableView: false
-  maxEntries: 1
+  maxEntries: null
   minEntries: null
   pageSize: 50
   propagationKeyFormat: null

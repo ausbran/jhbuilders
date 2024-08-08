@@ -134,96 +134,71 @@ document.addEventListener('DOMContentLoaded', function () {
   updateObserver();
 
   window.addEventListener('resize', updateObserver);
-
-  (function() {
-    var carousel = document.querySelector('.carousel');
-    var items = carousel.querySelectorAll('.carousel-item');
-    var progressBar = document.querySelector('.progress-bar .progress');
-    var index = 0;
-
-    function showNextImage() {
-        items[index].classList.remove('active');
-        index = (index + 1) % items.length;
-        items[index].classList.add('active');
-
-        // Reset and animate the progress bar
-        progressBar.style.width = '0';
-        setTimeout(() => {
-            progressBar.style.transition = 'width 5s linear';
-            progressBar.style.width = '100%';
-        }, 10);
-    }
-
-    setInterval(showNextImage, 5000); // Change image every 1 second
-
-    // Initial setup
-    items[index].classList.add('active');
-    progressBar.style.width = '100%';
-})();
+  
 });
 
 
 // Universal slider with arrow functionality
-var instances = document.querySelectorAll(".slider");
+// var instances = document.querySelectorAll(".slider");
 
-instances.forEach(function (instance) {
-  var arrows = instance.querySelectorAll(".arrow"),
-    prevArrow = instance.querySelector('.arrow-prev'),
-    nextArrow = instance.querySelector('.arrow-next'),
-    box = instance.querySelector(".slider-inner"),
-    x = 0,
-    mx = 0,
-    maxScrollWidth = box.scrollWidth - (box.clientWidth / 2) - (box.offsetWidth / 2);
+// instances.forEach(function (instance) {
+//   var arrows = instance.querySelectorAll(".arrow"),
+//     prevArrow = instance.querySelector('.arrow-prev'),
+//     nextArrow = instance.querySelector('.arrow-next'),
+//     box = instance.querySelector(".slider-inner"),
+//     x = 0,
+//     mx = 0,
+//     maxScrollWidth = box.scrollWidth - (box.clientWidth / 2) - (box.offsetWidth / 2);
 
-  arrows.forEach(function (arrow) {
-    arrow.addEventListener('click', function () {
-      if (this.classList.contains("arrow-next")) {
-        x = ((box.offsetWidth / 1.5)) + box.scrollLeft - 10;
-        box.scrollTo({
-          left: x,
-          behavior: 'smooth'
-        });
-        console.log('next');
-      } else {
-        x = ((box.offsetWidth / 1.5)) - box.scrollLeft - 10;
-        box.scrollTo({
-          left: -x,
-          behavior: 'smooth'
-        });
-        console.log('prev');
-      }
-    });
-  });
+//   arrows.forEach(function (arrow) {
+//     arrow.addEventListener('click', function () {
+//       if (this.classList.contains("arrow-next")) {
+//         x = ((box.offsetWidth / 1.5)) + box.scrollLeft - 10;
+//         box.scrollTo({
+//           left: x,
+//           behavior: 'smooth'
+//         });
+//         console.log('next');
+//       } else {
+//         x = ((box.offsetWidth / 1.5)) - box.scrollLeft - 10;
+//         box.scrollTo({
+//           left: -x,
+//           behavior: 'smooth'
+//         });
+//         console.log('prev');
+//       }
+//     });
+//   });
 
-  box.addEventListener('mousemove', function (e) {
-    var mx2 = e.pageX - this.offsetLeft;
-    if (mx) this.scrollLeft = this.sx + mx - mx2;
-  });
+//   box.addEventListener('mousemove', function (e) {
+//     var mx2 = e.pageX - this.offsetLeft;
+//     if (mx) this.scrollLeft = this.sx + mx - mx2;
+//   });
 
-  box.addEventListener('mousedown', function (e) {
-    this.sx = this.scrollLeft;
-    mx = e.pageX - this.offsetLeft;
-  });
+//   box.addEventListener('mousedown', function (e) {
+//     this.sx = this.scrollLeft;
+//     mx = e.pageX - this.offsetLeft;
+//   });
 
-  box.addEventListener('scroll', function () {
-    toggleArrows();
-  });
+//   box.addEventListener('scroll', function () {
+//     toggleArrows();
+//   });
 
-  document.addEventListener("mouseup", function () {
-    mx = 0;
-  });
+//   document.addEventListener("mouseup", function () {
+//     mx = 0;
+//   });
 
-  function toggleArrows() {
-    if (box.scrollLeft > maxScrollWidth - 10) {
-      // disable next button when right end has reached 
-      nextArrow.classList.add('disabled');
-    } else if (box.scrollLeft < 10) {
-      // disable prev button when left end has reached 
-      prevArrow.classList.add('disabled');
-    } else {
-      // both are enabled
-      nextArrow.classList.remove('disabled');
-      prevArrow.classList.remove('disabled');
-    }
-  }
-});
+//   function toggleArrows() {
+//     if (box.scrollLeft > maxScrollWidth - 10) {
+//       // disable next button when right end has reached 
+//       nextArrow.classList.add('disabled');
+//     } else if (box.scrollLeft < 10) {
+//       // disable prev button when left end has reached 
+//       prevArrow.classList.add('disabled');
+//     } else {
+//       // both are enabled
+//       nextArrow.classList.remove('disabled');
+//       prevArrow.classList.remove('disabled');
+//     }
+//   }
+// });

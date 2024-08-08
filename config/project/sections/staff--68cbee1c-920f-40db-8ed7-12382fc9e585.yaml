@@ -1,8 +1,8 @@
 defaultPlacement: beginning
 enableVersioning: true
 entryTypes:
-  - 08212732-97cb-4fe1-80d5-22da0da1d83a # Partner
   - fc6ef365-7b24-4504-a826-07dae12b991c # Employee
+  - 08212732-97cb-4fe1-80d5-22da0da1d83a # Partner
 handle: staff
 maxAuthors: 1
 name: Staff

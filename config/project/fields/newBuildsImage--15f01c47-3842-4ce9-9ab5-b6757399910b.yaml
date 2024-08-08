@@ -24,7 +24,7 @@ settings:
   restrictedLocationSource: 'volume:0df67807-28de-4196-83d0-7659095a96c0' # Projects
   restrictedLocationSubpath: null
   selectionLabel: null
-  showCardsInGrid: true
+  showCardsInGrid: false
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false

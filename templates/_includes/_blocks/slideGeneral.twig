@@ -1,0 +1,27 @@
+<div class="slide general">
+    <div class="image">
+        {% if slide.slideImage is defined %}
+            {% set asset = slide.slideImage.one() %}
+            {% if asset %}
+                {% include '_includes/_blocks/asset' with { asset: asset } %}
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="text">
+        <h3>{{ slide.title }}</h3>
+        {% set link = null %}
+        {% if slide.url is defined %}
+            {% set link = slide.url %}
+        {% elseif slide.magazineFile is defined %}
+            {% set link = slide.magazineFile %}
+        {% endif %}
+
+        {% include '_includes/_blocks/button' with {
+            link: link,
+            label: 'View',
+            firstArrow: 'red-arrow',
+            secondArrow: 'black-arrow'
+        } %}
+
+    </div>
+</div>

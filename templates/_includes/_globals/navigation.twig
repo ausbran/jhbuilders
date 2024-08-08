@@ -37,7 +37,7 @@
 							<div class="img-wrapper">
 								<img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
 							</div>
-							{% include '_includes/button' with { link: project.url, label: project.title, secondArrow: 'white-arrow' } %}
+							{% include '_includes/_blocks/button' with { link: project.url, label: project.title, secondArrow: 'white-arrow' } %}
 						</a>
 					</div>
 				{% endfor %}

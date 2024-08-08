@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ currentSite.language }}">
     <head>
-        <title>{{ siteName }} | {% include '_includes/title' %}</title>
+        <title>{{ siteName }} | {% include '_includes/_globals/title' %}</title>
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="apple-touch-icon" sizes="76x76" href="{{ craft.rebrand.getIcon().url }}">
@@ -13,13 +13,14 @@
         {% css "/assets/css/main.css" %}
     </head>
     <body data-barba="wrapper" {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
-        {% include '_includes/navigation' %}
+        {% include '_includes/_globals/navigation' %}
         <main data-barba="container" data-barba-namespace="home">
             {% block content %}{% endblock %}
         </main>
-        {% include '_includes/footer' %}
+        {% include '_includes/_globals/footer' %}
         {% js "/assets/js/main.js" %}
         <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     </body>
 </html>

@@ -1,10 +1,30 @@
 {% extends "index" %}
 
 {% block content %}
+    <div class="landing">
+        <h1>{{ entry.title }}</h1>
+        <p>{{ entry.text }}</p>
+    </div>
 
-<div class="landing-section">
-    <h1>{{ entry.title }}</h1>
-    <p>{{ entry.text }}</p>
-</div>
+    {% set press = craft.entries.section('press').all() %}
+    {% set jobs = craft.entries.section('jobs').all() %}
 
+    <div class="slider-outer margin-y-xl">
+        <h2>Awards & Press</h2>
+        {% include '_includes/_blocks/slider' with { 
+            slides: press, 
+            height: 'medium', 
+            visibleCards: 2, 
+            slideTemplate: '_includes/_blocks/slideGeneral' 
+        } %}
+    </div>
+
+    <div class="slider-outer margin-y-xl">
+        <h2>Careers</h2>
+        {% include '_includes/_blocks/slider' with { 
+            slides: jobs, 
+            visibleCards: 2, 
+            slideTemplate: '_includes/_blocks/slideJob' 
+        } %}
+    </div>
 {% endblock %}

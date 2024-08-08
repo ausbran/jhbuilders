@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: featuredProject
-instructions: null
+instructions: 'Choose several projects to display on the home page. One of the selected projects will randomly display each time the home page is loaded.'
 name: 'Featured Project'
 searchable: false
 settings:
@@ -8,9 +8,9 @@ settings:
   branchLimit: null
   localizeRelations: false
   maintainHierarchy: false
-  maxRelations: 1
+  maxRelations: 4
   minRelations: null
-  selectionLabel: null
+  selectionLabel: 'Add a Project'
   showCardsInGrid: true
   showSiteMenu: true
   sources:

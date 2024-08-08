@@ -8,7 +8,7 @@
             <div class="project gradient">
                 <div class="text">
                     {% include '_projects/_partials/projectInfo' with { entry: project } %}
-                    {% include '_includes/button' with {
+                    {% include '_includes/_blocks/button' with {
                         link: project.url,
                         label: 'Explore Project',
                         secondArrow: 'white-arrow'
@@ -18,7 +18,7 @@
                 {% set asset = project.projectImages.one() %}
                 {% if asset %}
                     <div class="overlay"></div>
-                    {% include '_includes/asset' %}
+                    {% include '_includes/_blocks/asset' %}
                 {% endif %}
             </div>
         {% endfor %}

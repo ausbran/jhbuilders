@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: remodelsImage
+handle: magazineFile
 instructions: null
-name: 'Remodels Image'
+name: 'Magazine File'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -9,29 +9,30 @@ settings:
   allowUploads: true
   allowedKinds:
     - image
+    - pdf
     - video
   branchLimit: null
-  defaultUploadLocationSource: 'volume:0df67807-28de-4196-83d0-7659095a96c0' # Projects
+  defaultUploadLocationSource: 'volume:e1c930be-4e19-4db0-ad0a-3c422934e22c' # Magazines
   defaultUploadLocationSubpath: null
-  localizeRelations: false
   maintainHierarchy: false
-  maxRelations: 1
+  maxRelations: null
   minRelations: null
   previewMode: full
   restrictFiles: true
-  restrictLocation: true
+  restrictLocation: false
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:0df67807-28de-4196-83d0-7659095a96c0' # Projects
   restrictedLocationSubpath: null
   selectionLabel: null
-  showCardsInGrid: false
+  showCardsInGrid: true
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  sources: '*'
+  sources:
+    - 'volume:e1c930be-4e19-4db0-ad0a-3c422934e22c' # Magazines
   targetSiteId: null
   validateRelatedElements: false
   viewMode: cards
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Assets

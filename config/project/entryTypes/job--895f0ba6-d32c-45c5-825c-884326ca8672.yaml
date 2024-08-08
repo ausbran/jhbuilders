@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-08T01:21:04+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,8 +36,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-08T01:22:25+00:00'
             elementCondition: null
-            fieldUid: 1cc8dda7-e3e2-4988-abfd-d613509a99cd # Image
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
             handle: null
             includeInCards: false
             instructions: null
@@ -45,7 +47,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 159bb1d8-c46e-445c-bb01-e0130953ed5f
+            uid: 8627899c-0f0f-45ad-ae94-4deb2bab3e54
             userCondition: null
             warning: null
             width: 100
@@ -54,12 +56,12 @@ fieldLayouts:
         userCondition: null
 handle: job
 hasTitleField: true
-icon: null
+icon: ''
 name: Job
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

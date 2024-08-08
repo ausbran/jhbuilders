@@ -1,6 +1,6 @@
-color: orange
+color: purple
 fieldLayouts:
-  1df27aef-3e2f-41a2-88dc-f257d1215083:
+  ba43b666-4d65-471c-9733-7507f429550a:
     tabs:
       -
         elementCondition: null
@@ -10,14 +10,14 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-08-07T23:52:51+00:00'
+            dateAdded: '2024-08-08T02:03:02+00:00'
             disabled: false
             elementCondition: null
             id: null
             includeInCards: false
             inputType: null
             instructions: null
-            label: Name
+            label: null
             max: null
             min: null
             name: null
@@ -31,65 +31,49 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 467843e7-afda-4f9c-a548-664e67d1e2b1
+            uid: a4a6b920-f2e4-4a4c-a0e0-c7263225ae80
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-08-07T23:52:51+00:00'
+            dateAdded: '2024-08-08T02:03:02+00:00'
             elementCondition: null
-            fieldUid: 8b656877-6f15-45aa-87d7-feb1d95ce5c2 # Plain Text
-            handle: position
+            fieldUid: 5a4ca78e-efcf-4c8c-81c1-2464038d63b8 # Button Link
+            handle: websiteLink
             includeInCards: false
             instructions: null
-            label: Position
+            label: 'Website Link'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c598f3ba-76bf-402a-82bb-372733724888
+            uid: 3d84e563-3ef0-44d3-ba0f-c6f602708796
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-08-07T23:52:51+00:00'
+            dateAdded: '2024-08-08T02:04:06+00:00'
             elementCondition: null
-            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
-            handle: bio
+            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
+            handle: slideImage
             includeInCards: false
             instructions: null
-            label: Bio
+            label: 'Website Cover Image'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c2fbbc78-da61-4d4a-bde6-1c781101f1be
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-08-07T23:52:51+00:00'
-            elementCondition: null
-            fieldUid: 77cbce15-f8f2-447c-9110-cb36d641174d # Image
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: Image
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e2c44764-804d-4b69-a03d-0a41c950cde4
+            uid: 2b7816a3-2ed2-4cb0-9f71-c67c890e5c2a
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 8fb86bb4-783f-488e-97b7-0b359457932a
+        uid: 0c408340-ea81-40b9-8cac-75a3607c59d0
         userCondition: null
-handle: partner
-hasTitleField: true
-icon: user
-name: Partner
+handle: website
+hasTitleField: false
+icon: browser
+name: Website
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

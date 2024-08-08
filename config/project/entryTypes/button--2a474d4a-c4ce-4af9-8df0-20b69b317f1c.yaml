@@ -51,16 +51,16 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 4f214814-db96-4951-a3b1-03392ef7ef4d # Entries
+            fieldUid: 26fa7b55-e9e5-4fbb-a5e1-0cc31f223c1e # Button Link
             handle: buttonLink
             includeInCards: false
             instructions: null
-            label: 'Button Link'
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 662cda34-873b-45b8-a99f-6a9e288bd17b
+            uid: 57c724a3-1f72-4977-b9fc-9fc65ce3352e
             userCondition: null
             warning: null
             width: 100

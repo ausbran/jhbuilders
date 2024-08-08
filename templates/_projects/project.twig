@@ -6,13 +6,13 @@
             {% include '_projects/_partials/projectInfo' with { entry: entry } %}
         </div> 
         <div class="project-buttons">
-            {% include '_includes/arrows' %}  
-            {% include '_includes/magnify' %}       
+            {% include '_includes/_icons/arrows' %}  
+            {% include '_includes/_icons/magnify' %}       
         </div> 
     </div>
     <div class="background gradient">
         {% for asset in entry.projectImages.all() %}
-            {% include '_includes/asset' %}
+            {% include '_includes/_blocks/asset' %}
         {% endfor %}
     </div>
 </div>

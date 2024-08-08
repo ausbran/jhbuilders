@@ -87,6 +87,21 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            fieldUid: 4561fe05-31a8-4fcd-86a8-cb4e675e6bb8 # Slide Time
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e396a828-475b-42ed-bb32-bd83a4505875
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: bda53640-24b3-44f4-8c8b-ee991f1addba # Text Alignment
             handle: null
             includeInCards: false
@@ -105,7 +120,7 @@ fieldLayouts:
             fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
             handle: null
             includeInCards: false
-            instructions: null
+            instructions: 'Define the maximum width for the text.'
             label: null
             providesThumbs: false
             required: false
