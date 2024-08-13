@@ -1,5 +1,5 @@
 <div class="slide general">
-    <div class="image">
+    <div class="image {% if height is defined %}{{ height }}{% endif %}">
         {% if slide.slideImage is defined %}
             {% set asset = slide.slideImage.one() %}
             {% if asset %}
@@ -8,7 +8,7 @@
         {% endif %}
     </div>
     <div class="text">
-        <h3>{{ slide.title }}</h3>
+        <h4>{{ slide.title }}</h4>
         {% set link = null %}
         {% if slide.url is defined %}
             {% set link = slide.url %}
@@ -22,6 +22,5 @@
             firstArrow: 'red-arrow',
             secondArrow: 'black-arrow'
         } %}
-
     </div>
 </div>

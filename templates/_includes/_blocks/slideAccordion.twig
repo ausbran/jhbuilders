@@ -1,0 +1,36 @@
+<div class="slide accordion-slide margin-y-sm bw">
+    <div class="image {% if height is defined %}{{ height }}{% endif %}">
+        {% if slide.staffImage is defined %}
+            {% set asset = slide.staffImage.one() %}
+            {% if asset %}
+                {% include '_includes/_blocks/asset' with { asset: asset } %}
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="text">
+        <div>
+            <h4 class="name">{{ slide.title }}</h4>
+            <h4 class="position">{{ slide.position }}</h4>
+        </div>
+        {% include '_includes/_blocks/button' with {
+            link: '#',
+            label: 'Read More',
+            firstArrow: 'white-arrow',
+            secondArrow: 'white-arrow',
+            class: 'accordion-trigger'
+        } %}
+    </div>
+    <aside class="slide-out {% if height is defined %}{{ height }}{% endif %}">
+        <div class="inner">
+            {% include '_includes/_icons/close' %}
+            <div>
+                <div>
+                    <h4 class="name">{{ slide.title }}</h4>
+                    <h4 class="position">{{ slide.position }}</h4>
+                </div>
+                {{ slide.bio }}
+            </div>
+        </div>
+    </aside>
+</div>
+

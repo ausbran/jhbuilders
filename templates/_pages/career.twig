@@ -1,0 +1,26 @@
+{% extends "index" %}
+
+{% set bodyClass = 'red' %}
+
+{% block content %}
+<div class="careers">
+    <div class="text center-left">
+        <h1>{{ entry.title }}</h1>
+        <div>
+            <h3>Description</h3>
+            {{ entry.description }}
+        </div>
+        <div>
+            <h3>Requirements</h3>
+            {{ entry.requirements }}
+        </div>
+        <div>
+            <h3>Duties</h3>
+            {{ entry.duties }}
+        </div>
+    </div>
+    <form class="form">
+        <h2>Tell us about yourself & share your resume and cover letter.</h2>
+    </form>
+</div>
+{% endblock %}

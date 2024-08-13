@@ -1,10 +1,9 @@
-@import "mixins";
-@import "variables";
-@import "global";
-@import "animations";
-@import "typography";
-@import "navigation";
-@import "footer";
+@import "globals/mixins";
+@import "globals/variables";
+@import "globals/global";
+@import "globals/typography";
+@import "globals/navigation";
+@import "globals/footer";
 @import "pages/home";
 @import "pages/story";
 @import "pages/company";
@@ -12,7 +11,9 @@
 @import "pages/projectCategory";
 @import "pages/project";
 @import "pages/press";
+@import "pages/career";
 @import "blocks/landing";
 @import "blocks/slider";
+@import "blocks/banner";
 @import "blocks/text";
 @import "blocks/buttons";

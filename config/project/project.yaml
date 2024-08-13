@@ -1,4 +1,4 @@
-dateModified: 1723086694
+dateModified: 1723510445
 elementSources:
   craft\elements\Entry:
     -
@@ -113,7 +113,7 @@ elementSources:
         - postDate
         - desc
       disabled: false
-      key: 'section:4ba31d02-8cc5-4c7c-8863-dd0825e666e9' # Jobs
+      key: 'section:4ba31d02-8cc5-4c7c-8863-dd0825e666e9' # Careers
       tableAttributes:
         - status
         - postDate
@@ -209,7 +209,7 @@ meta:
     2abd15c9-fdd9-47ba-8408-562df0e54ced: Press # Press
     2ae65e6b-281d-4313-9f2c-00364554ee33: Project # Project
     2e6345b3-c242-4919-be0a-11f0e6afc8c6: Company # Company
-    4ba31d02-8cc5-4c7c-8863-dd0825e666e9: Jobs # Jobs
+    4ba31d02-8cc5-4c7c-8863-dd0825e666e9: Careers # Careers
     4e18f1d5-2eaa-4991-92ac-5b50d48d27c7: Location # Location
     4f214814-db96-4951-a3b1-03392ef7ef4d: Entries # Entries
     5a4ca78e-efcf-4c8c-81c1-2464038d63b8: 'Button Link' # Button Link
@@ -242,7 +242,7 @@ meta:
     489ad90c-f81e-41c8-a312-7e1b0b7cd6fd: Employees # Employees
     0524ce74-5809-4227-9995-c07e31fcd67f: General # General
     781f432d-abd0-4efa-aa62-831ca28d2d13: Banner # Banner
-    895f0ba6-d32c-45c5-825c-884326ca8672: Job # Job
+    895f0ba6-d32c-45c5-825c-884326ca8672: Career # Career
     929dd815-3f39-4a7a-a039-6c7ac68799b5: Overlay # Overlay
     3285dc39-a847-478b-b879-dea4891400c6: Remodel # Remodel
     3586fc06-c1c0-4c1e-b303-909b88cf3f84: Videos # Videos

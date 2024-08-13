@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 895f0ba6-d32c-45c5-825c-884326ca8672 # Job
-handle: jobs
+  - 895f0ba6-d32c-45c5-825c-884326ca8672 # Career
+handle: Careers
 maxAuthors: 1
-name: Jobs
+name: Careers
 previewTargets:
   -
     __assoc__:
@@ -22,8 +22,8 @@ siteSettings:
   6974ec26-6de3-4cbe-87a2-c5363298442b: # JH Builders
     enabledByDefault: true
     hasUrls: true
-    template: jobs/_entry
-    uriFormat: 'jobs/{slug}'
+    template: _pages/career
+    uriFormat: 'company/{slug}'
 structure:
   maxLevels: null
   uid: 1cdcd16d-949c-4344-9a42-c2785e6ea266

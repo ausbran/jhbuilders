@@ -1,12 +1,11 @@
 columnSuffix: null
 handle: featuredProject
-instructions: 'Choose several projects to display on the home page. One of the selected projects will randomly display each time the home page is loaded.'
+instructions: 'Choose several projects to feature. One of the selected projects will randomly display each time the page is loaded.'
 name: 'Featured Project'
 searchable: false
 settings:
   allowSelfRelations: false
   branchLimit: null
-  localizeRelations: false
   maintainHierarchy: false
   maxRelations: 4
   minRelations: null
@@ -19,5 +18,5 @@ settings:
   validateRelatedElements: false
   viewMode: cards
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Entries

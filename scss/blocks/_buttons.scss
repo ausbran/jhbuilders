@@ -2,3 +2,113 @@
     display: flex;
     gap: $gap-xlarge;
 }
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: $red;
+    transition: $transition;
+    border: none;
+    &.icon {
+      padding: 21px;
+      // border: 1px solid $grey;
+      @include flex-center;
+      border-radius: $btn-radius;
+      background: $white;
+    }
+    // arrows that are to the right of text on all buttons
+    .btn-arrow {
+      position: relative;
+      bottom: -2px;
+      right: -10px;
+      display: inline-block;
+      width: 16px;
+      height: 14px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      svg {
+        position: absolute;
+        transition: $transition;
+        &:first-of-type {
+          @include translate(0,0,0);
+        }
+        &:last-of-type {
+          @include translate(-115%,0,0);
+        }
+        * {
+          stroke: $white;
+        }
+        &.red-arrow * {
+          stroke: $red;
+        }
+        &.white-arrow * {
+          stroke: $white;
+        }
+        &.black-arrow * {
+          stroke: $black;
+        }
+      }
+    }
+    &:hover {
+      svg {
+        &:first-of-type {
+          @include translate(115%,0,0);
+        }
+        &:last-of-type {
+          @include translate(0,0,0);
+        }
+      }
+    }
+  }
+  .close {
+    &:hover {
+      filter: brightness(1.5);
+    }
+  }
+  // arrows that are used for carousels
+  .arrows {
+    display: flex;
+    .arrow-prev {
+      border-radius: $btn-radius 0 0 $btn-radius;
+    }
+    .arrow-next {
+      border-radius: 0 $btn-radius $btn-radius 0;
+    }
+  }
+  .arrow {
+    .btn-arrow {
+        right: unset;
+        bottom: unset;
+    }
+    svg {
+        &:first-of-type {
+            @include transform(
+                translate3d(10px, 20px, 0)
+            );
+        }
+        &:last-of-type {
+            @include transform(
+                translate(115%, 0),  // This will be converted to translate3d
+                scale(0.8)
+            );
+        }
+    }
+    &.dark {
+      background-color: $white;
+      svg {
+        fill: $red;
+      }
+    }
+    &:not(.disabled):hover {
+      &.arrow-prev svg {
+        // transform: rotate(-180deg) translateX(2px);
+      }
+      &.arrow-next svg {
+        // transform: rotate(0deg)  translateX(2px);
+      }
+    }
+  }

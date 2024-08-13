@@ -58,6 +58,9 @@ nav {
       visibility: visible;
       border-bottom: 1px solid $grey;
     }
+  }
+  &.scrolled-without-border,
+  &.scrolled {
     .icon {
       border: 1px solid $grey;
     }
@@ -81,25 +84,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-  }
-  .icons {
-    @include flex-center;
-    overflow: hidden;
-    position: relative;
-    .icon {
-      &.close {
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        background: $red;
-        position: absolute;
-        top: 0;
-        @include translate(-100%,0,0);
-        * {
-          stroke: $white;
-        }
-      }
-    }
   }
   .logo,
   .icon {
@@ -130,7 +114,7 @@ nav {
     left: 0;
     width: 87vw;
     height: 100vh;
-    @include translate(-100%,0,0);
+    @include translate(-100.1%,0,0);
     padding: 150px $padding-large $padding-large $padding-large;
     transition: $transition-long;
     display: flex;
@@ -143,9 +127,9 @@ nav {
       width: 100%;
     }
     .brand-text {
-      max-width: 575px;
+      max-width: 600px;
     }
-    .featured-projects-outer h3 {
+    .featured-projects-outer h4 {
       margin-bottom: 10px;
     }
     .featured-projects {
@@ -161,7 +145,7 @@ nav {
           height: 100%;
           object-fit: cover;
           object-position: center;
-          transition: $transition;
+          transition: $transition-medium;
         }
       }
       .featured-project {
@@ -170,10 +154,10 @@ nav {
           @include scale(1.02);
         }
       }
-      .featured-project:first-of-type img {
+      .featured-project:first-of-type .img-wrapper {
         border-radius: $box-radius 0 0 $box-radius;
       }
-      .featured-project:last-of-type img {
+      .featured-project:last-of-type .img-wrapper {
         border-radius: 0 $box-radius $box-radius 0;
       }
     }
@@ -201,7 +185,7 @@ nav {
     .link,
     .featured-project,
     .brand-text,
-    h3.header {
+    h4.header {
       transition: $transition-long;
       opacity: 0;
       will-change: transform;
@@ -209,7 +193,7 @@ nav {
     .link {
       @include translate(-50px,0,0);
     }
-    h3.header {
+    h4.header {
       @include translate(-60px,0,0);
     }
     .featured-project {
@@ -223,7 +207,7 @@ nav {
     }
     .link:nth-child(1),
     .featured-project:nth-child(1),
-    h3.header, {
+    h4.header, {
       transition-delay: .35s;
     }
     .link:nth-child(2),
@@ -253,13 +237,6 @@ nav {
       opacity: .8;
       visibility: visible;
     }
-    .icons {
-      .icon {
-        &.close {
-          @include translate(0,0,0);
-        }
-      }
-    }
     &.scrolled {
       &:before {
         opacity: 0;
@@ -273,7 +250,7 @@ nav {
       .link,
       .featured-project,
       .brand-text,
-      h3.header {
+      h4.header {
         opacity: 1;
         @include translate(0,0,0);
       }

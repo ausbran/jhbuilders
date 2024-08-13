@@ -1,5 +1,5 @@
 <div class="slide general">
-    <div class="image">
+    <div class="image {% if height is defined %}{{ height }}{% endif %}">
         {% if slide.staffImage is defined %}
             {% set asset = slide.staffImage.one() %}
             {% if asset %}
@@ -8,7 +8,7 @@
         {% endif %}
     </div>
     <div class="text">
-        <h3 class="name">{{ slide.title }}</h3>
-        <h3 class="position">{{ slide.position }}</h3>
+        <h4 class="name">{{ slide.title }}</h4>
+        <h4 class="position">{{ slide.position }}</h4>
     </div>
 </div>

@@ -1,5 +1,8 @@
 // individual project page
 .project {
+    .slider-outer {
+        position: fixed;
+    }
     .inner {
         padding: unset !important;
         justify-content: space-between;
@@ -7,10 +10,34 @@
         padding: unset;
         max-width: $max-width;
         font-size: 1em;
+        .arrows,
+        .magnify,
+        .project-info,
+        .project-buttons,
+        .h3 {
+            transition: $transition-medium;
+        }
+        &.active {
+            .h3 {
+                color: $black;
+                &:first-of-type {
+                    color: $red;
+                }
+            }
+            .arrows,
+            .magnify {
+                border: 1px solid $grey;
+            }
+            .project-info,
+            .project-buttons {
+                @include translate(0,15px,0);
+            }
+        }
     }
     .project-info,
     .project-buttons {
         display: flex;
+        position: relative;
     }
     .project-info {
         gap: $gap;
@@ -22,4 +49,59 @@
         width: 20px;
         background: $white;
     }
+    .background.gradient {
+        background-size: cover;
+        background-position: center;
+        transition: opacity .5s;
+    }
+    .slider-container {
+        display: none;
+        opacity: 0;
+        transition: opacity .5s;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 350px);
+    }
+    .slider {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        height: inherit;
+        .slide {
+            width: 100%;
+            height: calc((100vh - 350px) / 2);
+            picture {
+                cursor: pointer;
+                height: 100% !important;
+                width: 100% !important;
+                overflow: hidden;
+                img {
+                    transition: $transition-medium;
+                    height: 100%;
+                }
+            }
+            &:hover {
+                opacity: .9;
+                img {
+                    @include scale(1.02);
+                }
+            }
+            &:nth-child(odd) {
+                grid-row: 1; // Place odd-numbered items in the first column
+            }
+            &:nth-child(even) {
+                grid-row: 2; // Place even-numbered items in the second column
+            }
+            &:first-of-type {
+                border-radius: $box-radius 0 0 0;
+            }
+            &:last-of-type {
+                border-radius: 0 0 0 $box-radius;
+            }
+        }
+    }
 }
+

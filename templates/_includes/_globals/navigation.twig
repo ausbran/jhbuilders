@@ -12,8 +12,8 @@
             </a>
         {% endif %}
         <div class="icons">
-            <button class="btn icon nav-js">{% include '_includes/_svg/nav.svg' %}</button>
-            <button class="btn icon nav-js close">{% include '_includes/_svg/close.svg' %}</button>
+            {% include '_includes/_icons/nav' %}
+            {% include '_includes/_icons/close' %}
         </div>
     </div>
 
@@ -28,16 +28,22 @@
             {% endfor %}
         </div>
         <div class="featured-projects-outer">
-			<h3 class="header">Recent Projects</h3>
+			<h4 class="header">Recent Projects</h3>
 			<div class="featured-projects">
 				{% set featuredProjects = navigation.featuredProjects.all() %}
 				{% for project in featuredProjects %}
 					<div class="featured-project">
 						<a href="{{ project.getUrl() }}">
 							<div class="img-wrapper">
-								<img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
+                                {% if project.projectImages.one() %}
+                                    <img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
+                                {% endif %}
 							</div>
-							{% include '_includes/_blocks/button' with { link: project.url, label: project.title, secondArrow: 'white-arrow' } %}
+							{% include '_includes/_blocks/button' with {
+                                link: project.url,
+                                label: project.title,
+                                secondArrow: 'white-arrow'
+                            } %}
 						</a>
 					</div>
 				{% endfor %}

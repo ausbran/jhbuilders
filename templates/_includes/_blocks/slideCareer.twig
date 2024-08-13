@@ -1,8 +1,8 @@
- <div class="slide job">
+ <div class="slide career {% if height is defined %}{{ height }}{% endif %}">
     <div class="text">
-        <h3>{{ slide.title }}</h3>
-        {# <h3>{{ slide.location }}</h3> #}
-        {{ slide.text }}
+        <h4>{{ slide.title }}</h4>
+        {# <h4>{{ slide.location }}</h4> #}
+        {{ slide.description }}
         {% include '_includes/_blocks/button' with {
             link: slide.url,
             label: 'See Position',

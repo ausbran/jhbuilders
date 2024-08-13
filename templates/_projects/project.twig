@@ -2,18 +2,30 @@
 
 <div class="project landing">
     <div class="inner">
+        {% include '_includes/_blocks/slider' with { 
+            slides: entry.projectImages.all(), 
+            slideTemplate: '_includes/_blocks/slideProject',
+            height: 'auto',
+            visibleCards: 1
+        } %}
         <div class="project-info">
             {% include '_projects/_partials/projectInfo' with { entry: entry } %}
         </div> 
         <div class="project-buttons">
-            {% include '_includes/_icons/arrows' %}  
-            {% include '_includes/_icons/magnify' %}       
+            {% include '_includes/_icons/arrows' with {
+                firstArrow: 'red-arrow'
+            }%}
+            <div class="icons">
+                {% include '_includes/_icons/magnify' %}
+                {% include '_includes/_icons/close' %}
+            </div>
         </div> 
     </div>
     <div class="background gradient">
-        {% for asset in entry.projectImages.all() %}
-            {% include '_includes/_blocks/asset' %}
-        {% endfor %}
+        {% set asset = entry.projectImages.one() %}
+        {% if asset %}
+            {% include '_includes/_blocks/asset' with { asset: asset } %}
+        {% endif %}
     </div>
 </div>
 

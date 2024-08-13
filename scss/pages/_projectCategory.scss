@@ -70,6 +70,7 @@
     overflow: hidden;
     position: relative;
     .text {
+        max-width: 415px;
         position: relative;
         z-index: 2;
         display: flex;

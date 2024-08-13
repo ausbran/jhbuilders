@@ -6,7 +6,9 @@
             {% case 'text' %}
                 {% include '_includes/_blocks/text' %}
             {% case 'buttons' %}
-                {% include '_includes/_blocks/buttons' with { buttons: block.buttons.all() } %}
+                {% include '_includes/_blocks/buttons' with {
+                    buttons: block.buttons.all()
+                } %}
             {% case 'iframe' %}
                 {% include '_includes/_blocks/iframe' %}
         {% endswitch %}

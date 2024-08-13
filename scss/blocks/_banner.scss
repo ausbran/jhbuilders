@@ -1,0 +1,9 @@
+.banner {
+    &.text {
+        display: flex;
+        gap: $gap;
+        h2 {
+            font-size: 3em;
+        }
+    }
+}

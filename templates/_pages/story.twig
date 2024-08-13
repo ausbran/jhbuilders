@@ -6,23 +6,20 @@
     {% set partners = craft.entries.section('staff').type('partner').all() %}
     {% set employees = craft.entries.section('staff').type('employee').all() %}
 
-    <div class="slider-outer margin-y-xl">
-        <h2>Partners</h2>
-        {% include '_includes/_blocks/slider' with { 
-            slides: partners, 
-            height: 'medium', 
-            visibleCards: 2, 
-            slideTemplate: '_includes/_blocks/slideEmployee' 
-        } %}
-    </div>
+    {% include '_includes/_blocks/slider' with { 
+        slides: partners, 
+        height: 'medium',
+        class: "accordion",
+        slideHeader: 'Partners',
+        visibleCards: 2, 
+        slideTemplate: '_includes/_blocks/slideAccordion'
+    } %}
 
-    <div class="slider-outer margin-y-xl">
-        <h2>Employees</h2>
-        {% include '_includes/_blocks/slider' with { 
-            slides: employees, 
-            height: 'medium', 
-            visibleCards: 3, 
-            slideTemplate: '_includes/_blocks/slideEmployee' 
-        } %}
-    </div>
+    {% include '_includes/_blocks/slider' with { 
+        slides: employees, 
+        height: 'medium', 
+        slideHeader: 'Employees',
+        visibleCards: 3, 
+        slideTemplate: '_includes/_blocks/slideEmployee' 
+    } %}
 {% endblock %}

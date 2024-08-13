@@ -1,26 +1,23 @@
 {# {% set height = height ?? 'medium' %} #}
 {% set visibleCards = visibleCards ?? '2' %}
 {% set slides = slides ?? block.slides.all() %}
+{% set class = class ?? null %}
+{% set slideHeader = slideHeader ?? null %}
 
-<div class="slider-container {% if height is defined %}{{ height }}{% endif %}">
-    <div class="slider" data-visible-cards="{{ visibleCards }}">
-        {% block slides %}
-            {% for slide in slides %}
-                {% include slideTemplate with { slide: slide } %}
-            {% endfor %}
-        {% endblock %}
+<div class="slider-outer margin-y-xl">
+    {% if slideHeader %}
+        <h3 class="slider-header">{{slideHeader}}</h3>
+    {% endif %}
+    <div class="slider-container">
+        <div class="slider {{ class }}" data-visible-cards="{{ visibleCards }}">
+            {% block slides %}
+                {% for slide in slides %}
+                    {% include slideTemplate with {
+                        slide: slide
+                        }
+                    %}
+                {% endfor %}
+            {% endblock %}
+        </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var sliders = document.querySelectorAll('.slider');
-        sliders.forEach(function(slider) {
-            var visibleCards = slider.getAttribute('data-visible-cards');
-            var slideWidth = 100 / visibleCards;
-            slider.querySelectorAll('.slide').forEach(function(slide) {
-                slide.style.width = slideWidth + '%';
-            });
-        });
-    });
-</script>

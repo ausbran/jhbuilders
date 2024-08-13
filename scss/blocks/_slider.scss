@@ -1,18 +1,116 @@
-.slider-outer h2 {
+.block-wrapper h2 {
     margin-bottom: $margin-small;
 }
-.slider-outer h2,
+.slider-header,
 .slider {
-    padding-left: $padding;
+    padding-left: calc((100% - $max-width) / 2);
 }
 .slider-container {
-    &.small { height: 400px; }
-    &.medium { height: 800px; }
-    &.large { height: 1000px; }
     .slider {
         height: 100%;
         display: flex;
         overflow-x: scroll;
+        padding-right: 100px;
+        &.accordion {
+            overflow: unset;
+            flex-wrap: wrap;
+            padding-right: calc((100% - $max-width) / 2);
+            .accordion-slide {
+                position: relative;
+                * {
+                    color: $white !important;
+                }
+                .text {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding: $padding-medium;
+                    width: 100%;
+                    div:first-of-type {
+                        display: flex;
+                        gap: $gap-medium;
+                    }
+                }
+                .slide-out {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    &:before {
+                        content: '';
+                        transform: scaleX(0);
+                        transition: $transition-medium;
+                        background-color: $red;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                    }
+                    .inner {
+                        width: 75%;
+                        height: 100%;
+                        padding: $padding;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        div:first-of-type {
+                            display: flex;
+                            flex-direction: column;
+                            gap: $gap-medium;
+                            div {
+                                display: flex;
+                                flex-direction: row;
+                                gap: $gap-medium;
+                            }
+                        }
+                        .close {
+                            width: 42px;
+                        }
+                    }
+                }
+                &:nth-of-type(odd) {
+                    .image {
+                        border-radius: $box-radius 0 0 $box-radius;
+                    }
+                    .slide-out {
+                        @include translate(100%,0,0);
+                        &:before {
+                            transform-origin: right;
+                            border-radius: 0 $box-radius $box-radius 0;
+                        }
+                    }
+                }
+                &:nth-of-type(even) {
+                    .image {
+                        border-radius: 0 $box-radius $box-radius 0;
+                    }
+                    .slide-out {
+                        @include translate(-100%,0,0);
+                        &:before {
+                            transform-origin: right;
+                            border-radius: $box-radius 0 0 $box-radius;
+                        }
+                    }
+                }
+                &:last-of-type {
+                    .image {
+                        border-radius: $box-radius;
+                    }
+                }
+                &.active {
+                    .slide-out {
+                        &:before {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+            .accordion-trigger {
+                cursor: pointer;
+            }            
+        }
     }
     .slide {
         height:100%;
@@ -53,7 +151,7 @@
                 color: $black;
             }
         }
-        &.job {
+        &.career {
             border: 1px solid $red;
             border-right: unset;
             padding: $padding;
@@ -68,6 +166,9 @@
                 flex-direction: column;
                 width: 75%;
             }
+        }
+        &.general {
+            max-width: 550px;
         }
     }
 }

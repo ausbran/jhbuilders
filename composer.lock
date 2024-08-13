@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e86300e6f5bbd31152468bf6a29ac07e",
+    "content-hash": "419bf414399c5d4eaf0a24085345adb5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -285,11 +285,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.3.1",
+            "version": "5.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/cms.git",
+                "reference": "812a7db96a9368f36c5653db761c355afc5bde2e"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/215a98e93a15c1e7537f42e19815d763b715d0ee",
-                "reference": "215a98e93a15c1e7537f42e19815d763b715d0ee",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/812a7db96a9368f36c5653db761c355afc5bde2e",
+                "reference": "812a7db96a9368f36c5653db761c355afc5bde2e",
                 "shasum": ""
             },
             "require": {
@@ -350,6 +355,21 @@
                 "bower-asset/yii2-pjax": "2.0.8",
                 "yii2tech/ar-softdelete": "1.0.4"
             },
+            "require-dev": {
+                "codeception/codeception": "^5.0.11",
+                "codeception/lib-innerbrowser": "4.0.1",
+                "codeception/module-asserts": "^3.0.0",
+                "codeception/module-datafactory": "^3.0.0",
+                "codeception/module-phpbrowser": "^3.0.0",
+                "codeception/module-rest": "^3.3.2",
+                "codeception/module-yii2": "^1.1.9",
+                "craftcms/ecs": "dev-main",
+                "fakerphp/faker": "^1.19.0",
+                "league/factory-muffin": "^3.3.0",
+                "phpstan/phpstan": "^1.10.56",
+                "vlucas/phpdotenv": "^5.4.1",
+                "yiisoft/yii2-redis": "^2.0"
+            },
             "suggest": {
                 "ext-exif": "Adds support for parsing image EXIF data.",
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
@@ -362,6 +382,7 @@
                     "yii2tech\\ar\\softdelete\\": "lib/ar-softdelete/src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -379,14 +400,14 @@
                 "yii2"
             ],
             "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
                 "docs": "https://craftcms.com/docs/5.x/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "rss": "https://github.com/craftcms/cms/releases.atom",
+                "source": "https://github.com/craftcms/cms"
             },
-            "time": "2024-08-07T17:44:10+00:00"
+            "time": "2024-08-12T18:52:06+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -579,11 +600,11 @@
         },
         {
             "name": "dasprid/enum",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DASPRiD/Enum/zipball/6faf451159fb8ba4126b925ed2d78acfce0dc016",
-                "reference": "6faf451159fb8ba4126b925ed2d78acfce0dc016",
+                "url": "https://api.github.com/repos/DASPRiD/Enum/zipball/8dfd07c6d2cf31c8da90c53b83c026c7696dda90",
+                "reference": "8dfd07c6d2cf31c8da90c53b83c026c7696dda90",
                 "shasum": ""
             },
             "require": {
@@ -611,7 +632,7 @@
                 "enum",
                 "map"
             ],
-            "time": "2023-08-25T16:18:39+00:00"
+            "time": "2024-08-09T14:30:48+00:00"
         },
         {
             "name": "davechild/textstatistics",
@@ -1291,7 +1312,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v10.48.19",
+            "version": "v10.48.20",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/collections/zipball/37c863cffb345869dd134eff8e646bc82a19cc96",
@@ -1336,7 +1357,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v10.48.19",
+            "version": "v10.48.20",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/conditionable/zipball/d0958e4741fc9d6f516a552060fd1b829a85e009",
@@ -1372,7 +1393,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v10.48.19",
+            "version": "v10.48.20",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/contracts/zipball/8d7152c4a1f5d9cf7da3e8b71f23e4556f6138ac",
@@ -1410,7 +1431,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v10.48.19",
+            "version": "v10.48.20",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/macroable/zipball/dff667a46ac37b634dcf68909d9d41e94dc97c27",

@@ -16,14 +16,16 @@
                 link: featuredProject.url,
                 label: buttonLabel
             } %}
-            {% include '_includes/_blocks/buttons' with { buttons: entry.buttons.all() } %}
+            {% include '_includes/_blocks/buttons' with {
+                buttons: entry.buttons.all()
+            } %}
         </div>
     {% endif %}
 {% endblock %}
 
 {% block background %}
     {% if featuredProject %}
-        <div class="carousel gradient">
+        <div class="carousel gradient" data-slide-time="{{ entry.slideTime ?? 15 }}">
             {% for asset in featuredProject.projectImages.all()|slice(0, 5) %}
                 <div class="carousel-item">
                     {% include '_includes/_blocks/asset' %}
@@ -35,45 +37,3 @@
         </div>
     {% endif %}
 {% endblock %}
-
-
-{% js %}
-    {% set slideTime = entry.slideTime ?? 15 %}
-
-    (function() {
-        var carousel = document.querySelector('.carousel');
-        var items = carousel.querySelectorAll('.carousel-item');
-        var progressBar = document.querySelector('.progress-bar .progress');
-        var index = 0;
-        var slideTime = {{ slideTime * 1000 }}; // Dynamic interval time in milliseconds
-        var pauseTime = 400; // 1-second pause before switching to the next image
-    
-        function showNextImage() {
-            items[index].classList.remove('active');
-            index = (index + 1) % items.length;
-            items[index].classList.add('active');
-
-            // Reset and animate the progress bar
-            progressBar.style.transition = 'none'; // Remove transition to reset
-            progressBar.style.width = '0%'; // Reset width to 0
-            setTimeout(() => {
-                progressBar.style.transition = `width ${slideTime}ms linear`; // Reapply transition for animation
-                progressBar.style.width = '100%'; // Animate to full width
-            }, 50); // Timeout to allow DOM update
-        }
-
-        function startCarousel() {
-            showNextImage(); // Show the initial image
-            setInterval(() => {
-                showNextImage();
-            }, slideTime + pauseTime); // Change image after slideTime + pauseTime
-        }
-
-        // Initial setup
-        items[index].classList.add('active');
-        progressBar.style.transition = `width ${slideTime}ms linear`;
-        progressBar.style.width = '100%';
-
-        startCarousel(); // Start the carousel
-    })();
-{% endjs %}
