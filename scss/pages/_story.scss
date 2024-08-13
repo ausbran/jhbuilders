@@ -42,7 +42,9 @@
         transition: .28s $ease;
         &:hover {
           opacity: .7; 
-          @include translate(0,-2px,0);
+          @include transform(
+              translate3d(0, -2px, 0)
+          );
         }
       }
     }

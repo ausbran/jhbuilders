@@ -75,7 +75,9 @@
                         border-radius: $box-radius 0 0 $box-radius;
                     }
                     .slide-out {
-                        @include translate(100%,0,0);
+                        @include transform(
+                            translate3d(100%, 0, 0)
+                        );
                         &:before {
                             transform-origin: right;
                             border-radius: 0 $box-radius $box-radius 0;
@@ -87,7 +89,9 @@
                         border-radius: 0 $box-radius $box-radius 0;
                     }
                     .slide-out {
-                        @include translate(-100%,0,0);
+                        @include transform(
+                            translate3d(-100%, 0, 0)
+                        );
                         &:before {
                             transform-origin: right;
                             border-radius: $box-radius 0 0 $box-radius;

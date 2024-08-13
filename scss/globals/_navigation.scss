@@ -114,7 +114,9 @@ nav {
     left: 0;
     width: 87vw;
     height: 100vh;
-    @include translate(-100.1%,0,0);
+    @include transform(
+      translate3d(-100.1%,0,0)
+    );
     padding: 150px $padding-large $padding-large $padding-large;
     transition: $transition-long;
     display: flex;
@@ -151,7 +153,9 @@ nav {
       .featured-project {
         width: 100%;
         &:hover img {
-          @include scale(1.02);
+          @include transform(
+            scale(1.02)
+          );
         }
       }
       .featured-project:first-of-type .img-wrapper {
@@ -191,16 +195,24 @@ nav {
       will-change: transform;
     }
     .link {
-      @include translate(-50px,0,0);
+      @include transform(
+        translate3d(-50px,0,0)
+      );
     }
     h4.header {
-      @include translate(-60px,0,0);
+      @include transform(
+        translate3d(-60px,0,0)
+      );
     }
     .featured-project {
-      @include translate(-70px,0,0);
+      @include transform(
+        translate3d(-70px,0,0)
+      );
     }
     .brand-text {
-      @include translate(-80px,0,0);
+      @include transform(
+        translate3d(-80px,0,0)
+      );
     }
     .brand-text {
       transition-delay: .45s;
@@ -246,13 +258,17 @@ nav {
       }
     }
     .menu {
-      @include translate(0,0,0);
+      @include transform(
+        translate3d(0,0,0)
+      );
       .link,
       .featured-project,
       .brand-text,
       h4.header {
         opacity: 1;
-        @include translate(0,0,0);
+        @include transform(
+          translate3d(0,0,0)
+        );
       }
     }
   }

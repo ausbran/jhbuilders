@@ -4,6 +4,12 @@
 {% set class = class ?? null %}
 {% set slideHeader = slideHeader ?? null %}
 
+<style>
+.slide {
+    flex: 0 0 calc(100% / {{ visibleCards }}); /* Dynamically set based on visibleCards */
+}
+</style>
+
 <div class="slider-outer margin-y-xl">
     {% if slideHeader %}
         <h3 class="slider-header">{{slideHeader}}</h3>
@@ -19,5 +25,7 @@
                 {% endfor %}
             {% endblock %}
         </div>
+        {% include '_includes/_icons/arrows' %}
     </div>
 </div>
+

@@ -2,6 +2,11 @@
     display: flex;
     gap: $gap-xlarge;
 }
+.close {
+    &:hover {
+      filter: brightness(1.5);
+    }
+  }
 .btn {
     position: relative;
     display: inline-flex;
@@ -22,7 +27,7 @@
     // arrows that are to the right of text on all buttons
     .btn-arrow {
       position: relative;
-      bottom: -2px;
+      bottom: -1px;
       right: -10px;
       display: inline-block;
       width: 16px;
@@ -34,10 +39,14 @@
         position: absolute;
         transition: $transition;
         &:first-of-type {
-          @include translate(0,0,0);
+            @include transform(
+                translate3d(0, 0, 0)
+            );
         }
         &:last-of-type {
-          @include translate(-115%,0,0);
+            @include transform(
+                translate3d(-115%, 0, 0)
+            );
         }
         * {
           stroke: $white;
@@ -56,19 +65,19 @@
     &:hover {
       svg {
         &:first-of-type {
-          @include translate(115%,0,0);
+          @include transform(
+                translate3d(115%, 0, 0)
+            );
         }
         &:last-of-type {
-          @include translate(0,0,0);
+          @include transform(
+                translate3d(0, 0, 0)
+            );
         }
       }
     }
   }
-  .close {
-    &:hover {
-      filter: brightness(1.5);
-    }
-  }
+
   // arrows that are used for carousels
   .arrows {
     display: flex;
@@ -84,31 +93,78 @@
         right: unset;
         bottom: unset;
     }
-    svg {
-        &:first-of-type {
-            @include transform(
-                translate3d(10px, 20px, 0)
-            );
-        }
-        &:last-of-type {
-            @include transform(
-                translate(115%, 0),  // This will be converted to translate3d
-                scale(0.8)
-            );
-        }
-    }
     &.dark {
       background-color: $white;
       svg {
         fill: $red;
       }
     }
-    &:not(.disabled):hover {
-      &.arrow-prev svg {
-        // transform: rotate(-180deg) translateX(2px);
-      }
-      &.arrow-next svg {
-        // transform: rotate(0deg)  translateX(2px);
-      }
+    &.arrow-prev svg {
+        &:first-of-type {
+            @include transform(
+                translate3d(-8px, 0, 0),
+                rotate(180deg)
+            );
+        }
+        &:last-of-type {
+            @include transform(
+                translate3d(calc(115% + 8px), 0, 0),
+                rotate(180deg)
+            );
+        }
     }
+    &.arrow-next svg {
+        &:first-of-type {
+            @include transform(
+                translate3d(-8px, 0, 0)
+            );
+        }
+        &:last-of-type {
+            @include transform(
+                translate3d(calc(-115% - 8px), 0, 0)
+            );
+        }
+    }
+    &:hover {
+        &.arrow-prev svg {
+            &:first-of-type {
+                @include transform(
+                    translate3d(calc(-115% - 8px), 0, 0),
+                    rotate(180deg)
+                );
+            }
+            &:last-of-type {
+                @include transform(
+                    translate3d(-8px, 0, 0),
+                    rotate(180deg)
+                );
+            }
+        }
+        &.arrow-next svg {
+            &:first-of-type {
+                @include transform(
+                    translate3d(calc(115% + 8px), 0, 0)
+                );
+            }
+            &:last-of-type {
+                @include transform(
+                    translate3d(-8px, 0, 0)
+                );
+            }
+        }
+    }
+    // &:not(.disabled):hover {
+    //   &.arrow-prev svg {
+    //     @include transform(
+    //         translate3d(-8px, 0, 0),
+    //         !important
+    //     );
+    //   }
+    //   &.arrow-next svg {
+    //     @include transform(
+    //         translate3d(-8px, 0, 0),
+    //         !important
+    //     );
+    //   }
+    // }
   }

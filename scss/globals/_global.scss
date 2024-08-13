@@ -112,13 +112,17 @@ ul {
   img {
     filter: grayscale(1);
     transition: $transition;
-    @include scale(1);
+    @include transform(
+      scale(1)
+    );
   }
   &:hover {
     .background,
     img {
       filter: grayscale(0);
-      @include scale(1.01);
+      @include transform(
+        scale(1.01)
+      );
     }
   }
 }
@@ -137,7 +141,9 @@ ul {
       background: $red;
       position: absolute;
       top: 0;
-      @include translate(-100.2%,0,0);
+      @include transform(
+          translate3d(-100.2%, 0, 0)
+      );
       * {
         stroke: $white;
       }
@@ -148,7 +154,9 @@ ul {
   .icons {
     .icon {
       &.close {
-        @include translate(0,0,0);
+        @include transform(
+            translate3d(0, 0, 0)
+        );
       }
     }
   }

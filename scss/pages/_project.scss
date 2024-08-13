@@ -30,7 +30,9 @@
             }
             .project-info,
             .project-buttons {
-                @include translate(0,15px,0);
+                @include transform(
+                    translate3d(0, 15px, 0)
+                );
             }
         }
     }
@@ -86,7 +88,9 @@
             &:hover {
                 opacity: .9;
                 img {
-                    @include scale(1.02);
+                    @include transform(
+                        scale(1.02)
+                    );
                 }
             }
             &:nth-child(odd) {
