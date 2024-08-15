@@ -3,6 +3,9 @@
     .slider-outer {
         position: fixed;
     }
+    .arrow.disabled {
+        opacity: 1;
+    }
     .inner {
         padding: unset !important;
         justify-content: space-between;
@@ -14,11 +17,11 @@
         .magnify,
         .project-info,
         .project-buttons,
-        .h3 {
+        h3 {
             transition: $transition-medium;
         }
         &.active {
-            .h3 {
+            h3 {
                 color: $black;
                 &:first-of-type {
                     color: $red;
@@ -28,7 +31,11 @@
             .magnify {
                 border: 1px solid $grey;
             }
-            .project-info,
+            .project-info {
+                @include transform(
+                    translate3d(0, 3px, 0)
+                );
+            }
             .project-buttons {
                 @include transform(
                     translate3d(0, 15px, 0)
@@ -40,9 +47,16 @@
     .project-buttons {
         display: flex;
         position: relative;
+        gap: $gap;
     }
     .project-info {
         gap: $gap;
+        &.h4 {
+            gap: $gap-medium;
+        }
+        * {
+            line-height: 1em;
+        }
     }
     .project-buttons {
         gap: $gap-medium;
@@ -87,10 +101,9 @@
             }
             &:hover {
                 opacity: .9;
+    
                 img {
-                    @include transform(
-                        scale(1.02)
-                    );
+                    @include transform(scale(1.02));
                 }
             }
             &:nth-child(odd) {
@@ -99,11 +112,21 @@
             &:nth-child(even) {
                 grid-row: 2; // Place even-numbered items in the second column
             }
-            &:first-of-type {
+            &:first-of-type picture {
                 border-radius: $box-radius 0 0 0;
             }
-            &:last-of-type {
+            &:nth-of-type(2) picture {
                 border-radius: 0 0 0 $box-radius;
+            }
+            &:nth-last-child(odd):nth-last-of-type(2) {
+                picture {
+                    border-radius: 0 $box-radius 0 0;
+                }
+            }
+            &:nth-last-child(even):nth-last-of-type(1) {
+                picture {
+                    border-radius: 0 0 $box-radius 0;
+                }
             }
         }
     }

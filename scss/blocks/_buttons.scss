@@ -80,6 +80,7 @@
 
   // arrows that are used for carousels
   .arrows {
+    border-radius: $btn-radius;
     display: flex;
     .arrow-prev {
       border-radius: $btn-radius 0 0 $btn-radius;
@@ -153,18 +154,7 @@
             }
         }
     }
-    // &:not(.disabled):hover {
-    //   &.arrow-prev svg {
-    //     @include transform(
-    //         translate3d(-8px, 0, 0),
-    //         !important
-    //     );
-    //   }
-    //   &.arrow-next svg {
-    //     @include transform(
-    //         translate3d(-8px, 0, 0),
-    //         !important
-    //     );
-    //   }
-    // }
+    &.disabled {
+      opacity: 0;
+    }
   }

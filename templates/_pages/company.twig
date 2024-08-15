@@ -4,16 +4,15 @@
     {% include '_includes/_blocks/bannerText' with { block: entry } %}
 
     {% set press = craft.entries.section('press').all() %}
-    {% set jobs = craft.entries.section('careers').all() %}
-
     {% include '_includes/_blocks/slider' with { 
-        slides: press, 
+        slides: press,
         height: 'medium', 
         slideHeader: 'Awards & Press',
         visibleCards: 2, 
-        slideTemplate: '_includes/_blocks/slideGeneral' 
+        slideTemplate: '_includes/_blocks/slidePress' 
     } %}
 
+    {% set jobs = craft.entries.section('careers').all() %}
     {% include '_includes/_blocks/slider' with { 
         slides: jobs, 
         height: 'short',

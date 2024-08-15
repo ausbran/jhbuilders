@@ -6,11 +6,10 @@
             slides: entry.projectImages.all(), 
             slideTemplate: '_includes/_blocks/slideProject',
             height: 'auto',
-            visibleCards: 1
+            visibleCards: 1,
+            arrows: false
         } %}
-        <div class="project-info">
-            {% include '_projects/_partials/projectInfo' with { entry: entry } %}
-        </div> 
+        {% include '_projects/projectInfo' with { entry: entry } %}
         <div class="project-buttons">
             {% include '_includes/_icons/arrows' with {
                 firstArrow: 'red-arrow'
@@ -28,5 +27,23 @@
         {% endif %}
     </div>
 </div>
+
+{% set projects = craft.entries()
+    .section('projects')
+    .type('project')
+    .limit(6)
+    .orderBy('RAND()')
+    .all() %}
+
+{% if projects %}
+    {% include '_includes/_blocks/slider' with { 
+        slides: projects, 
+        slideTemplate: '_includes/_blocks/slideProjects',
+        height: 'medium',
+        visibleCards: 2,
+        arrows: true,
+        slideHeader: 'More Projects'
+    } %}
+{% endif %}
 
 {% endblock %}

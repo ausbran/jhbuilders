@@ -111,7 +111,7 @@ ul {
   .background,
   img {
     filter: grayscale(1);
-    transition: $transition;
+    transition: $transition-medium;
     @include transform(
       scale(1)
     );
@@ -121,7 +121,24 @@ ul {
     img {
       filter: grayscale(0);
       @include transform(
-        scale(1.01)
+        scale(1.02)
+      );
+    }
+  }
+}
+.scale {
+  .background,
+  img {
+    transition: $transition-medium;
+    @include transform(
+      scale(1)
+    );
+  }
+  &:hover {
+    .background,
+    img {
+      @include transform(
+        scale(1.02)
       );
     }
   }
@@ -160,6 +177,32 @@ ul {
       }
     }
   }
+}
+
+// highlight effect
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  color: inherit;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 10%;
+    height: 80%;
+    background: $red;
+    transition: right 0.3s ease-out, left 0.3s ease-out;
+  }
+}
+// highlight locations
+.highlight:hover:before,
+.slide:hover .highlight:before {
+  right: 0;
+  left: 0;
 }
 
 /* Define margin classes */
@@ -235,7 +278,7 @@ ul {
   height: 600px !important; 
 }
 .large {
-  height: 880px !important; 
+  height: 750px !important; 
 }
 
 @include respond-to-max($desktop) {

@@ -71,7 +71,7 @@ fieldLayouts:
             dateAdded: '2024-08-08T02:03:45+00:00'
             elementCondition: null
             fieldUid: f150ae50-f438-4d0a-97d8-ca26506a57dc # Magazine File
-            handle: slideImage
+            handle: pressImage
             includeInCards: false
             instructions: null
             label: 'Magazine Cover Image'

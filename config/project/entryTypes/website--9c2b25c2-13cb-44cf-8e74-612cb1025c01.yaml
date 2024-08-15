@@ -55,7 +55,7 @@ fieldLayouts:
             dateAdded: '2024-08-08T02:04:06+00:00'
             elementCondition: null
             fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
-            handle: slideImage
+            handle: pressImage
             includeInCards: false
             instructions: null
             label: 'Website Cover Image'

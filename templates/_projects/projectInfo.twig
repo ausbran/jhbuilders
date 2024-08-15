@@ -1,0 +1,17 @@
+{% set size = size ?? 'h3' %}
+
+<div class="project-info {{ size }}">
+    <h3>{{ entry.title }}</h2>
+    
+    {% set location = entry.projectLocation.one() %}
+    {% if location %}
+        <h3>
+            {{ location.locality }}, {{ location.administrativeArea }}
+        </h3>
+    {% endif %}
+
+    {% set date = entry.projectDate %}
+    {% if date %}
+        <h3>{{ date | date('Y') }}</h2>
+    {% endif %}
+</div>

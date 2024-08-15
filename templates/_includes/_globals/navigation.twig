@@ -34,7 +34,7 @@
 				{% for project in featuredProjects %}
 					<div class="featured-project">
 						<a href="{{ project.getUrl() }}">
-							<div class="img-wrapper">
+							<div class="img-wrapper scale">
                                 {% if project.projectImages.one() %}
                                     <img src="{{ project.projectImages.one().url }}" alt="{{ project.title }}">
                                 {% endif %}

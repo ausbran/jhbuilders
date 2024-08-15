@@ -4,17 +4,17 @@
     {% include '_includes/_blocks/landingGeneral' with { blocks: story.landing.all() } %}
 
     {% set partners = craft.entries.section('staff').type('partner').all() %}
-    {% set employees = craft.entries.section('staff').type('employee').all() %}
-
     {% include '_includes/_blocks/slider' with { 
         slides: partners, 
-        height: 'medium',
+        height: 'large',
         class: "accordion",
         slideHeader: 'Partners',
         visibleCards: 2, 
-        slideTemplate: '_includes/_blocks/slideAccordion'
+        slideTemplate: '_includes/_blocks/slideAccordion',
+        arrows: false
     } %}
 
+    {% set employees = craft.entries.section('staff').type('employee').all() %}
     {% include '_includes/_blocks/slider' with { 
         slides: employees, 
         height: 'medium', 

@@ -7,7 +7,7 @@
         {% for project in projects %}
             <div class="project gradient">
                 <div class="text">
-                    {% include '_projects/_partials/projectInfo' with { entry: project } %}
+                    {% include '_projects/projectInfo' with { entry: project } %}
                     {% include '_includes/_blocks/button' with {
                         link: project.url,
                         label: 'Explore Project',

@@ -1,7 +1,7 @@
-<div class="slide general">
+<div class="slide press">
     <div class="image {% if height is defined %}{{ height }}{% endif %}">
-        {% if slide.slideImage is defined %}
-            {% set asset = slide.slideImage.one() %}
+        {% if slide.pressImage is defined and slide.pressImage|length %}
+            {% set asset = slide.pressImage.one() %}
             {% if asset %}
                 {% include '_includes/_blocks/asset' with { asset: asset } %}
             {% endif %}

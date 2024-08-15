@@ -31,12 +31,9 @@
             position: absolute;
             display: flex;
             align-items: flex-end;
-            gap: $gap-medium;
+            gap: $gap-large;
             * {
                 color: $white;
-            }
-            .btn {
-                margin-left: $margin;
             }
         }
         .overlay {
@@ -78,16 +75,9 @@
         gap: $gap-medium;
     }
     * {
-        color: $white;
+        color: $white !important;
     }
     .background {
         z-index: 0;
     }
-}
-
-// individual project page
-.project-info,
-.project-buttons {
-    display: flex;
-    gap: $gap;
 }

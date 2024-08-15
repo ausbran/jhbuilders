@@ -1,0 +1,26 @@
+<div class="slide project">
+    <a href="{{ slide.url }}">
+        <div class="image scale {% if height is defined %}{{ height }}{% endif %}">
+            {% if slide.projectImages is defined %}
+                {% set asset = slide.projectImages.one() %}
+                {% if asset %}
+                    {% include '_includes/_blocks/asset' with { asset: asset } %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </a>
+    <div class="text">
+        <div class="project-info">
+            {% include '_projects/projectInfo' with {
+                entry: slide,
+                size: 'h4'
+            } %}
+        </div> 
+        {% include '_includes/_blocks/button' with {
+            link: slide.url,
+            label: 'Explore Project',
+            firstArrow: 'red-arrow',
+            secondArrow: 'black-arrow'
+        } %}
+    </div>
+</div>
