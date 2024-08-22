@@ -1,19 +1,19 @@
 columnSuffix: null
-handle: buttons
+handle: featuredProjects
 instructions: null
-name: Buttons
+name: 'Featured Projects'
 searchable: false
 settings:
-  createButtonLabel: 'New Button'
+  createButtonLabel: 'New Featured Project Block'
   entryTypes:
-    - 2a474d4a-c4ce-4af9-8df0-20b69b317f1c # Button
+    - 94cb9947-273b-4b08-994c-6ef6402b164b # Featured Project
   includeTableView: false
-  maxEntries: null
+  maxEntries: 1
   minEntries: null
   pageSize: 50
   propagationKeyFormat: null
   propagationMethod: all
-  showCardsInGrid: true
+  showCardsInGrid: false
   viewMode: cards
 translationKeyFormat: null
 translationMethod: site

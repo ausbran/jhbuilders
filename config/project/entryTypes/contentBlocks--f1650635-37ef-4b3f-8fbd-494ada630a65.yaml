@@ -1,6 +1,6 @@
-color: purple
+color: null
 fieldLayouts:
-  ba43b666-4d65-471c-9733-7507f429550a:
+  7c9a9ac0-f3ee-4626-bd42-59c125a4b23d:
     tabs:
       -
         elementCondition: null
@@ -10,7 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-08-08T02:03:02+00:00'
+            dateAdded: '2024-08-21T21:46:14+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,49 +31,33 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: a4a6b920-f2e4-4a4c-a0e0-c7263225ae80
+            uid: b4f668c2-2ab2-48cf-a3ba-00a1b0b381cf
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-08-08T02:03:02+00:00'
+            dateAdded: '2024-08-21T21:51:13+00:00'
             elementCondition: null
-            fieldUid: 5a4ca78e-efcf-4c8c-81c1-2464038d63b8 # Button Link
-            handle: websiteLink
+            fieldUid: 022ea0cc-0378-4208-8aa9-5d66cc4e3e20 # Content Blocks
+            handle: null
             includeInCards: false
             instructions: null
-            label: 'Website Link'
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3d84e563-3ef0-44d3-ba0f-c6f602708796
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-08-08T02:04:06+00:00'
-            elementCondition: null
-            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
-            handle: pressImage
-            includeInCards: false
-            instructions: null
-            label: 'Website Cover Image'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 2b7816a3-2ed2-4cb0-9f71-c67c890e5c2a
+            uid: 1d4bb6f1-8d58-465a-b947-75c3f3903531
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 0c408340-ea81-40b9-8cac-75a3607c59d0
+        uid: 6c82b7e9-2b93-4921-856e-ca3ac306c342
         userCondition: null
-handle: website
-hasTitleField: true
-icon: browser
-name: Website
+handle: contentBlocks
+hasTitleField: false
+icon: ''
+name: 'Content Blocks'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

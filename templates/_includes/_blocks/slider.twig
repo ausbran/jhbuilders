@@ -1,13 +1,15 @@
 {# {% set height = height ?? 'medium' %} #}
-{% set visibleCards = visibleCards ?? '2' %}
 {% set slides = slides ?? block.slides.all() %}
+{% set visibleCards = visibleCards ?? '2' %}
 {% set class = class ?? null %}
 {% set slideHeader = slideHeader ?? null %}
 {% set arrows = arrows ?? true %}
+{% set marginTop = marginTop ?? 'margin-top' %}
+{% set marginBottom = marginBottom ?? 'margin-bottom' %}
 
-<div class="slider-outer margin-y-xl">
+<div id="{{ slideHeader|kebab }}" class="slider-outer {{ marginTop }} {{ marginBottom }}">
     {% if slideHeader %}
-        <h3 class="slider-header">{{slideHeader}}</h3>
+        <h3 class="slider-header margin-bottom-sm">{{ slideHeader }}</h3>
     {% endif %}
     <div class="slider-container">
         <div class="slider {{ class }}" data-visible-cards="{{ visibleCards }}">

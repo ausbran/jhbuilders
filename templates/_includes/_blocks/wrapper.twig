@@ -1,0 +1,11 @@
+{# _includes/_blocks/wrapper.twig #}
+{% import '_includes/_globals/macros' as macros %}
+
+{# Set default values for marginTop and marginBottom if they are not provided #}
+{% set marginTop = marginTop ?? 'margin-top' %}
+{% set marginBottom = marginBottom ?? 'margin-bottom' %}
+
+{# Render the block content #}
+{% block blockContent %}
+    {# This block will be overridden by individual block templates #}
+{% endblock %}

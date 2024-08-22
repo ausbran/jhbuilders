@@ -1,8 +1,9 @@
 {% set size = size ?? 'h3' %}
+{% set class = class ?? null %}
 
 <div class="project-info {{ size }}">
-    <h3>{{ entry.title }}</h2>
-    
+    <h3 class="{{ class }}">{{ entry.title }}</h2>
+
     {% set location = entry.projectLocation.one() %}
     {% if location %}
         <h3>

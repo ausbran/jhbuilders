@@ -1,8 +1,6 @@
-// navigation.js
 import { body, nav, links, navIcon } from './globals.js';
 
 export function initNavigation() {
-    // Use global variables directly
     navIcon.addEventListener('click', function () {
         nav.classList.toggle('menu-opened');
         body.classList.toggle('no-scroll');

@@ -14,6 +14,7 @@
 </head>
 {# {% set bodyClass = class ?? null %} #}
 <body data-barba="wrapper" {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
+    {% include '_includes/_globals/load' %}
     {% include '_includes/_globals/navigation' %}
     <main data-barba="container" data-barba-namespace="{{ entry.type }}">
         {% block content %}{% endblock %}
@@ -22,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>

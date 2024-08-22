@@ -1,9 +1,37 @@
 .banner {
+    padding: $padding;
+    box-sizing: content-box;
     &.text {
+        gap: $gap-xlarge !important;
+        max-width: $max-width;
+        margin-right: auto;
+        margin-left: auto;
         display: flex;
         gap: $gap;
-        h2 {
-            font-size: 3em;
+        h1 {
+            color: $red;
+            white-space: nowrap;
+        }
+         p {
+            padding-top: 33px;
+         }
+    }
+    &.box {
+        background-color: $red;
+        height: 400px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        .inner {
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+            max-width: $max-width;
+            margin: 0 auto;
+            width: 100%;
+        }
+        * {
+            color: $white;
         }
     }
 }

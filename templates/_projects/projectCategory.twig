@@ -7,13 +7,17 @@
         {% for project in projects %}
             <div class="project gradient">
                 <div class="text">
-                    {% include '_projects/projectInfo' with { entry: project } %}
+                    {# opposite ordering of btn and project-info to use ~ operator in CSS for highlight effect #}
                     {% include '_includes/_blocks/button' with {
                         link: project.url,
                         label: 'Explore Project',
                         secondArrow: 'white-arrow'
                         }
                     %}
+                    {% include '_projects/projectInfo' with {
+                        entry: project,
+                        class: 'highlight'
+                    } %}
                 </div>
                 {% set asset = project.projectImages.one() %}
                 {% if asset %}

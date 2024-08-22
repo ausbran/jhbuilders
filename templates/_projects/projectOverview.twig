@@ -1,7 +1,9 @@
 <div class="landing project-gate">
     <div class="project-overview bw">
         <div class="text">
-            {{ entry.newBuildsText }}
+            <div>
+                {{ entry.newBuildsText|replace({'<h2>': '<h2 class="highlight">'})|raw }}
+            </div>
             {% set newBuildsButton = entry.newBuildsButton.one() %}
             {% if newBuildsButton %}
                 {% set linkEntry = newBuildsButton.buttonLink.one() %}
@@ -22,7 +24,9 @@
     </div>
     <div class="project-overview bw">
         <div class="text">
-            {{ entry.remodelsText }}
+            <div>
+                {{ entry.remodelsText|replace({'<h2>': '<h2 class="highlight">'})|raw }}
+            </div>
             {% set remodelsButton = entry.remodelsButton.one() %}
             {% if remodelsButton %}
                 {% set linkEntry = remodelsButton.buttonLink.one() %}

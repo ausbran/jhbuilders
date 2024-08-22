@@ -1,7 +1,10 @@
 {% extends "index" %}
 
 {% block content %}
-    {% include '_includes/_blocks/bannerText' with { block: entry } %}
+    {% include '_includes/_blocks/bannerText' with {
+        block: entry,
+        marginTop: entry.marginTop
+    } %}
 
     {% set press = craft.entries.section('press').all() %}
     {% include '_includes/_blocks/slider' with { 
@@ -14,8 +17,9 @@
 
     {% set jobs = craft.entries.section('careers').all() %}
     {% include '_includes/_blocks/slider' with { 
-        slides: jobs, 
-        height: 'short',
+        slides: jobs,
+        class: 'careers',
+        height: 'medium',
         slideHeader: 'Careers',
         visibleCards: 2, 
         slideTemplate: '_includes/_blocks/slideCareer' 

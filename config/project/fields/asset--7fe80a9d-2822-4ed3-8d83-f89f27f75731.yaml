@@ -11,9 +11,8 @@ settings:
     - image
     - video
   branchLimit: null
-  defaultUploadLocationSource: 'volume:0524ce74-5809-4227-9995-c07e31fcd67f' # General
+  defaultUploadLocationSource: 'volume:37391c35-7f8d-4a6c-a7e6-a05b2cd60b2c' # Press
   defaultUploadLocationSubpath: null
-  localizeRelations: false
   maintainHierarchy: false
   maxRelations: null
   minRelations: null
@@ -25,7 +24,7 @@ settings:
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: true
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'
@@ -33,5 +32,5 @@ settings:
   validateRelatedElements: false
   viewMode: cards
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Assets

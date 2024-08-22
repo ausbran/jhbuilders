@@ -35,6 +35,10 @@
             * {
                 color: $white;
             }
+            .btn {
+                // for highlight effect to work
+                order: 2;
+            }
         }
         .overlay {
             position: absolute;
@@ -59,7 +63,7 @@
 .project-overview {
     width: 50%;
     height: 100%;
-    padding: $padding-large;
+    padding: $padding;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -72,12 +76,20 @@
         z-index: 2;
         display: flex;
         flex-direction: column;
-        gap: $gap-medium;
+        gap: $gap-large;
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: $gap-small;
+        }
     }
     * {
         color: $white !important;
     }
     .background {
         z-index: 0;
+        &:before {
+            opacity: .75;
+        }
     }
 }

@@ -141,7 +141,7 @@ fieldLayouts:
         uid: 54cf1a9c-133c-4034-8794-53619b16bc02
         userCondition: null
 handle: featuredProject
-hasTitleField: true
+hasTitleField: false
 icon: star
 name: 'Featured Project'
 showSlugField: true

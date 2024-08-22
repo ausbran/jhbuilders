@@ -152,6 +152,9 @@ nav {
       }
       .featured-project {
         width: 100%;
+        .btn {
+          margin-top: $gap-small;
+        }
       }
       .featured-project:first-of-type .img-wrapper {
         border-radius: $box-radius 0 0 $box-radius;

@@ -12,7 +12,7 @@ settings:
     - pdf
     - video
   branchLimit: null
-  defaultUploadLocationSource: 'volume:e1c930be-4e19-4db0-ad0a-3c422934e22c' # Magazines
+  defaultUploadLocationSource: 'volume:37391c35-7f8d-4a6c-a7e6-a05b2cd60b2c' # Press
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
   maxRelations: null
@@ -28,8 +28,7 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  sources:
-    - 'volume:e1c930be-4e19-4db0-ad0a-3c422934e22c' # Magazines
+  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: cards

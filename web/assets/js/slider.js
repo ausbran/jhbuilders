@@ -1,6 +1,9 @@
+import { navHeight } from './globals.js';
+
 export function initSlider() {
     var sliders = document.querySelectorAll('.slider');
 
+    // sliders
     sliders.forEach(function(slider) {
         var visibleCards = parseInt(slider.getAttribute('data-visible-cards'), 10);
         var slides = slider.querySelectorAll('.slide');
@@ -42,13 +45,13 @@ export function initSlider() {
         if (arrowPrev && arrowNext) {
             arrowPrev.addEventListener('click', function() {
                 if (!arrowPrev.classList.contains('disabled')) {
-                    scrollSlider(-2 * slider.clientWidth / visibleCards);  // Scroll back by two cards
+                    scrollSlider(-1 * slider.clientWidth / visibleCards);  // Scroll back by one card
                 }
             });
 
             arrowNext.addEventListener('click', function() {
                 if (!arrowNext.classList.contains('disabled')) {
-                    scrollSlider(2 * slider.clientWidth / visibleCards);  // Scroll forward by two cards
+                    scrollSlider(1 * slider.clientWidth / visibleCards);  // Scroll forward by one card
                 }
             });
 
@@ -65,7 +68,6 @@ export function initSlider() {
     // accordion
     const accordionTriggers = document.querySelectorAll('.accordion-trigger');
     const closeButtons = document.querySelectorAll('.slide-out .close');
-    const navHeight = document.querySelector('nav').offsetHeight; // Get the height of the navigation element
 
     accordionTriggers.forEach(trigger => {
         trigger.addEventListener('click', function (e) {

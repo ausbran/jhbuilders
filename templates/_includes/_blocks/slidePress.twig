@@ -1,21 +1,23 @@
+{% set link = null %}
+{% if slide.url is defined %}
+    {% set link = slide.url %}
+{% elseif slide.magazineFile is defined %}
+    {% set link = slide.magazineFile %}
+{% endif %}
+
 <div class="slide press">
-    <div class="image {% if height is defined %}{{ height }}{% endif %}">
+    <div class="image scale {% if height is defined %}{{ height }}{% endif %}">
         {% if slide.pressImage is defined and slide.pressImage|length %}
             {% set asset = slide.pressImage.one() %}
             {% if asset %}
-                {% include '_includes/_blocks/asset' with { asset: asset } %}
+                <a href={{ link }}>
+                    {% include '_includes/_blocks/asset' with { asset: asset } %}
+                </a>
             {% endif %}
         {% endif %}
     </div>
     <div class="text">
         <h4>{{ slide.title }}</h4>
-        {% set link = null %}
-        {% if slide.url is defined %}
-            {% set link = slide.url %}
-        {% elseif slide.magazineFile is defined %}
-            {% set link = slide.magazineFile %}
-        {% endif %}
-
         {% include '_includes/_blocks/button' with {
             link: link,
             label: 'View',

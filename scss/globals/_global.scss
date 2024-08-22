@@ -78,7 +78,7 @@ ul {
   max-width: $max-width;
 }
 .gradient:before {
-  z-index: 1;
+  z-index: 2;
   opacity: .4;
   content: "";
   position: absolute;
@@ -185,7 +185,7 @@ ul {
   display: inline-block;
   z-index: 0;
   color: inherit;
-
+  width: fit-content;
   &:before {
     content: '';
     position: absolute;
@@ -200,74 +200,49 @@ ul {
 }
 // highlight locations
 .highlight:hover:before,
-.slide:hover .highlight:before {
+.slide:hover .highlight:before,
+.project-overview:hover .highlight:before,
+.projects .project .text .btn:hover ~ .project-info .highlight:before {
   right: 0;
   left: 0;
 }
 
 /* Define margin classes */
-.margin-xs {
-  margin: 8px;
+.margin-top-xs {
+  margin-top: $margin-xsmall;
 }
-.margin-sm {
-  margin: 16px;
+.margin-top-sm {
+  margin-top: $margin-small;
 }
-.margin-md {
-  margin: 24px;
+.margin-top-md {
+  margin-top: $margin-medium;
 }
-.margin-lg {
-  margin: 32px;
+.margin-top {
+  margin-top: $margin;
 }
-.margin-xl {
-  margin: 100px;
+.margin-top-lg {
+  margin-top: $margin-large;
 }
-
-/* Margin top and bottom */
-.margin-y-xs {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.margin-top-xl {
+  margin-top: $margin-xlarge;
 }
-.margin-y-sm {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.margin-bottom-xs {
+  margin-bottom: $margin-xsmall;
 }
-.margin-y-md {
-  margin-top: 25px;
-  margin-bottom: 25px;
+.margin-bottom-sm {
+  margin-bottom: $margin-small;
 }
-.margin-y-lg {
-  margin-top: 50px;
-  margin-bottom: 50px;
+.margin-bottom-md {
+  margin-bottom: $margin-medium;
 }
-.margin-y-xl {
-  margin-top: 75px;
-  margin-bottom: 75px;
+.margin-bottom {
+  margin-bottom: $margin;
 }
-.margin-y-xxl {
-  margin-top: 100px;
-  margin-bottom: 100px;
+.margin-bottom-lg {
+  margin-bottom: $margin-large;
 }
-
-/* Margin left and right */
-.margin-x-xs {
-  margin-left: 8px;
-  margin-right: 8px;
-}
-.margin-x-sm {
-  margin-left: 16px;
-  margin-right: 16px;
-}
-.margin-x-md {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-.margin-x-lg {
-  margin-left: 32px;
-  margin-right: 32px;
-}
-.margin-x-xl {
-  margin-left: 40px;
-  margin-right: 40px;
+.margin-bottom-xl {
+  margin-bottom: $margin-xlarge;
 }
 
 // dynamic component sizes

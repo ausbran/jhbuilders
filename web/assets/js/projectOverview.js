@@ -1,10 +1,9 @@
+import { navHeight } from './globals.js';
+
 export function initProjectOverview() {
     const projects = document.querySelectorAll(".project");
-    const nav = document.querySelector('nav');
 
     function updateObserver() {
-        const navHeight = nav.offsetHeight;
-
         const observerOptions = {
             root: null,
             rootMargin: `-${navHeight}px 0px -${navHeight}px 0px`,

@@ -1,6 +1,21 @@
-<div class="banner {{ block.textAlignment }}">
-     {% include '_includes/_blocks/text' with {
-        text: block.bannerText,
-        maxWidth: entry.bannerMaxWidth
-    } %}
+{% set text = block[handle] ?? null %}
+{% set marginTop = marginTop ?? 'margin-top' %}
+{% set marginBottom = marginBottom ?? 'margin-bottom' %}
+
+<div class="banner box {{ marginTop }} {{ marginBottom }}">
+    <div class="inner">
+        {% if text %}
+            {% include '_includes/_blocks/text' with {
+                text: text,
+                maxWidth: block.maxWidth
+            } %}
+        {% endif %}
+
+            {% include '_includes/_blocks/button' with {
+                    link: link,
+                    label: label,
+                    secondArrow: 'white-arrow'
+                }
+            %}
+    </div>
 </div>

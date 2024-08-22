@@ -1,8 +1,12 @@
  <div class="slide career {% if height is defined %}{{ height }}{% endif %}">
     <div class="text">
-        <h4>{{ slide.title }}</h4>
-        {# <h4>{{ slide.location }}</h4> #}
-        {{ slide.description }}
+        <div>
+            <span>
+                <h4>{{ slide.title }}</h4>
+                <h4>{{ slide.office.label }}</h4>
+            </span>
+            {{ slide.description|replace({'<p>': '<p class="thin">'})|raw }}
+        </div>
         {% include '_includes/_blocks/button' with {
             link: slide.url,
             label: 'See Position',

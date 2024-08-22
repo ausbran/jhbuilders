@@ -7,8 +7,23 @@ export function initProject(container) {
         buttons = container.querySelector('.project-buttons'),
         close = buttons.querySelector('.close'),
         slides = sliderContainer.querySelectorAll('.project-slide'),
-        inner = document.querySelector('.inner'),
+        projectImages = backgroundElement.querySelectorAll('picture'),
+        inner = container.querySelector('.inner'),
         timeout = 300;
+
+    let currentImageIndex = 0;
+
+    function showImage(index) {
+        projectImages.forEach((img, i) => {
+            if (i === index) {
+                img.classList.add('active');
+                img.classList.remove('previous');
+            } else {
+                img.classList.remove('active');
+                img.classList.add('previous');
+            }
+        });
+    }
 
     function closeSlider() {
         sliderContainer.style.opacity = 0;
@@ -20,6 +35,15 @@ export function initProject(container) {
             body.classList.remove('no-scroll');
             nav.classList.remove('scrolled-without-border');
         }, timeout);
+    }
+
+    function handleArrowClick(direction) {
+        if (direction === 'next') {
+            currentImageIndex = (currentImageIndex + 1) % projectImages.length;
+        } else if (direction === 'prev') {
+            currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+        }
+        showImage(currentImageIndex);
     }
 
     if (magnify && backgroundElement && sliderContainer) {
@@ -38,11 +62,12 @@ export function initProject(container) {
                 sliderContainer.style.opacity = 1;
             }, timeout);
 
-            slides.forEach(slide => {
+            slides.forEach((slide, index) => {
                 slide.addEventListener('click', function () {
-                    const largeImageUrl = this.getAttribute('data-full-url');
+                    const largeImageUrl = slide.getAttribute('data-full-url');
                     if (largeImageUrl) {
-                        backgroundElement.innerHTML = `<img src="${largeImageUrl}" alt="Selected Image" />`;
+                        currentImageIndex = index;
+                        showImage(currentImageIndex);
                         closeSlider();
                     }
                 });
@@ -51,4 +76,29 @@ export function initProject(container) {
     }
 
     close.addEventListener('click', closeSlider);
+
+    const projectArrows = buttons.querySelectorAll('.project-buttons .arrow');
+
+    // arrow button clicks
+    projectArrows.forEach(arrow => {
+        arrow.addEventListener('click', function () {
+            if (arrow.classList.contains('arrow-next')) {
+                handleArrowClick('next');
+            } else {
+                handleArrowClick('prev');
+            }
+        });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowRight') {
+            handleArrowClick('next');
+        } else if (event.key === 'ArrowLeft') {
+            handleArrowClick('prev');
+        }
+    });
+
+    // Initial display setup
+    showImage(currentImageIndex);
 }

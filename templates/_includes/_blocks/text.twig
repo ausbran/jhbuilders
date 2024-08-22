@@ -1,7 +1,7 @@
-{% if block.maxWidth %}
-    <div class="description-wrapper" style="max-width:{{ block.maxWidth }}px;">
-        {{ block.text }}
+{% if maxWidth %}
+    <div class="description-wrapper" style="max-width:{{ maxWidth }}px;">
+        {{ text|raw }}
     </div>
 {% else %}
-    {{ block.text }}
+    {{ text|raw }}
 {% endif %}

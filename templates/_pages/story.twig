@@ -3,6 +3,8 @@
 {% block content %}
     {% include '_includes/_blocks/landingGeneral' with { blocks: story.landing.all() } %}
 
+    {% include '_includes/_blocks/bannerText' with { block: entry } %}
+
     {% set partners = craft.entries.section('staff').type('partner').all() %}
     {% include '_includes/_blocks/slider' with { 
         slides: partners, 
@@ -21,5 +23,12 @@
         slideHeader: 'Employees',
         visibleCards: 3, 
         slideTemplate: '_includes/_blocks/slideEmployee' 
+    } %}
+
+    {% include '_includes/_blocks/banner' with {
+        block: entry,
+        handle: 'bannerText',
+        link: entry.buttonLink,
+        label: entry.buttonLabel
     } %}
 {% endblock %}

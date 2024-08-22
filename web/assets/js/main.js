@@ -4,9 +4,11 @@ import { initPress } from './press.js';
 import { initSlider } from './slider.js';
 import { initLandingFeatured } from './landingFeatured.js';
 import { initProject } from './project.js';
+import { initLoad } from './load.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
+    initLoad();
     const namespace = document.querySelector('main').dataset.barbaNamespace;
     initializeComponents(document, namespace);
 });

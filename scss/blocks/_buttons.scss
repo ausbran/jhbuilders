@@ -11,12 +11,13 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    cursor: pointer;
-    font-size: 0.9em;
+    cursor: !important;
+    font-size: 0.95em;
     font-weight: 600;
     color: $red;
     transition: $transition;
     border: none;
+    white-space: nowrap;
     &.icon {
       padding: 21px;
       // border: 1px solid $grey;

@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: textAlignment
+handle: marginBottom
 instructions: null
-name: 'Text Alignment'
+name: 'Margin Bottom'
 searchable: false
 settings:
   options:
@@ -9,10 +9,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Top Left'
+          - 'Extra Small'
         -
           - value
-          - top-left
+          - margin-bottom-xs
         -
           - default
           - ''
@@ -20,10 +20,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Top Center'
+          - Small
         -
           - value
-          - top-center
+          - margin-bottom-sm
         -
           - default
           - ''
@@ -31,10 +31,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Top Right'
+          - Medium
         -
           - value
-          - top-right
+          - margin-bottom-md
         -
           - default
           - ''
@@ -42,43 +42,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Center Left'
+          - Default
         -
           - value
-          - center-left
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Center Center'
-        -
-          - value
-          - center-center
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Center Right'
-        -
-          - value
-          - center-right
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Bottom Left'
-        -
-          - value
-          - bottom-left
+          - margin-bottom
         -
           - default
           - '1'
@@ -86,10 +53,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Bottom Center'
+          - Large
         -
           - value
-          - bottom-center
+          - margin-bottom-lg
         -
           - default
           - ''
@@ -97,10 +64,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Bottom Right'
+          - 'Extra Large'
         -
           - value
-          - bottom-right
+          - margin-bottom-xl
         -
           - default
           - ''
