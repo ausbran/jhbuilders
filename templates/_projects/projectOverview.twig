@@ -1,6 +1,6 @@
 <div class="landing project-gate">
-    <div class="project-overview bw">
-        <div class="text fade-in">
+    <div class="project-overview">
+        <div class="text fade-in" data-cascade>
             <div>
                 {{ entry.newBuildsText|replace({'<h2>': '<h2 class="highlight">'})|raw }}
             </div>
@@ -16,14 +16,14 @@
                 {% endif %}
             {% endif %}
         </div>
-        <div class="background gradient">
+        <div class="background gradient bw">
             {% for asset in entry.newBuildsImage %}
                 {% include '_includes/_blocks/asset' %}
             {% endfor %}
         </div>
     </div>
-    <div class="project-overview bw">
-        <div class="text fade-in">
+    <div class="project-overview">
+        <div class="text fade-in" data-cascade>
             <div>
                 {{ entry.remodelsText|replace({'<h2>': '<h2 class="highlight">'})|raw }}
             </div>
@@ -39,7 +39,7 @@
                 {% endif %}
             {% endif %}
         </div>
-        <div class="background gradient">
+        <div class="background gradient bw">
             {% for asset in entry.remodelsImage %}
                 {% include '_includes/_blocks/asset' %}
             {% endfor %}

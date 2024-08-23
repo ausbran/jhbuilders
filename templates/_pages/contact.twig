@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="landing project-gate">
-    <div class="project-overview bw contact">
-        <div class="text fade-in">
+    <div class="project-overview contact">
+        <div class="text fade-in" data-cascade>
             <h2 class="highlight">Jackson Office</h2>
             <div>
                 {% set location = entry.jacksonLocation.one() %}
@@ -22,7 +22,7 @@
                 label: 'Get in touch'
             } %}
         </div>
-        <div class="background gradient">
+        <div class="background gradient bw">
             {% for asset in entry.jacksonImage %}
                 {% include '_includes/_blocks/asset' with {
                     width: 960,
@@ -32,8 +32,8 @@
             {% endfor %}
         </div>
     </div>
-    <div class="project-overview bw contact">
-        <div class="text fade-in">
+    <div class="project-overview contact">
+        <div class="text fade-in" data-cascade>
             <h2 class="highlight">Driggs Office</h2>
             <div>
                 {% set location = entry.driggsLocation.one() %}
@@ -52,7 +52,7 @@
                 label: 'Get in touch'
             } %}
         </div>
-        <div class="background gradient">
+        <div class="background gradient bw">
             {% for asset in entry.driggsImage %}
                 {% include '_includes/_blocks/asset' with {
                     width: 960,

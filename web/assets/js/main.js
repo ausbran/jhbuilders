@@ -77,6 +77,11 @@ barba.init({
         afterEnter(data) {
             const namespace = data.next.container.dataset.barbaNamespace;
             initializeComponents(data.next.container, namespace);
+
+            // Reset scroll position and re-initialize scroll animations
+            window.scrollTo(0, 0);
+            initScroll(); // Ensure animations are initialized on the new page
         }
     }]
 });
+

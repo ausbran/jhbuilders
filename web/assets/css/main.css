@@ -19,6 +19,15 @@ body.red {
 body.red *::selection {
   background-color: #E5E5E5;
 }
+body.red footer {
+  background-color: transparent;
+}
+body.red footer * {
+  color: #FFFFFF;
+}
+body.red footer svg * {
+  fill: #FFFFFF;
+}
 
 * {
   box-sizing: border-box;
@@ -236,7 +245,7 @@ ul {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
 }
 
 .fade-in.visible {
@@ -1225,68 +1234,8 @@ footer .social-link svg {
   }
 }
 
-.landing-video.about {
-  z-index: -2 !important;
-  mix-blend-mode: multiply;
-  opacity: 0.2;
-  min-height: 100%;
-  min-width: 100%;
-  object-fit: cover !important;
-}
-
-.about .text-wrapper {
-  position: fixed;
-  width: 90vw;
-  max-width: 500px;
-  right: 8vw;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.about .text-wrapper * {
-  color: #fff;
-}
-.about .text-wrapper h1 {
-  font-size: 50px;
-  line-height: 0.9em;
-  font-weight: normal !important;
-  margin: 20px 0;
-}
-.about .text-wrapper p {
-  font-size: 13px;
-  line-height: 1.75em;
-  max-width: 300px;
-}
-.about .text-wrapper .contact {
-  font-family: "Helvetica Now", helvetica, sans-serif !important;
-  text-transform: uppercase;
-  font-size: 0.7em;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  line-height: 1em;
-}
-@media (max-width: 1200px) {
-  .about .text-wrapper .contact {
-    font-size: 0.65em;
-  }
-}
-.about .text-wrapper .contact a:first-of-type {
-  margin-right: 30px;
-}
-.about .text-wrapper .contact a {
-  display: inline-block;
-  transition: 0.28s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.about .text-wrapper .contact a:hover {
-  opacity: 0.7;
-  -moz-transform: translate3d(0, -2px, 0);
-  -o-transform: translate3d(0, -2px, 0);
-  -ms-transform: translate3d(0, -2px, 0);
-  -webkit-transform: translate3d(0, -2px, 0);
-  transform: translate3d(0, -2px, 0);
+.landing.story video {
+  object-position: left;
 }
 
 .project-overview.contact:first-of-type {
@@ -1309,6 +1258,7 @@ footer .social-link svg {
   max-width: 1550px;
   margin: auto;
   margin-top: 200px;
+  margin-bottom: 75px;
 }
 .projects img {
   width: 100%;
@@ -1577,13 +1527,17 @@ canvas {
   align-items: flex-start;
   gap: 30px;
 }
+.careers-outer .text div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 .careers-outer .text h1 {
   margin-left: -0.04em;
   margin-top: -0.15em;
   margin-bottom: 20px;
 }
 .careers-outer .text h3 {
-  margin-bottom: 5px;
   text-decoration: underline;
 }
 .careers-outer .text * {
@@ -1591,6 +1545,13 @@ canvas {
 }
 .careers-outer .text p {
   max-width: 500px;
+}
+.careers-outer .text ol, .careers-outer .text ul {
+  margin: unset;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .careers-outer .text,
 .careers-outer .fui-i {
@@ -1711,7 +1672,7 @@ canvas {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: #ED3127;
+  background: #FFFFFF;
   padding: 75px 50px;
 }
 .landing .inner {
