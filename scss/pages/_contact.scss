@@ -1,0 +1,16 @@
+.project-overview.contact {
+    &:first-of-type {
+        padding-left: $scroll-padding;
+    }
+    .text {
+        max-width: unset;
+        gap: $gap-small;
+        div {
+            flex-direction: row;
+            gap: $gap;
+        }
+        .btn {
+            margin-top: $margin-medium;
+        }
+    }
+}

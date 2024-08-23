@@ -147,10 +147,10 @@ fieldLayouts:
             dateAdded: '2024-08-21T23:18:05+00:00'
             elementCondition: null
             fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
-            handle: null
+            handle: topMaxWidth
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Top Banner Max Width'
             providesThumbs: false
             required: false
             tip: null
@@ -158,7 +158,23 @@ fieldLayouts:
             uid: bcf01f2e-1625-49a8-89ae-3c62601301f6
             userCondition: null
             warning: null
-            width: 100
+            width: 25
+          -
+            dateAdded: '2024-08-23T05:37:06+00:00'
+            elementCondition: null
+            fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
+            handle: bottomMaxWidth
+            includeInCards: false
+            instructions: null
+            label: 'Bottom Banner Max Width'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc04b9dc-d641-4166-aedc-9d3c4a513ad0
+            userCondition: null
+            warning: null
+            width: 25
           -
             dateAdded: '2024-08-21T23:18:05+00:00'
             elementCondition: null
@@ -174,7 +190,7 @@ fieldLayouts:
             uid: 3b7a89ee-57f2-4ada-b429-15b69621d8e0
             userCondition: null
             warning: null
-            width: 100
+            width: 25
         name: Settings
         uid: 03e64733-4cff-4c46-9eb7-56a8e2f03640
         userCondition: null

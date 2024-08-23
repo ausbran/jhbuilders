@@ -1,50 +1,53 @@
 footer {
+  margin: auto;
   position: relative;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
-  flex-direction: column;
   gap: $gap-large;
   width: $width;
-  margin: $margin auto;
+  max-width: $max-width;
   background: $white;
   color: $black;
-  min-height: 400px;
-  padding: $padding-large;
+  height: 240px;
+  padding: 0 $padding $padding $padding;
   border-radius: $box-radius;
   overflow: hidden;
+  box-sizing: content-box;
   .logo {
-    height: 90%;
-    margin: auto;
-  }
-  .footer-links ul,
-  .social-links {
-    list-style: none;
-    display: flex;
-    gap: $gap-large; 
-  }
-  .footer-links {
-    li {
-      @include small-headers;
+    height: 100%;
+    a, img {
+      height: inherit;
     }
-  }
-  .social-links {
-    .social-link {
-      height: 20px;
-      display: inline-block;
-      img {
-        height: 100%;
+    a {
+      transition: $transition-medium;
+      &:hover {
+        opacity: .8;
       }
     }
   }
-  .social-link,
-  .footer-links li {
-    transition: $transition;
-    &:hover {
-      opacity: .6;
+  .footer-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: $gap-large; 
+    a {
+      transition: $transition;
+      &:hover {
+        opacity: .6;
+      }
     }
   }
+    .social-link {
+      height: 23px;
+      width: 23px;
+      display: inline-block;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
 }
 @include respond-to-max($desktop) {
   footer {
@@ -55,9 +58,6 @@ footer {
 @include respond-to-max($tablet) {
   footer {
     align-items: center;
-    .logo {
-      left: -30%;
-    }
   }
 }
 @include respond-to-max($mobile) {
@@ -66,16 +66,5 @@ footer {
     margin: $margin-small;
     padding: $padding-large $padding;
     align-items: flex-start;
-    ul:first-child {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .logo {
-      left: unset;
-      width: 90%;
-      right: -30%;
-      top: -30%;
-      bottom: unset;
-    }
   }
 }

@@ -1,4 +1,4 @@
-color: null
+color: cyan
 fieldLayouts:
   8f8961ce-b8f9-44b2-8ade-61b7a791585f:
     tabs:
@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-23T00:51:06+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,8 +36,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-23T00:52:55+00:00'
             elementCondition: null
-            fieldUid: ae97b4e4-7938-4735-b734-84f98ec34af2 # Buttons
+            fieldUid: 7e4b4add-061e-4eab-92df-597242f18a90 # Primary Links
             handle: null
             includeInCards: false
             instructions: null
@@ -45,22 +47,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3a45b8fe-a8ab-4cca-82dd-57c1ca71d338
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7cdc4ad1-fdc3-4d17-9903-1716875a6d54
+            uid: 6dcac474-fd3a-484b-a836-176a941596ba
             userCondition: null
             warning: null
             width: 100
@@ -68,13 +55,13 @@ fieldLayouts:
         uid: cbdd056d-244a-4dc8-821c-06f875fcca10
         userCondition: null
 handle: footer
-hasTitleField: true
-icon: ''
+hasTitleField: false
+icon: compass
 name: Footer
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: Footer
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

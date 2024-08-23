@@ -3,7 +3,8 @@
 {% block content %}
     {% include '_includes/_blocks/bannerText' with {
         block: entry,
-        marginTop: entry.marginTop
+        marginTop: entry.marginTop,
+        maxWidth: entry.maxWidth
     } %}
 
     {% set press = craft.entries.section('press').all() %}
@@ -12,6 +13,7 @@
         height: 'medium', 
         slideHeader: 'Awards & Press',
         visibleCards: 2, 
+        fadeIn: true,
         slideTemplate: '_includes/_blocks/slidePress' 
     } %}
 
@@ -22,6 +24,7 @@
         height: 'medium',
         slideHeader: 'Careers',
         visibleCards: 2, 
+        fadeIn: true,
         slideTemplate: '_includes/_blocks/slideCareer' 
     } %}
 {% endblock %}

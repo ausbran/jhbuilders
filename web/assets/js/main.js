@@ -5,15 +5,28 @@ import { initSlider } from './slider.js';
 import { initLandingFeatured } from './landingFeatured.js';
 import { initProject } from './project.js';
 import { initLoad } from './load.js';
+import { initScroll } from './scroll.js';
+
+// Ensure the loading screen is visible and content is hidden immediately on DOMContentLoaded
+window.addEventListener('DOMContentLoaded', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    const body = document.body;
+    loadingScreen.classList.add('visible'); // Make sure loading screen is visible
+    body.classList.add('hidden-content');  // Hide the main content
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
-    initLoad();
+    initLoad(); // Handle the loading screen hide after video ends
     const namespace = document.querySelector('main').dataset.barbaNamespace;
     initializeComponents(document, namespace);
 });
 
 function initializeComponents(container, namespace) {
+    initScroll();
+    const body = document.body;
+    body.classList.remove('red');
+
     switch (namespace) {
         case 'projectCategory':
             initProjectOverview();
@@ -27,6 +40,16 @@ function initializeComponents(container, namespace) {
             if (pdfViewer) {
                 const pdfUrl = pdfViewer.dataset.url;
                 initPress(pdfUrl);
+            }
+            break;
+        case 'Career':
+            body.classList.add('red');
+            break;
+        case 'story':
+            initSlider();
+            const video = container.querySelector('.background video');
+            if (video) {
+                video.play();
             }
             break;
         default:

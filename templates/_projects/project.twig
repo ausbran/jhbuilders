@@ -8,13 +8,18 @@
                 slides: projectImages, 
                 slideTemplate: '_includes/_blocks/slideProject',
                 height: 'auto',
-                visibleCards: 1
+                visibleCards: 1,
+                arrows: false
             } %}
         {% endif %}
         
-        {% include '_projects/projectInfo' with { entry: entry } %}
+        {% include '_projects/projectInfo' with {
+            entry: entry,
+            fadeIn: true
+            }
+        %}
         
-        <div class="project-buttons">
+        <div class="project-buttons fade-in">
             {% include '_includes/_icons/arrows' with {
                 firstArrow: 'red-arrow'
             } %}
@@ -44,7 +49,6 @@
         slideTemplate: '_includes/_blocks/slideProjects',
         height: 'medium',
         visibleCards: 2,
-        arrows: true,
         slideHeader: 'More Projects'
     } %}
 {% endif %}

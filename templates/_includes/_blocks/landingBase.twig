@@ -19,7 +19,8 @@
 
 <div class="landing {{ entry.slug }}">
     <div class="inner {{ textAlignment }}">
-        <div class="text" {% if maxChildMaxWidth is not null %}style="max-width: {{ maxChildMaxWidth }}px;"{% endif %}>
+        <div class="text fade-in" data-cascade style="max-width: 575px">
+        {# <div class="text fade-in" data-cascade {% if maxChildMaxWidth is not null %}style="max-width: {{ maxChildMaxWidth }}px;"{% endif %}> #}
             {% block content %}
                 {# Default content, can be overridden in child templates #}
             {% endblock %}

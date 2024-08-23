@@ -1,161 +1,184 @@
 .buttons {
-    display: flex;
-    gap: $gap-xlarge;
+  display: flex;
+  gap: 60px;
 }
 .close {
-    &:hover {
-      filter: brightness(1.5);
-    }
+  &:hover {
+    filter: brightness(1.5);
   }
+}
+.back {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 40px;
+  z-index: 99999;
+  display: inline-block;
+  text-align: center;
+  padding: 0 120px;
+  max-width: $max-width;
+  width: fit-content;
+  .btn {
+    color: $white;
+  }
+  .btn-arrow {
+    right: unset !important;
+    left: calc(-100% - 8px);
+    @include transform(rotate(180deg));
+  }
+}
 .btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    cursor: !important;
-    font-size: 0.95em;
-    font-weight: 600;
-    color: $red;
-    transition: $transition;
-    border: none;
-    white-space: nowrap;
-    &.icon {
-      padding: 21px;
-      // border: 1px solid $grey;
-      @include flex-center;
-      border-radius: $btn-radius;
-      background: $white;
-    }
-    // arrows that are to the right of text on all buttons
-    .btn-arrow {
-      position: relative;
-      bottom: -1px;
-      right: -10px;
-      display: inline-block;
-      width: 16px;
-      height: 14px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      overflow: hidden;
-      svg {
-        position: absolute;
-        transition: $transition;
-        &:first-of-type {
-            @include transform(
-                translate3d(0, 0, 0)
-            );
-        }
-        &:last-of-type {
-            @include transform(
-                translate3d(-115%, 0, 0)
-            );
-        }
-        * {
-          stroke: $white;
-        }
-        &.red-arrow * {
-          stroke: $red;
-        }
-        &.white-arrow * {
-          stroke: $white;
-        }
-        &.black-arrow * {
-          stroke: $black;
-        }
-      }
-    }
-    &:hover {
-      svg {
-        &:first-of-type {
-          @include transform(
-                translate3d(115%, 0, 0)
-            );
-        }
-        &:last-of-type {
-          @include transform(
-                translate3d(0, 0, 0)
-            );
-        }
-      }
-    }
-  }
-
-  // arrows that are used for carousels
-  .arrows {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer !important;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: $red;
+  transition: $transition;
+  border: none;
+  white-space: nowrap;
+  &.icon {
+    padding: 21px;
+    // border: 1px solid $grey;
+    @include flex-center;
     border-radius: $btn-radius;
-    display: flex;
-    .arrow-prev {
-      border-radius: $btn-radius 0 0 $btn-radius;
-    }
-    .arrow-next {
-      border-radius: 0 $btn-radius $btn-radius 0;
-    }
+    background: $white;
   }
-  .arrow {
-    .btn-arrow {
-        right: unset;
-        bottom: unset;
-    }
-    &.dark {
-      background-color: $white;
-      svg {
-        fill: $red;
+  // arrows that are to the right of text on all buttons
+  .btn-arrow {
+    position: relative;
+    bottom: -.5px;
+    right: -8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    svg {
+      position: absolute;
+      transition: $transition;
+      &:first-of-type {
+          @include transform(
+              translate3d(0, 0, 0)
+          );
+      }
+      &:last-of-type {
+          @include transform(
+              translate3d(-115%, 0, 0)
+          );
+      }
+      * {
+        stroke: $white;
+      }
+      &.red-arrow * {
+        stroke: $red;
+      }
+      &.white-arrow * {
+        stroke: $white;
+      }
+      &.black-arrow * {
+        stroke: $black;
       }
     }
-    &.arrow-prev svg {
-        &:first-of-type {
-            @include transform(
-                translate3d(-8px, 0, 0),
-                rotate(180deg)
-            );
-        }
-        &:last-of-type {
-            @include transform(
-                translate3d(calc(115% + 8px), 0, 0),
-                rotate(180deg)
-            );
-        }
-    }
-    &.arrow-next svg {
-        &:first-of-type {
-            @include transform(
-                translate3d(-8px, 0, 0)
-            );
-        }
-        &:last-of-type {
-            @include transform(
-                translate3d(calc(-115% - 8px), 0, 0)
-            );
-        }
-    }
-    &:hover {
-        &.arrow-prev svg {
-            &:first-of-type {
-                @include transform(
-                    translate3d(calc(-115% - 8px), 0, 0),
-                    rotate(180deg)
-                );
-            }
-            &:last-of-type {
-                @include transform(
-                    translate3d(-8px, 0, 0),
-                    rotate(180deg)
-                );
-            }
-        }
-        &.arrow-next svg {
-            &:first-of-type {
-                @include transform(
-                    translate3d(calc(115% + 8px), 0, 0)
-                );
-            }
-            &:last-of-type {
-                @include transform(
-                    translate3d(-8px, 0, 0)
-                );
-            }
-        }
-    }
-    &.disabled {
-      opacity: 0;
+  }
+  &:hover {
+    svg {
+      &:first-of-type {
+        @include transform(
+              translate3d(115%, 0, 0)
+          );
+      }
+      &:last-of-type {
+        @include transform(
+              translate3d(0, 0, 0)
+          );
+      }
     }
   }
+}
+
+// arrows that are used for carousels
+.arrows {
+  border-radius: $btn-radius;
+  display: flex;
+  .arrow-prev {
+    border-radius: $btn-radius 0 0 $btn-radius;
+  }
+  .arrow-next {
+    border-radius: 0 $btn-radius $btn-radius 0;
+  }
+}
+.arrow {
+  .btn-arrow {
+      right: unset;
+      bottom: unset;
+  }
+  &.dark {
+    background-color: $white;
+    svg {
+      fill: $red;
+    }
+  }
+  &.arrow-prev svg {
+      &:first-of-type {
+          @include transform(
+              translate3d(0, 0, 0),
+              rotate(180deg)
+          );
+      }
+      &:last-of-type {
+          @include transform(
+              translate3d(115%, 0, 0),
+              rotate(180deg)
+          );
+      }
+  }
+  &.arrow-next svg {
+      &:first-of-type {
+          @include transform(
+              translate3d(0, 0, 0)
+          );
+      }
+      &:last-of-type {
+          @include transform(
+              translate3d(-115%, 0, 0)
+          );
+      }
+  }
+  &:hover {
+      &.arrow-prev svg {
+          &:first-of-type {
+              @include transform(
+                  translate3d(-115%, 0, 0),
+                  rotate(180deg)
+              );
+          }
+          &:last-of-type {
+              @include transform(
+                  translate3d(0, 0, 0),
+                  rotate(180deg)
+              );
+          }
+      }
+      &.arrow-next svg {
+          &:first-of-type {
+              @include transform(
+                  translate3d(115%, 0, 0)
+              );
+          }
+          &:last-of-type {
+              @include transform(
+                  translate3d(0, 0, 0)
+              );
+          }
+      }
+  }
+  &.disabled {
+    opacity: 0;
+  }
+}

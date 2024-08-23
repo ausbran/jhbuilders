@@ -131,6 +131,7 @@
                 &:last-of-type {
                     .image {
                         border-radius: $box-radius;
+                        transition: border-radius $transition;
                     }
                 }
                 &.active {
@@ -143,6 +144,11 @@
                     }
                     .inner {
                         opacity: 1;
+                    }
+                    &:last-of-type {
+                        .image {
+                            border-radius: $box-radius 0 0 $box-radius;
+                        }
                     }
                 }
             }

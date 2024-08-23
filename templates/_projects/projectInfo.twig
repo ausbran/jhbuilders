@@ -1,18 +1,17 @@
 {% set size = size ?? 'h3' %}
 {% set class = class ?? null %}
+{% set fadeIn = fadeIn is defined and fadeIn == true ? 'fade-in' : '' %}
 
-<div class="project-info {{ size }}">
-    <h3 class="{{ class }}">{{ entry.title }}</h2>
+<div class="project-info {{ size }} {{ fadeIn }}">
+    <h3 class="{{ class }}">{{ entry.title }}</h3>
 
     {% set location = entry.projectLocation.one() %}
     {% if location %}
-        <h3>
-            {{ location.locality }}, {{ location.administrativeArea }}
-        </h3>
+        <h3>{{ location.locality }}, {{ location.administrativeArea }}</h3>
     {% endif %}
 
     {% set date = entry.projectDate %}
     {% if date %}
-        <h3>{{ date | date('Y') }}</h2>
+        <h3>{{ date | date('Y') }}</h3>
     {% endif %}
 </div>

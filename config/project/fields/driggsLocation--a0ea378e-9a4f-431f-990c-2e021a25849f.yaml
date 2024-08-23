@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: driggsLocation
+instructions: null
+name: 'Driggs Location'
+searchable: false
+settings:
+  maxAddresses: 1
+  minAddresses: null
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Addresses

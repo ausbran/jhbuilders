@@ -6,8 +6,9 @@
 {% set arrows = arrows ?? true %}
 {% set marginTop = marginTop ?? 'margin-top' %}
 {% set marginBottom = marginBottom ?? 'margin-bottom' %}
+{% set fadeIn = fadeIn is defined ? 'fade-in' : '' %}
 
-<div id="{{ slideHeader|kebab }}" class="slider-outer {{ marginTop }} {{ marginBottom }}">
+<div id="{{ slideHeader|kebab }}" class="slider-outer {{ marginTop }} {{ marginBottom }} {{ fadeIn }}" data-cascade>
     {% if slideHeader %}
         <h3 class="slider-header margin-bottom-sm">{{ slideHeader }}</h3>
     {% endif %}

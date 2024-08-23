@@ -1,26 +1,30 @@
 {% extends "index" %}
 
-{% set bodyClass = 'red' %}
-
 {% block content %}
+<div class="back">
+    {% include '_includes/_blocks/button' with {
+        link: '/company',
+        label: 'Back to all careers',
+        firstArrow: 'white-arrow',
+        secondArrow: 'white-arrow'
+    } %}
+</div>
 <div class="careers-outer">
     <div class="text center-left">
         <h1>{{ entry.title }}</h1>
         <div>
             <h3>Description</h3>
-            {{ entry.description }}
+            {{ entry.description|replace({'<p>': '<p class="thin">'})|raw }}
         </div>
         <div>
             <h3>Requirements</h3>
-            {{ entry.requirements }}
+            {{ entry.requirements|replace({'<p>': '<p class="thin">'})|raw }}
         </div>
         <div>
             <h3>Duties</h3>
-            {{ entry.duties }}
+            {{ entry.duties|replace({'<p>': '<p class="thin">'})|raw }}
         </div>
     </div>
-    <form class="form">
-        <h2>Tell us about yourself & share your resume and cover letter.</h2>
-    </form>
+    {{ craft.formie.renderForm('careerForm') }}
 </div>
 {% endblock %}

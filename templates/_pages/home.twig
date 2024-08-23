@@ -3,7 +3,10 @@
 {% block content %}
     {% set featuredProject = entry.featuredProject.one() %}
     {% if featuredProject %}
-        {% include '_includes/_blocks/landingFeatured' %}
+        {% include '_includes/_blocks/landingFeatured' with {
+            block: entry,
+            maxWidth: entry.topMaxWidth
+        } %}
     {% else %}
         <p class="error-text">No featured project selected.</p>
     {% endif %}
@@ -12,7 +15,8 @@
         block: entry,
         handle: 'bannerText',
         marginTop: '',
-        link: entry.buttonLink,
-        label: entry.buttonLabel
+        link: entry.buttonLinkEntries.one().getUrl(),
+        label: entry.buttonLabel,
+        maxWidth: entry.bottomMaxWidth
     } %}
 {% endblock %}

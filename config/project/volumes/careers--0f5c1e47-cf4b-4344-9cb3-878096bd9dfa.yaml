@@ -1,0 +1,50 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  1c8063f0-142d-49d3-b6f0-fd16e64d9ae7:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-08-22T16:36:42+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 0606da5e-948d-454a-bd55-6c11826148a2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2a0a833a-d0e4-4493-9591-88ad14086ab7
+        userCondition: null
+fs: uploads
+handle: careers
+name: Careers
+sortOrder: 10
+subpath: careers
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

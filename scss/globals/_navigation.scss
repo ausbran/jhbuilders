@@ -1,3 +1,11 @@
+body.red {
+  nav {
+    &:before {
+      background-color: $red !important;
+      border: unset !important;
+    }
+  }
+}
 nav {
   width: 100vw;
   height: 100px;
@@ -114,15 +122,18 @@ nav {
     left: 0;
     width: 87vw;
     height: 100vh;
-    @include transform(
-      translate3d(-100.1%,0,0)
-    );
-    padding: 150px $padding-large $padding-large $padding-large;
+    @include transform(translate3d(-100.1%,0,0));
+    padding: 150px $padding $padding $padding;
     transition: $transition-long;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    // undecided on padding for nav. come back to this
+    // @include respond-to(1650px) {
+    //   padding-left: $scroll-padding;
+    //   padding-right: $scroll-padding;
+    // }
     .primary-links,
     .featured-projects,
     .brand-text {
@@ -239,10 +250,10 @@ nav {
     margin: unset;
     background: transparent;
     transition: background-color $transition;
-    .bar {
-      height: inherit;
-      width: inherit;
-    }
+    // .bar {
+    //   height: inherit;
+    //   width: inherit;
+    // }
     &:after {
       opacity: .8;
       visibility: visible;

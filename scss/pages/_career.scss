@@ -1,14 +1,25 @@
 .careers-outer {
     max-width: $max-width;
-    padding: $padding;
+    padding: $margin-xlarge $padding $padding $padding;
     margin: auto;
     display: flex;
+    align-items: flex-start;
     gap: $gap-large;
     .text {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: $gap-medium;
+        gap: $gap;
+        h1 {
+            margin-left: -.04em;
+            margin-top: -.15em;
+            // to align large header with body copy
+            margin-bottom: $margin-small;
+        }
+        h3 {
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
         * {
             color: $white;
         }
@@ -17,12 +28,108 @@
         }
     }
     .text,
-    .form {
+    .fui-i {
         width: 50%;
     }
-    .form {
-        h2 {
+    .fui-i {
+        // Override Formie CSS variables
+        --fui-input-line-height: 2;
+        --fui-btn-line-height: 2;
+        --fui-focus-border-color: var(--grey);
+        --fui-primary-color-hover: #fff;
+        --fui-submit-btn-color: var(--red);
+        --fui-primary-color: #fff;
+        --fui-alert-error-color: #fff;
+        --fui-alert-success-color: #fff;
+        --fui-input-background-color: transparent;
+        --fui-error: #fff;
+        --fui-error-color: #fff;
+        --fui-border: 0 solid #fff;
+        --fui-border-color: #fff;
+        --fui-input-error-color: #fff;   
+        --fui-submit-btn-color-hover: var(--red);
+
+        position: sticky;
+        top: 125px;
+        @include flex-center;
+        flex-direction: column;
+        h2,
+        .fui-error-message,
+        input,
+        input::placeholder,
+        .iti__selected-country,
+        textarea,
+        textarea::placeholder {
             color: $white;
+        }
+        * {
+            font-weight: 600;
+        }
+        textarea {
+            min-height: 75px;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+        }
+        .fui-heading.fui-heading-h2 {
+            max-width: 80%;
+            width: 100%;
+            line-height: 1em;
+            margin-bottom: $margin-small;
+        }
+        .fui-alert-success {
+            height: 50%;
+            width: 100%;
+            @include flex-center;
+            background-color: transparent;
+            border: 1px solid $white;
+            transition: $transition;
+            p {
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+        .fui-submit {
+            width: 100%;
+        }
+        .fui-input[type="file"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+        .fui-input[type="file"],
+        .fui-submit {
+            &:hover {
+                opacity: .8;
+                @include transform(translate3d(0,-1px,0))
+            }
+        }
+        .fui-input[type="file"]::-webkit-file-upload-button {
+            text-align: left;
+            background-color: $red;  // Your custom background color
+            color: $white;  // Your custom text color
+            border: none;  // Remove default border
+            cursor: pointer;
+            font: inherit;
+            margin-right: $margin-small;
+        }
+        .fui-input[type="file"]::-moz-file-upload-button {
+            text-align: left;
+            background-color: $red;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+            margin-right: $margin-small;
+        }     
+        .careers-outer .fui-i .fui-input[type=file]:after {
+            content: url('web/assets/svg/arrow.svg');
+            display: block;
+            width: 14px;
+            height: 16px;
         }
     }
 }

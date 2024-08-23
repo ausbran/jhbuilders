@@ -10,12 +10,10 @@
         </div>
     </a>
     <div class="text">
-        <div class="project-info">
-            {% include '_projects/projectInfo' with {
-                entry: slide,
-                size: 'h4'
-            } %}
-        </div> 
+        {% include '_projects/projectInfo' with {
+            entry: slide,
+            size: 'h4'
+        } %}
         {% include '_includes/_blocks/button' with {
             link: slide.url,
             label: 'Explore Project',

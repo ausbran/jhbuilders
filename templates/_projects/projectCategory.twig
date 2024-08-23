@@ -16,7 +16,8 @@
                     %}
                     {% include '_projects/projectInfo' with {
                         entry: project,
-                        class: 'highlight'
+                        class: 'highlight',
+                        fadeIn: true
                     } %}
                 </div>
                 {% set asset = project.projectImages.one() %}

@@ -1,10 +1,66 @@
 {% extends "index" %}
 
 {% block content %}
-
-<div class="landing-section">
-    <h1>{{ entry.title }}</h1>
-    <p>{{ entry.text }}</p>
+<div class="landing project-gate">
+    <div class="project-overview bw contact">
+        <div class="text fade-in">
+            <h2 class="highlight">Jackson Office</h2>
+            <div>
+                {% set location = entry.jacksonLocation.one() %}
+                {% if location %}
+                    <a target="_blank" href="{{ entry.jacksonGoogle }}">
+                        {{ location.addressLine1 }}, 
+                        {{ location.locality }}, 
+                        {{ location.administrativeArea }} 
+                        {{ location.postalCode }}
+                    </a>
+                {% endif %}
+                <a target="_blank" href="{{ entry.jacksonPhone }}">{{ entry.jacksonPhone|replace({'tel:': ''}) }}</a>
+            </div>
+            {% include '_includes/_blocks/button' with { 
+                link: '#', 
+                label: 'Get in touch'
+            } %}
+        </div>
+        <div class="background gradient">
+            {% for asset in entry.jacksonImage %}
+                {% include '_includes/_blocks/asset' with {
+                    width: 960,
+                    height: 1080,
+                    quality: 100
+                } %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="project-overview bw contact">
+        <div class="text fade-in">
+            <h2 class="highlight">Driggs Office</h2>
+            <div>
+                {% set location = entry.driggsLocation.one() %}
+                {% if location %}
+                    <a target="_blank" href="{{ entry.driggsGoogle }}">
+                        {{ location.addressLine1 }}, 
+                        {{ location.locality }}, 
+                        {{ location.administrativeArea }} 
+                        {{ location.postalCode }}
+                    </a>
+                {% endif %}
+                <a target="_blank" href="{{ entry.driggsPhone }}">{{ entry.driggsPhone|replace({'tel:': ''}) }}</a>
+            </div>
+            {% include '_includes/_blocks/button' with { 
+                link: '#', 
+                label: 'Get in touch'
+            } %}
+        </div>
+        <div class="background gradient">
+            {% for asset in entry.driggsImage %}
+                {% include '_includes/_blocks/asset' with {
+                    width: 960,
+                    height: 1080,
+                    quality: 100
+                } %}
+            {% endfor %}
+        </div>
+    </div>
 </div>
-
 {% endblock %}

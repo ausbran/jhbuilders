@@ -4,6 +4,12 @@ $black: #555555;
 $grey: #E5E5E5;
 $white: #FFFFFF;
 
+// Convert SCSS variable to CSS variable
+:root {
+    --red: #{$red};
+    --grey: #{$grey};
+}
+
 // sizing---------------------------------------
 $width: calc(100vw - 100px);
 $width-medium: calc(100vw - 60px);
