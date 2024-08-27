@@ -12,9 +12,9 @@ export function initScroll() {
             if (entry.isIntersecting) {
                 element.classList.add('visible');
                 element.classList.remove(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME);
-                if (element.hasAttribute('data-cascade')) {
-                    element.style.setProperty('--animation-order', animationOrderCounter++);
-                }
+                // if (element.hasAttribute('data-cascade')) {
+                //     element.style.setProperty('--animation-order', animationOrderCounter++);
+                // }
                 observer.unobserve(element);
             }
         });
@@ -29,7 +29,8 @@ export function initScroll() {
         animationOrderCounter = 0;
 
         const observer = new IntersectionObserver(onIntersection, {
-            threshold: 0.4,
+            rootMargin: '-50px 0px 0px 0px',
+            threshold: 0
         });
 
         animationElements.forEach((element) => {

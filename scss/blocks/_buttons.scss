@@ -8,24 +8,29 @@
   }
 }
 .back {
+  transition: $transition;
   position: fixed;
   left: 0;
   right: 0;
   margin: auto;
   top: 40px;
-  z-index: 99999;
+  z-index: 999;
   display: inline-block;
   text-align: center;
   padding: 0 120px;
   max-width: $max-width;
   width: fit-content;
+  .btn-arrow {
+    position: absolute !important;
+    right: unset !important;
+    left: -25px;
+    bottom: 1.5px !important;
+    @include transform(rotate(180deg));
+  }
+}
+.red .back {
   .btn {
     color: $white;
-  }
-  .btn-arrow {
-    right: unset !important;
-    left: calc(-100% - 8px);
-    @include transform(rotate(180deg));
   }
 }
 .btn {
@@ -33,9 +38,9 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer !important;
-  font-size: 0.9em;
+  font-size: .9rem;
   font-weight: 600;
-  color: $red;
+  color: $black;
   transition: $transition;
   border: none;
   white-space: nowrap;
@@ -180,5 +185,21 @@
   }
   &.disabled {
     opacity: 0;
+  }
+}
+
+@include respond-to-max($desktop) {
+  .btn {
+    &.icon {
+      padding: 17px;
+    }
+  }
+  .buttons {
+    gap: 40px;
+  }
+}
+@include respond-to-max($tablet) {
+  .btn {
+    font-size: .85rem;
   }
 }

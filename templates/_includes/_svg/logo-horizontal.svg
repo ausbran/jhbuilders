@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="135.35" height="44" viewBox="0 0 135.35 44">
   <g id="logo" transform="translate(-152.107 -31)">
-    <text id="Builders" transform="translate(185.457 64)" fill="#555" font-size="30" font-family="HelveticaNowDisplay-Lt, Helvetica Now Display"><tspan x="0" y="0">Builders</tspan></text>
+    <text id="Builders" transform="translate(185.457 64)" fill="#555" font-size="30" font-family="HelveticaNowDisplay-Lt, Helvetica Now"><tspan x="0" y="0">Builders</tspan></text>
     <path id="JH" d="M26.993,9.383V1.225h4.442V0H0V14.507H3.6V15a9.313,9.313,0,0,0,.544,3.491A2.075,2.075,0,0,0,6.224,19.5a2.062,2.062,0,0,0,2.09-1.1,5.675,5.675,0,0,0,.3-2.206V1.225h4.471V16.118a8.487,8.487,0,0,1-.943,4.326q-1.6,2.7-5.763,2.7T.8,20.96A7.573,7.573,0,0,1,0,19.294v4.552H31.435V22.622H26.993V13.07H18.631v9.552H14.2V1.225h4.427V9.383Z" transform="translate(152.107 41.896)" fill="#ed3127"/>
   </g>
 </svg>

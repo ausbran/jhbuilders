@@ -11,8 +11,8 @@ $white: #FFFFFF;
 }
 
 // sizing---------------------------------------
-$width: calc(100vw - 100px);
-$width-medium: calc(100vw - 60px);
+$width: calc(100vw - 150px);
+$width-medium: calc(100vw - 100px);
 $width-small: calc(100vw - 40px);
 $max-width: 1550px;
 
@@ -51,6 +51,9 @@ $gap: 30px;
 $gap-medium: 20px;
 $gap-small: 10px;
 $scroll-padding: calc((100% - $max-width) / 2);
+$scroll-padding-medium: 75px;
+$scroll-padding-small: 50px;
+$scroll-padding-xsmall: 25px;
 
 // element heights------------------------------
 $min-box-height: 700px;
@@ -76,3 +79,16 @@ $h2: 2.5rem;   // 40px
 $h3: 1.625rem; // 26px
 $h4: 1.375rem; // 22px
 $p: 1rem;   // 16px
+
+
+$h1-desktop: 4rem;  // 56px
+$h2-desktop: 2.5rem;  // 40px
+$h3-desktop: 1rem;    // 16px
+$h4-desktop: 1.125rem; // 18px
+
+
+$h1-mobile: 3.25rem;  // 44px
+$h2-mobile: 2.25rem;     // 32px
+$h3-mobile: 1.25rem; // 14px
+$h4-mobile: 1rem;     // 16px
+$p-mobile: .9rem;   // 16px

@@ -6,7 +6,7 @@
   @include flex-center;
   overflow: hidden;
   background: $white;
-  padding: 75px 50px;
+  padding: 75px;
   .inner {
     max-width: $max-width;
     display: flex;
@@ -95,17 +95,32 @@
   &.project {
     background: $white;
   }
+  @include respond-to-max($desktop-xlarge) {
+    padding: 50px;
+  } // end 1500px
   @include respond-to-max($desktop) {
-    .inner {
-      padding: $padding;
-    }
   } // end $desktop
   @include respond-to-max($tablet) {
-
   } // end $tablet
   @include respond-to-max($mobile) {
-    .inner {
-      padding: $padding-small;
+    padding: 45px 25px;
+    &.home {
+      .buttons.wrapper {
+        margin-left: -25px;
+        overflow: scroll;
+        border-top: 1px solid $white;
+        padding-top: 15px;
+        width: calc(100% + 50px);
+        a:nth-of-type(1) {
+          padding-left: 25px;
+        }
+        .buttons {
+          padding-right: 32px;
+          a {
+            padding-left: unset;
+          }
+        }
+      }
     }
   } // end $mobile
 } // end landing

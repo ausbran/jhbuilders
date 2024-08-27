@@ -56,10 +56,14 @@ export function initProject(container) {
             backgroundElement.style.transition = 'opacity 0.5s';
             backgroundElement.style.opacity = 0;
 
+            // Prepare sliderContainer for fade-in
+            sliderContainer.style.display = 'block';
+            sliderContainer.style.opacity = 0;
+            sliderContainer.style.transition = 'opacity 0.5s'; // Ensure this is set
+
             setTimeout(() => {
                 inner.classList.add('active');
-                sliderContainer.style.display = 'block';
-                sliderContainer.style.opacity = 1;
+                sliderContainer.style.opacity = 1; // Now trigger the fade-in
             }, timeout);
 
             slides.forEach((slide, index) => {
@@ -79,7 +83,7 @@ export function initProject(container) {
 
     const projectArrows = buttons.querySelectorAll('.project-buttons .arrow');
 
-    // arrow button clicks
+    // Arrow button clicks
     projectArrows.forEach(arrow => {
         arrow.addEventListener('click', function () {
             if (arrow.classList.contains('arrow-next')) {

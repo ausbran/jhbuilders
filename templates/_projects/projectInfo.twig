@@ -2,7 +2,7 @@
 {% set class = class ?? null %}
 {% set fadeIn = fadeIn is defined and fadeIn == true ? 'fade-in' : '' %}
 
-<div class="project-info {{ size }} {{ fadeIn }}">
+<div class="project-info {{ size }} {% if fadeIn == true %}fade-in{% endif %}" {% if fadeIn == true %}data-cascade{% endif %}>
     <h3 class="{{ class }}">{{ entry.title }}</h3>
 
     {% set location = entry.projectLocation.one() %}

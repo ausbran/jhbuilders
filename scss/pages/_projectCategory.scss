@@ -34,7 +34,7 @@
             align-items: flex-end;
             gap: $gap-large;
             * {
-                color: $white;
+                color: $white !important;
             }
             .btn {
                 // for highlight effect to work
@@ -57,10 +57,44 @@
             opacity: .2;
         }
     }
+    @include respond-to-max($desktop-xlarge) {
+        width: $width-medium;
+    }
+    @include respond-to-max($desktop) {
+        width: $width-medium;
+    }
+    @include respond-to-max($tablet) {
+        .back {
+            display: none !important;
+        }
+    }
+    @include respond-to-max($mobile) {
+        width: 100vw;
+        .project {
+            border-radius: unset !important;
+        }
+    }
 }
+
 .project-images {
     position: absolute;
 }
+.back {
+    display: inline-flex !important;
+    gap: $gap-large;
+    a {
+        color: $black;
+        transition: $transition;
+        &:hover {
+            opacity: .5;
+            @include transform(translate3d(0,-1px,0));
+        }
+        &.active {
+            color: $red;
+        }
+    }
+}
+
 .project-overview {
     width: 50%;
     height: 100%;

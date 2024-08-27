@@ -55,6 +55,7 @@ html {
 }
 h1, .h1 {
   @include heading($h1);
+  line-height: 1em;
 }
 h2, .h2 {
   @include heading($h2);
@@ -144,20 +145,11 @@ a {
   }
 }
 @include respond-to-max($desktop-large) {
-  p {
-    font-size: .875em;
-  }
+  // p {
+  //   font-size: .875em;
+  // }
 }
 @include respond-to-max($desktop) {
-  h1 {
-    font-size: 3.5em;
-  }
-  h2 {
-    font-size: 2.5em;
-  }
-  h3 {
-    font-size: 1.5em;
-  }
   .landing-section {
   .top-left,
   .top-center,
@@ -167,15 +159,6 @@ a {
   }
 }
 @include respond-to-max($tablet) {
-  h1 {
-    font-size: 3em;
-  }
-  h2 {
-    font-size: 2em;
-  }
-  h3 {
-    font-size: 1.25em;
-  }
   .landing-section {
   .top-left,
   .top-center,
@@ -185,7 +168,22 @@ a {
   }
 }
 @include respond-to-max($mobile) {
+  h1, .h1 {
+    font-size: $h1-mobile;
+  }
+
+  h2, .h2 {
+    font-size: $h2-mobile;
+  }
+
+  h3, .h3 {
+    font-size: $h3-mobile;
+  }
+
+  h4, .h4 {
+    font-size: $h4-mobile;
+  }
   p {
-    font-size: .8em;
+    font-size: $p-mobile;
   }
 }

@@ -18,7 +18,7 @@
         .project-info,
         .project-buttons,
         h3 {
-            transition: $transition-medium;
+            transition: $transition-medium !important;
         }
         &.active {
             h3 {
@@ -134,16 +134,55 @@
             &:nth-of-type(2) picture {
                 border-radius: 0 0 0 $box-radius;
             }
-            &:nth-last-child(odd):nth-last-of-type(2) {
-                picture {
-                    border-radius: 0 $box-radius 0 0;
-                }
+            // &:nth-last-child(odd):nth-last-of-type(1) {
+            //     picture {
+            //         border-radius: 0 $box-radius 0 0;
+            //     }
+            // }
+            // &:nth-last-child(even):nth-last-of-type(1) {
+            //     picture {
+            //         border-radius: 0 0 $box-radius 0;
+            //     }
+            // }
+        }
+    }
+    @include respond-to-max($desktop) {
+        .inner {
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            gap: $gap-medium;
+        }
+        .slider-container {
+            bottom: unset;
+            top: 100px;
+            height: calc(100vh - 250px);
+            .slider .slide {
+                height: calc((100vh - 250px) / 2);
             }
-            &:nth-last-child(even):nth-last-of-type(1) {
-                picture {
-                    border-radius: 0 0 $box-radius 0;
-                }
+        }
+        .inner.active .project-info {
+            @include transform(translate3d(0,15px,0));
+        }
+    }
+    @include respond-to-max($mobile) {
+        padding-bottom: 25px !important;
+        .project-info h3:last-of-type {
+            display: none;
+        }
+        .inner.active{
+            .project-buttons,
+            .project-info {
+                @include transform(translate3d(0,0,0));
             }
+        }
+    }
+    @include respond-to-max-height(600px) {
+        .slider-container {
+            .slider .slide {
+                height: calc((250px / 2));
+            }
+            height: 250px;
         }
     }
 }

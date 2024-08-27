@@ -1,0 +1,5 @@
+<aside class="back">
+    <a class="{% if craft.app.request.getSegment(2) == 'all' %}active{% endif %}" href="/projects/all">All Projects</a>
+    <a class="{% if craft.app.request.getSegment(2) == 'new-builds' %}active{% endif %}" href="/projects/new-builds">New Builds</a>
+    <a class="{% if craft.app.request.getSegment(2) == 'remodels' %}active{% endif %}" href="/projects/remodels">Remodels</a>
+</aside>

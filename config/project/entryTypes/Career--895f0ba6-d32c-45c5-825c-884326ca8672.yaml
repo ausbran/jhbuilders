@@ -102,7 +102,7 @@ fieldLayouts:
         name: Content
         uid: 60748f44-b291-409e-a8bd-5c6ce090d1e0
         userCondition: null
-handle: Career
+handle: career
 hasTitleField: true
 icon: ''
 name: Career

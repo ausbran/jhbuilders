@@ -2,15 +2,9 @@
 
 	{# top bar #}
     <div class="bar">
-        {% if craft.rebrand.isLogoUploaded() %}
-            <a href="{{ currentSite.baseUrl }}" class="logo">
-                <img src="{{ craft.rebrand.getLogo().url }}" alt="{{ siteName }} Logo">
-            </a>
-        {% else %}
-            <a href="{{ currentSite.baseUrl }}" class="logo">
-                {% include '_includes/_svg/logo-vertical.svg' %}
-            </a>
-        {% endif %}
+        <a href="{{ currentSite.baseUrl }}" class="logo">
+            {% include '_includes/_svg/logo-vertical.svg' %}
+        </a>
         <div class="icons">
             {% include '_includes/_icons/nav' %}
             {% include '_includes/_icons/close' %}

@@ -1,4 +1,5 @@
 import { initNavigation } from './navigation.js';
+import { initLogo } from './logo.js';
 import { initProjectOverview } from './projectOverview.js';
 import { initPress } from './press.js';
 import { initSlider } from './slider.js';
@@ -6,26 +7,36 @@ import { initLandingFeatured } from './landingFeatured.js';
 import { initProject } from './project.js';
 import { initLoad } from './load.js';
 import { initScroll } from './scroll.js';
+import { body, nav } from './globals.js';
 
-// Ensure the loading screen is visible and content is hidden immediately on DOMContentLoaded
+// loading screen
 window.addEventListener('DOMContentLoaded', () => {
     const loadingScreen = document.getElementById('loading-screen');
-    const body = document.body;
-    loadingScreen.classList.add('visible'); // Make sure loading screen is visible
-    body.classList.add('hidden-content');  // Hide the main content
+    loadingScreen.classList.add('visible');
+    body.classList.add('hidden-content');
 });
 
 document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
-    initLoad(); // Handle the loading screen hide after video ends
+    initLogo();
+    initLoad();
     const namespace = document.querySelector('main').dataset.barbaNamespace;
     initializeComponents(document, namespace);
 });
 
 function initializeComponents(container, namespace) {
     initScroll();
-    const body = document.body;
     body.classList.remove('red');
+    const video = container.querySelector('video');
+
+    if (video) {
+        video.play();
+        video.addEventListener('playing', () => {
+            setTimeout(initLogo, 100); // Ensure logo color adjustment after video starts
+        });
+    } else {
+        setTimeout(initLogo, 100); // Delay to ensure content is fully loaded
+    }
 
     switch (namespace) {
         case 'projectCategory':
@@ -35,22 +46,31 @@ function initializeComponents(container, namespace) {
             initProject(container);
             initSlider();
             break;
+        case 'blog':
+            nav.classList.add('border');
+            break;
         case 'magazine':
+            nav.classList.add('border');
             const pdfViewer = container.querySelector('#pdf-viewer');
             if (pdfViewer) {
                 const pdfUrl = pdfViewer.dataset.url;
                 initPress(pdfUrl);
             }
             break;
-        case 'Career':
+        case 'career':
+            nav.classList.add('border');
             body.classList.add('red');
+            if (typeof craft !== 'undefined' && craft.formie) {
+                const forms = container.querySelectorAll('form[data-fui-form]');
+                forms.forEach((form) => {
+                    const formHandle = form.getAttribute('data-fui-form-handle');
+                    craft.formie.renderFormJs(formHandle);
+                });
+            }
             break;
         case 'story':
+            nav.classList.add('border');
             initSlider();
-            const video = container.querySelector('.background video');
-            if (video) {
-                video.play();
-            }
             break;
         default:
             const carousel = container.querySelector('.carousel');
@@ -61,6 +81,7 @@ function initializeComponents(container, namespace) {
             if (slider) {
                 initSlider();
             }
+            setTimeout(initLogo, 100); // Delay to ensure content is fully loaded
             break;
     }
 }
@@ -77,11 +98,9 @@ barba.init({
         afterEnter(data) {
             const namespace = data.next.container.dataset.barbaNamespace;
             initializeComponents(data.next.container, namespace);
-
-            // Reset scroll position and re-initialize scroll animations
             window.scrollTo(0, 0);
-            initScroll(); // Ensure animations are initialized on the new page
+            initScroll(); 
+            initLogo();
         }
     }]
 });
-

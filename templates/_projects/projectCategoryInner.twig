@@ -1,0 +1,29 @@
+
+{% if projects | length %}
+    {% for project in projects %}
+        <div class="project gradient">
+            <div class="text">
+                {# opposite ordering of btn and project-info to use ~ operator in CSS for highlight effect #}
+                {% include '_includes/_blocks/button' with {
+                    link: project.url,
+                    label: 'Explore Project',
+                    secondArrow: 'white-arrow',
+                    fadeIn: true
+                    }
+                %}
+                {% include '_projects/projectInfo' with {
+                    entry: project,
+                    class: 'highlight',
+                    fadeIn: true
+                } %}
+            </div>
+            {% set asset = project.projectImages.one() %}
+            {% if asset %}
+                <div class="overlay"></div>
+                {% include '_includes/_blocks/asset' %}
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No projects found for the selected category.</p>
+{% endif %}

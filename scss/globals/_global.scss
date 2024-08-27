@@ -91,6 +91,7 @@ ul {
   max-width: $max-width;
 }
 .gradient:before {
+  pointer-events: none;
   z-index: 2;
   opacity: .4;
   content: "";
@@ -129,7 +130,8 @@ ul {
       scale(1)
     );
   }
-  &:hover {
+  &:hover,
+  .text:hover ~ {
     .background,
     img {
       filter: grayscale(0);
@@ -141,7 +143,8 @@ ul {
 }
 .scale {
   .background,
-  img {
+  img,
+  video {
     transition: $transition-medium;
     @include transform(
       scale(1)
@@ -149,7 +152,8 @@ ul {
   }
   &:hover {
     .background,
-    img {
+    img,
+    video {
       @include transform(
         scale(1.02)
       );
@@ -221,7 +225,7 @@ ul {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity $transition-medium, transform $transition-medium !important;
+  transition: opacity .8s, transform .8s !important;
 }
 
 .fade-in.visible {
@@ -237,9 +241,6 @@ ul {
 .fade-in[data-cascade] {
   transition-delay: calc(var(--animation-order) * 0.1s) !important;
 }
-
-
-
 
 /* Define margin classes */
 .margin-top-xs {
@@ -290,10 +291,24 @@ ul {
   height: 750px !important; 
 }
 
+@include respond-to-max($desktop-xlarge) {
+  .margin-top {
+    margin-top: 50px;
+  }
+  .margin-bottom {
+    margin-bottom: 50px;
+  }
+}
 @include respond-to-max($desktop) {
   .outer {
     width: $width-medium;
     margin: $margin-medium;
+  }
+  .margin-top-xl {
+    margin-top: $margin-large;
+  }
+  .margin-bottom-xl {
+    margin-bottom: $margin-large;
   }
 }
 @include respond-to-max($tablet) {

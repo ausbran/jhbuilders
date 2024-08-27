@@ -1,10 +1,72 @@
 {% extends "index" %}
 
 {% block content %}
-<div class="text center-center margin-top-lg margin-bottom fade-in" data-cascade>
-    <h1>{{ entry.title }}</h1>
-    {{ entry.text }}
+
+<div class="press-outer">
+    <div class="back">
+        {% include '_includes/_blocks/button' with {
+            link: '/company',
+            label: 'Back to all press',
+            firstArrow: 'red-arrow',
+            secondArrow: 'black-arrow'
+        } %}
+    </div>
+
+    <div class="text center-center margin-top-xl margin-bottom fade-in {% if entry.type == 'blog' %}blog{% endif %}" data-cascade>
+        {% set date = entry.date %}
+        {% if date %}
+            <h3>{{ date | date('Y') }}</h3>
+        {% endif %}
+        <h1>{{ entry.title }}</h1>
+        {% if entry.text %}
+            {{ entry.text }}
+        {% endif %}
+        {% if entry.type == 'website' %}
+            {% include '_includes/_blocks/button' with {
+                link: entry.websiteLink,
+                label: 'View website',
+                firstArrow: 'red-arrow',
+                secondArrow: 'black-arrow',
+                newTab: true,
+                class: 'website-link'
+            } %}
+        {% endif %}
+    </div>
+
+    {% if entry.type == 'magazine' %}
+        <div id="pdf-viewer" class="pdf-viewer" data-url="{{ entry.magazineFile.one().url }}"></div>
+
+    {% elseif entry.type == 'website' %}
+        <a href="{{ entry.websiteLink }}" target="_blank" class="website-image fade-in" data-cascade>
+            <h2>View website</h2>
+            {% for asset in entry.pressImage %}
+                {% include '_includes/_blocks/asset' with {
+                    asset: asset,
+                    width: 1920,
+                    height: 1080
+                } %}
+            {% endfor %}
+        </a>
+
+    {% elseif entry.type == 'blog' %}
+        <!-- No additional elements for blog, only text is displayed -->
+    {% endif %}
 </div>
 
-<div id="pdf-viewer" class="pdf-viewer margin-y-xl" data-url="{{ entry.magazineFile.one().url }}"></div>
+{% set press = craft.entries()
+    .section('press')
+    .limit(6)
+    .orderBy('RAND()')
+    .all() %}
+
+{% if press %}
+    {% include '_includes/_blocks/slider' with { 
+        slides: press, 
+        slideTemplate: '_includes/_blocks/slidePress',
+        height: 'medium',
+        visibleCards: 2,
+        slideHeader: 'More Press'
+    } %}
+{% endif %}
+
 {% endblock %}

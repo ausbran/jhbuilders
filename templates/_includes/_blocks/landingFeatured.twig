@@ -11,7 +11,7 @@
     {% if featuredProject %}
         {{ entry.text }}
         {% set buttonLabel = 'Explore ' ~ featuredProject.title %}
-        <div class="buttons">
+        <div class="buttons wrapper">
             {% include '_includes/_blocks/button' with {
                 link: featuredProject.url,
                 label: buttonLabel

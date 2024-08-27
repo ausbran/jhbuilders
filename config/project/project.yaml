@@ -1,4 +1,4 @@
-dateModified: 1724391426
+dateModified: 1724797056
 elementSources:
   craft\elements\Entry:
     -
@@ -133,60 +133,6 @@ elementSources:
         - 'field:9b9cd007-b263-4d95-821d-014590cc1f0f' # Project Images
         - link
       type: native
-    -
-      condition:
-        class: craft\elements\conditions\entries\EntryCondition
-        conditionRules:
-          -
-            class: craft\elements\conditions\entries\SectionConditionRule
-            operator: in
-            uid: defae111-1821-4d31-9faf-af7a43281183
-            values:
-              - d7bc45f1-f1c6-4fe7-aad5-a83242f68d4c # Projects
-          -
-            class: craft\elements\conditions\UriConditionRule
-            operator: '**'
-            uid: 9f6d7e31-75b7-4889-880c-31699b644e0d
-            value: remodel
-        elementType: craft\elements\Entry
-        fieldContext: global
-      defaultSort:
-        - section
-        - asc
-      key: 'custom:6390376f-80cf-4094-8c0f-dc002226fda1'
-      label: Remodels
-      tableAttributes:
-        - status
-        - postDate
-        - 'field:9b9cd007-b263-4d95-821d-014590cc1f0f' # Project Images
-        - link
-      type: custom
-    -
-      condition:
-        class: craft\elements\conditions\entries\EntryCondition
-        conditionRules:
-          -
-            class: craft\fields\conditions\OptionsFieldConditionRule
-            fieldUid: 1d1719d0-caff-4e5a-8f9c-6a29d3d7d336
-            layoutElementUid: 6b74708b-0a74-4152-ace3-2ead102d9b45
-            operator: in
-            uid: 36291100-2c56-4865-b439-be597e0ebf81
-            values:
-              - newBuild
-        elementType: craft\elements\Entry
-        fieldContext: global
-      defaultSort:
-        - dateCreated
-        - desc
-      key: 'custom:6883adfb-473b-43ff-b0c4-2cae05bcc537'
-      label: 'New Builds'
-      tableAttributes:
-        - status
-        - postDate
-        - 'field:1d1719d0-caff-4e5a-8f9c-6a29d3d7d336'
-        - 'field:9b9cd007-b263-4d95-821d-014590cc1f0f' # Project Images
-        - link
-      type: custom
 email:
   fromEmail: ausbranham@gmail.com
   fromName: 'JH Builders'
@@ -302,6 +248,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  dospaces:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   formie:
     edition: standard
     enabled: true

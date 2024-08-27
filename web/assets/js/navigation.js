@@ -1,9 +1,14 @@
 import { body, nav, links, navIcon } from './globals.js';
 
 export function initNavigation() {
+    var back = document.querySelector('.back');
+
     navIcon.addEventListener('click', function () {
         nav.classList.toggle('menu-opened');
         body.classList.toggle('no-scroll');
+        if (back) {
+            back.classList.add('hidden');
+        }
     });
 
     function closeMenu() {
@@ -14,6 +19,9 @@ export function initNavigation() {
     document.body.addEventListener('click', function(event) {
         if (event.target.closest('.close')) {
             closeMenu();
+            if (back) {
+                back.classList.remove('hidden');
+            }
         }
     });
 
@@ -51,5 +59,5 @@ export function initNavigation() {
     }
 
     const throttledHandleScroll = throttle(handleScroll);
-    window.addEventListener('scroll', throttledHandleScroll);
+    window.addEventListener('scroll', throttledHandleScroll);   
 }

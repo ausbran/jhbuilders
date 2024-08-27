@@ -5,6 +5,7 @@
     display: flex;
     align-items: flex-start;
     gap: $gap-large;
+    box-sizing: content-box;
     .text {
         display: flex;
         flex-direction: column;

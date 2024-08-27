@@ -1,11 +1,3 @@
-body.red {
-  nav {
-    &:before {
-      background-color: $red !important;
-      border: unset !important;
-    }
-  }
-}
 nav {
   width: 100vw;
   height: 100px;
@@ -75,6 +67,9 @@ nav {
     .logo {
       height: 60px;
       top: 0;
+      #builders {
+        fill: $black !important;
+      }
     }
   }
   &.visible {
@@ -111,29 +106,33 @@ nav {
     &:hover {
       opacity: .6;
     }
-    svg {
+    svg.nav-svg {
       height: 100%;
+      * {
+        transition: $transition-medium;
+      }
     }
   }
   .menu {
+    pointer-events: none;
     z-index: 0;
     position: absolute;
     top: 0;
     left: 0;
-    width: 87vw;
+    width: calc(100vw - 170px);
+    max-width: $max-width;
     height: 100vh;
     @include transform(translate3d(-100.1%,0,0));
     padding: 150px $padding $padding $padding;
+    margin-right: $scroll-padding;
     transition: $transition-long;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    // undecided on padding for nav. come back to this
-    // @include respond-to(1650px) {
-    //   padding-left: $scroll-padding;
-    //   padding-right: $scroll-padding;
-    // }
+    @include respond-to(1650px) {
+      padding-left: $scroll-padding;
+    }
     .primary-links,
     .featured-projects,
     .brand-text {
@@ -189,6 +188,7 @@ nav {
         position: relative;
         &:hover {
           opacity: .5;
+          transition-delay: unset !important;
         }
       }
     }
@@ -244,16 +244,30 @@ nav {
       transition-delay: .05s;
     }
   }
+  &.menu-opened.scrolled {
+    #builders {
+      fill: $white !important;
+    }
+  }
   &.menu-opened {
     text-align: left;
     width: 100vw;
     margin: unset;
     background: transparent;
     transition: background-color $transition;
-    // .bar {
-    //   height: inherit;
-    //   width: inherit;
-    // }
+    #builders {
+      fill: $white !important;
+    }
+    #jh,
+    #logo-bg {
+      transition: $transition !important;
+    }
+    #jh {
+      fill: $white;
+    }
+    #logo-bg {
+      fill: $red;
+    }
     &:after {
       opacity: .8;
       visibility: visible;
@@ -267,6 +281,7 @@ nav {
       }
     }
     .menu {
+      pointer-events: initial;
       @include transform(
         translate3d(0,0,0)
       );
@@ -282,21 +297,48 @@ nav {
     }
   }
   @include respond-to-max($desktop-xlarge) {
+    .bar {
+      width: $width-medium;
+    }
+    .menu {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  } // end 1500px
+  @include respond-to-max($desktop-large) {
+    .menu {
+      width: 100vw;
+      .primary-links {
+        gap: $gap-small $gap-large;
+        .link {
+          font-size: 2.25rem;
+        }
+      }
+    }
+    .icons .icon.close {
+      background-color: $white;
+      svg * {
+        stroke: $red;
+      }
+    }
   }
   @include respond-to-max($desktop) {
-    height: 82px;
+    height: 80px;
     .bar {
-      position: fixed;
       width: $width-medium;
+      height: inherit;
       &:before {
         height: 80px;
       }
     }
     .logo {
-      top: 0;
+      height: 70px;
     }
-    .logo {
-      margin-top: $margin-medium;
+    &.scrolled-without-border,
+    &.scrolled {
+      .logo {
+        height: 50px;
+      }
     }
     .primary-links {
       .description {
@@ -317,44 +359,68 @@ nav {
       letter-spacing: 0;
       text-transform: capitalize;
     }
-    .primary-links .link a:not(.gradient) {
-      margin-left: $margin-medium;
-    }
-    &.menu-opened {
-      .logo {
-        margin-left: $margin-medium;
-      }
-    }
   }
   @include respond-to-max($tablet) {
-    height: 65px;
-    .logo {
-      width: 90px;
-      height: 19px;
-      top: -2px;
+    .featured-projects-outer {
+      display: none !important;
     }
-    .bar {
-      width: calc(100vw - 50px);
-      &:before {
-        height: 70px;
+    .menu {
+      justify-content: space-between;
+      .primary-links {
+        flex-direction: column;
+        gap: 6vh;
+        margin-bottom: 50px;
       }
-    }
-    .hamburger,
-    .logo {
-      margin-top: 25px;
-    }
-    .primary-links .link a:not(.gradient) {
-      margin-left: 25px;
-    }
-    &.menu-opened {
-      .logo {
-        margin-left: 25px;
+      .link:nth-child(4),
+      .featured-project:nth-child(4),
+      h4.header, {
+        transition-delay: .35s;
+      }
+      .link:nth-child(3),
+      .featured-project:nth-child(3) {
+        transition-delay: .25s;
+      }
+      .link:nth-child(2),
+      .featured-project:nth-child(2) {
+        transition-delay: .15s;
+      }
+      .link:nth-child(1),
+      .featured-project:nth-child(1) {
+        transition-delay: .05s;
       }
     }
   }
   @include respond-to-max($mobile) {
-
+    .menu {
+      padding: 140px 25px 25px 25px;
+    }
+    .bar {
+      width: calc(100vw - 50px);
+    }
   }
   @include respond-to-max($mobile-small) {
+  }
+}
+
+body.red {
+  nav {
+    #builders {
+      fill: $white !important;
+    }
+    #jh {
+      fill: $white;
+    }
+    #logo-bg {
+      fill: transparent;
+    }
+    &.scrolled {
+      #builders {
+        fill: $white !important;
+      }
+    }
+    &:before {
+      background-color: $red !important;
+      border: unset !important;
+    }
   }
 }

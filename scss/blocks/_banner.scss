@@ -2,18 +2,17 @@
     padding: $padding;
     box-sizing: content-box;
     &.text {
-        gap: $gap-xlarge !important;
+        gap: $gap-xlarge;
         max-width: $max-width;
         margin-right: auto;
         margin-left: auto;
         display: flex;
-        gap: $gap;
         h1 {
             color: $red;
             white-space: nowrap;
         }
          p {
-            padding-top: 33px;
+            padding-top: 26px;
          }
     }
     &.box {
@@ -33,5 +32,33 @@
         * {
             color: $white;
         }
+    }
+    @include respond-to-max($desktop-xlarge) {
+        padding: 50px;
+    }
+    @include respond-to-max(1300px) {
+        &.text.long {
+            flex-direction: column;
+            gap: $gap !important;
+            max-width: 800px;
+            margin-left: unset;
+            p {
+                padding-top: unset;
+            }
+        }
+    }
+    @include respond-to-max($desktop) {
+        &.text {
+            flex-direction: column;
+            gap: $gap-medium;
+            max-width: 800px;
+            margin-left: unset;
+            p {
+                padding-top: unset;
+            }
+        }
+    }
+    @include respond-to-max($mobile) {
+        padding: 45px 25px;
     }
 }
