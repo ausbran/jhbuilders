@@ -98,12 +98,11 @@
   @include respond-to-max($desktop-xlarge) {
     padding: 50px;
   } // end 1500px
-  @include respond-to-max($desktop) {
-  } // end $desktop
-  @include respond-to-max($tablet) {
-  } // end $tablet
   @include respond-to-max($mobile) {
     padding: 45px 25px;
+    &.project {
+      padding-bottom: 25px !important;
+    }
     &.home {
       .buttons.wrapper {
         margin-left: -25px;

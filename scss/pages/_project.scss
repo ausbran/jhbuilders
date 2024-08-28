@@ -50,6 +50,7 @@
         gap: $gap;
     }
     .project-info {
+        flex-wrap: wrap;
         gap: $gap;
         &.h4 {
             gap: $gap-medium;
@@ -166,8 +167,10 @@
         }
     }
     @include respond-to-max($mobile) {
-        padding-bottom: 25px !important;
-        .project-info h3:last-of-type {
+        // padding-bottom: 25px !important;
+        .project-info h3:last-of-type,
+        .project-info h3:nth-of-type(2),
+        span.label {
             display: none;
         }
         .inner.active{

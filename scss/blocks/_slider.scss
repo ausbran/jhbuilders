@@ -350,6 +350,9 @@
 }
 
 @include respond-to-max($mobile) {
+    .slider-container .slide.project .text {
+        gap: $gap-small;
+    }
     .slider-header,
     .slider,
     .project-overview,

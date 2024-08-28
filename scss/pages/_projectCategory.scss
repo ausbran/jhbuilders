@@ -59,19 +59,40 @@
     }
     @include respond-to-max($desktop-xlarge) {
         width: $width-medium;
+        .project .text {
+            padding: 50px;
+        }
     }
     @include respond-to-max($desktop) {
         width: $width-medium;
+        .project .project-info h3:last-of-type {
+            display: none;
+        }
     }
     @include respond-to-max($tablet) {
         .back {
             display: none !important;
         }
+        .project .text {
+            justify-content: space-between;
+            width: 100%;
+            gap: $gap-medium;
+        }
+        .project .project-info {
+            gap: $gap-medium;
+        }
     }
     @include respond-to-max($mobile) {
         width: 100vw;
+        margin-top: unset;
         .project {
             border-radius: unset !important;
+            .text {
+                padding: 45px 25px;
+                span.label {
+                    display: none;
+                }
+            }
         }
     }
 }

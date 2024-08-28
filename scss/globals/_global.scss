@@ -315,6 +315,11 @@ ul {
   .slider-nav {
     display: none !important;
   }
+  .small,
+  .medium,
+  .large { 
+    height: 500px !important; 
+  }
 }
 @include respond-to-max($mobile) {
   .outer {
