@@ -12,6 +12,7 @@ export function initProject(container) {
         timeout = 300;
 
     let currentImageIndex = 0;
+    let isThumbnailSliderOpen = false; // Track whether the thumbnail slider is open
 
     function showImage(index) {
         projectImages.forEach((img, i) => {
@@ -35,15 +36,53 @@ export function initProject(container) {
             body.classList.remove('no-scroll');
             nav.classList.remove('scrolled-without-border');
         }, timeout);
+        isThumbnailSliderOpen = false; // Set to false when the slider is closed
     }
 
     function handleArrowClick(direction) {
-        if (direction === 'next') {
-            currentImageIndex = (currentImageIndex + 1) % projectImages.length;
-        } else if (direction === 'prev') {
-            currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+        if (isThumbnailSliderOpen) {
+            // Handle arrow click for thumbnail slider
+            const offset = direction === 'next' ? 1 : -1;
+            scrollThumbnailSlider(offset);
+        } else {
+            // Handle arrow click for main background images
+            if (direction === 'next') {
+                currentImageIndex = (currentImageIndex + 1) % projectImages.length;
+            } else if (direction === 'prev') {
+                currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+            }
+            showImage(currentImageIndex);
         }
-        showImage(currentImageIndex);
+    }
+
+    function scrollThumbnailSlider(offset) {
+        // Find the slider inside the container
+        const slider = sliderContainer.querySelector('.slider');
+
+        // Calculate the width of one slide
+        const slideWidth = slider.clientWidth / slides.length;
+
+        // Scroll by the offset times the width of one slide
+        slider.scrollBy({
+            left: offset * slideWidth,
+            behavior: 'smooth'
+        });
+
+        // Ensure arrows are correctly toggled
+        toggleArrows();
+    }
+
+    function toggleArrows() {
+        const arrowPrev = buttons.querySelector('.arrow-prev');
+        const arrowNext = buttons.querySelector('.arrow-next');
+        const slider = sliderContainer.querySelector('.slider');
+
+        // Check if slider is at start or end
+        const isAtStart = slider.scrollLeft <= 0;
+        const isAtEnd = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth;
+
+        if (arrowPrev) arrowPrev.classList.toggle('disabled', isAtStart);
+        if (arrowNext) arrowNext.classList.toggle('disabled', isAtEnd);
     }
 
     if (magnify && backgroundElement && sliderContainer) {
@@ -56,26 +95,16 @@ export function initProject(container) {
             backgroundElement.style.transition = 'opacity 0.5s';
             backgroundElement.style.opacity = 0;
 
-            // Prepare sliderContainer for fade-in
             sliderContainer.style.display = 'block';
             sliderContainer.style.opacity = 0;
-            sliderContainer.style.transition = 'opacity 0.5s'; // Ensure this is set
+            sliderContainer.style.transition = 'opacity 0.5s';
 
             setTimeout(() => {
                 inner.classList.add('active');
-                sliderContainer.style.opacity = 1; // Now trigger the fade-in
+                sliderContainer.style.opacity = 1;
+                isThumbnailSliderOpen = true; // Set to true when the slider is opened
+                toggleArrows(); // Initialize arrow state when the slider is opened
             }, timeout);
-
-            slides.forEach((slide, index) => {
-                slide.addEventListener('click', function () {
-                    const largeImageUrl = slide.getAttribute('data-full-url');
-                    if (largeImageUrl) {
-                        currentImageIndex = index;
-                        showImage(currentImageIndex);
-                        closeSlider();
-                    }
-                });
-            });
         });
     }
 
@@ -90,6 +119,17 @@ export function initProject(container) {
                 handleArrowClick('next');
             } else {
                 handleArrowClick('prev');
+            }
+        });
+    });
+
+    // Thumbnail click functionality
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', function () {
+            currentImageIndex = index;
+            showImage(currentImageIndex); // Update background image
+            if (isThumbnailSliderOpen) {
+                closeSlider(); // Close the slider after updating the background image
             }
         });
     });

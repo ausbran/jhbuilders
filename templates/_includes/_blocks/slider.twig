@@ -13,7 +13,7 @@
         <h3 class="slider-header margin-bottom-sm">{{ slideHeader }}</h3>
     {% endif %}
     <div class="slider-container">
-        <div class="slider {{ class }}" data-visible-cards="{{ visibleCards }}">
+        <div class="slider {{ class }} visible-cards-{{ visibleCards }}">
             {% block slides %}
                 {% for slide in slides %}
                     {% include slideTemplate with {

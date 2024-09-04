@@ -7,6 +7,7 @@ import { initLandingFeatured } from './landingFeatured.js';
 import { initProject } from './project.js';
 import { initLoad } from './load.js';
 import { initScroll } from './scroll.js';
+import { initContact } from './contact.js';
 import { body, nav } from './globals.js';
 
 // loading screen
@@ -27,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function initializeComponents(container, namespace) {
     initScroll();
     body.classList.remove('red');
+    nav.classList.remove('border');
     const video = container.querySelector('video');
-
     if (video) {
         video.play();
         video.addEventListener('playing', () => {
@@ -37,20 +38,37 @@ function initializeComponents(container, namespace) {
     } else {
         setTimeout(initLogo, 100); // Delay to ensure content is fully loaded
     }
-
     switch (namespace) {
         case 'projectCategory':
             initProjectOverview();
+            nav.classList.add('border');
             break;
         case 'project':
             initProject(container);
             initSlider();
             break;
+        case 'story':
+            nav.classList.add('border');
+            initSlider();
+            break;
+        case 'contact':
+            initContact();
+            break;
+        case 'company':
+            nav.classList.add('border');
+            initSlider();
+            break;
         case 'blog':
             nav.classList.add('border');
+            initSlider();
+            break;
+        case 'website':
+            nav.classList.add('border');
+            initSlider();
             break;
         case 'magazine':
             nav.classList.add('border');
+            initSlider();
             const pdfViewer = container.querySelector('#pdf-viewer');
             if (pdfViewer) {
                 const pdfUrl = pdfViewer.dataset.url;
@@ -58,19 +76,7 @@ function initializeComponents(container, namespace) {
             }
             break;
         case 'career':
-            nav.classList.add('border');
             body.classList.add('red');
-            if (typeof craft !== 'undefined' && craft.formie) {
-                const forms = container.querySelectorAll('form[data-fui-form]');
-                forms.forEach((form) => {
-                    const formHandle = form.getAttribute('data-fui-form-handle');
-                    craft.formie.renderFormJs(formHandle);
-                });
-            }
-            break;
-        case 'story':
-            nav.classList.add('border');
-            initSlider();
             break;
         default:
             const carousel = container.querySelector('.carousel');

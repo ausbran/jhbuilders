@@ -3,19 +3,24 @@
 {% block content %}
 <div class="landing project-gate">
     <div class="project-overview contact">
+        <div class="form-wrapper">
+            {% include '_includes/_icons/close' %}
+            {{ craft.formie.renderForm('jacksonForm') }}
+            {{ craft.formie.renderFormJs('jacksonForm') }}
+        </div>
         <div class="text fade-in" data-cascade>
             <h2 class="highlight">Jackson Office</h2>
             <div>
                 {% set location = entry.jacksonLocation.one() %}
                 {% if location %}
-                    <a target="_blank" href="{{ entry.jacksonGoogle }}">
+                    <a class="hover" target="_blank" href="{{ entry.jacksonGoogle }}">
                         {{ location.addressLine1 }}, 
                         {{ location.locality }}, 
                         {{ location.administrativeArea }} 
                         {{ location.postalCode }}
                     </a>
                 {% endif %}
-                <a target="_blank" href="{{ entry.jacksonPhone }}">{{ entry.jacksonPhone|replace({'tel:': ''}) }}</a>
+                <a class="hover" target="_blank" href="{{ entry.jacksonPhone }}">{{ entry.jacksonPhone|replace({'tel:': ''}) }}</a>
             </div>
             {% include '_includes/_blocks/button' with { 
                 link: '#', 
@@ -33,19 +38,24 @@
         </div>
     </div>
     <div class="project-overview contact">
+        <div class="form-wrapper">
+            {% include '_includes/_icons/close' %}
+            {{ craft.formie.renderForm('driggsForm') }}
+            {{ craft.formie.renderFormJs('driggsForm') }}
+        </div>
         <div class="text fade-in" data-cascade>
             <h2 class="highlight">Driggs Office</h2>
             <div>
                 {% set location = entry.driggsLocation.one() %}
                 {% if location %}
-                    <a target="_blank" href="{{ entry.driggsGoogle }}">
+                    <a class="hover" target="_blank" href="{{ entry.driggsGoogle }}">
                         {{ location.addressLine1 }}, 
                         {{ location.locality }}, 
                         {{ location.administrativeArea }} 
                         {{ location.postalCode }}
                     </a>
                 {% endif %}
-                <a target="_blank" href="{{ entry.driggsPhone }}">{{ entry.driggsPhone|replace({'tel:': ''}) }}</a>
+                <a class="hover" target="_blank" href="{{ entry.driggsPhone }}">{{ entry.driggsPhone|replace({'tel:': ''}) }}</a>
             </div>
             {% include '_includes/_blocks/button' with { 
                 link: '#', 

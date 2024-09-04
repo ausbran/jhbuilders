@@ -22,15 +22,39 @@
             margin: auto;
         }
     }
+    figure {
+        border-radius: $box-radius;
+        overflow: hidden;
+        object-fit: cover;
+        height: 80vh;
+        min-height: 500px;
+        max-height: 1000px;
+        width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     .blog {
         text-align: left;
-        p {
-            font-weight: 500;
-            line-height: 2em;
-            margin-bottom: $margin-small;
-        }
         h1 {
             margin-bottom: 50px;
+            text-align: center;
+        }
+        .inner {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: $gap-medium;
+            p {
+                font-weight: 500;
+                line-height: 2em;
+            }
+            p,
+            figure {
+                margin: auto;
+            }
         }
     }
     canvas,

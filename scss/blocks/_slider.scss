@@ -32,6 +32,21 @@
         overflow-y: hidden;
         padding-bottom: 1px; // for descenders of letters getting cut off
         padding-right: $scroll-padding;
+        &.visible-cards-1 .slide {
+            width: 100%;
+        }
+        
+        &.visible-cards-2 .slide {
+            width: 50%;
+        }
+        
+        &.visible-cards-3 .slide {
+            width: 33.33%;
+        }
+        
+        &.visible-cards-4 .slide {
+            width: 25%;
+        }
         &.accordion {
             overflow: unset;
             flex-wrap: wrap;
@@ -136,7 +151,6 @@
                 }
                 &.active {
                     overflow: visible;
-                    width: 100%;
                     .slide-out {
                         &:before {
                             transform: scaleX(1);
@@ -160,6 +174,7 @@
             border: 1px solid $red;
         }
     }
+    
     .slide {
         scroll-snap-align: start;  // Snap to the start of each slide
         height:100%;

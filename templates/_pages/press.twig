@@ -19,7 +19,9 @@
         {% endif %}
         <h1>{{ entry.title }}</h1>
         {% if entry.text %}
-            {{ entry.text }}
+            <div class="inner">
+                {{ entry.text }}
+            </div>
         {% endif %}
         {% if entry.type == 'website' %}
             {% include '_includes/_blocks/button' with {

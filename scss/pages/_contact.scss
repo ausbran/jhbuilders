@@ -13,4 +13,48 @@
             margin-top: $margin-medium;
         }
     }
+    .form-wrapper {
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        background: $red;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: $padding;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: $gap-large;
+        @include transform(translate3d(0,100%,0));
+        transition: $transition-long;
+        .fui-i,
+        .close {
+            transition: $transition-long;
+            opacity: 0;
+            @include transform(translate3d(0,50px,0));
+        }
+        .close {
+            transition-delay: .15s;
+        }
+        .fui-i {
+            width: 100%;
+            transition-delay: .3s;
+            .fui-heading.fui-heading-h2 {
+                max-width: 370px;
+            }
+            .fui-form {
+                width: 100%;
+            }
+        }
+        &.active {
+            @include transform(translate3d(0,0,0));
+            .fui-i,
+            .close {
+                opacity: 1;
+                @include transform(translate3d(0,0,0));
+            }
+        }
+    }
 }

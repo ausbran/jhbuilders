@@ -1,4 +1,4 @@
-<div class="slide project fade-in" data-cascade>
+<div class="slide project">
     <a href="{{ slide.url }}">
         <div class="image scale {% if height is defined %}{{ height }}{% endif %}">
             {% if slide.projectImages is defined %}
@@ -12,13 +12,15 @@
     <div class="text">
         {% include '_projects/projectInfo' with {
             entry: slide,
-            size: 'h4'
+            size: 'h4',
+            fadeIn: false
         } %}
         {% include '_includes/_blocks/button' with {
             link: slide.url,
             label: 'Explore Project',
             firstArrow: 'red-arrow',
-            secondArrow: 'black-arrow'
+            secondArrow: 'black-arrow',
+            fadeIn: false
         } %}
     </div>
 </div>

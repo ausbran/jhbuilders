@@ -39,7 +39,7 @@
 {% set projects = craft.entries()
     .section('projects')
     .type('project')
-    .limit(6)
+    .limit(4)
     .orderBy('RAND()')
     .all() %}
 
@@ -49,7 +49,8 @@
         slideTemplate: '_includes/_blocks/slideProjects',
         height: 'medium',
         visibleCards: 2,
-        slideHeader: 'More Projects'
+        slideHeader: 'More Projects',
+        fadeIn: true
     } %}
 {% endif %}
 

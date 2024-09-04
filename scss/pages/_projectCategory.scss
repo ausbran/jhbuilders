@@ -105,11 +105,6 @@
     gap: $gap-large;
     a {
         color: $black;
-        transition: $transition;
-        &:hover {
-            opacity: .5;
-            @include transform(translate3d(0,-1px,0));
-        }
         &.active {
             color: $red;
         }
@@ -140,7 +135,7 @@
         }
     }
     * {
-        color: $white !important;
+        color: $white;
     }
     .background {
         z-index: 0;

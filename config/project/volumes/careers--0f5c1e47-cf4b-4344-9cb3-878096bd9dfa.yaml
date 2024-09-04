@@ -47,4 +47,4 @@ subpath: careers
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 transformFs: ''
-transformSubpath: ''
+transformSubpath: transforms

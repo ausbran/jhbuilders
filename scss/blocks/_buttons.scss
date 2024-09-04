@@ -33,7 +33,15 @@
     color: $white;
   }
 }
+.hover {
+  transition: $transition;
+  &:hover {
+    opacity: .5;
+    @include transform(translate3d(0,-1px,0));
+  }
+}
 .btn {
+  width: fit-content;
   position: relative;
   display: inline-flex;
   align-items: center;

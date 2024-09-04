@@ -72,6 +72,11 @@ nav {
       }
     }
   }
+  &.border {
+    .icon {
+      border: 1px solid $grey;
+    }
+  }
   &.visible {
     &:after {
       opacity: .6;

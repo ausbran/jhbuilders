@@ -3,27 +3,13 @@ import { navHeight } from './globals.js';
 export function initSlider() {
     var sliders = document.querySelectorAll('.slider');
 
-    // sliders
     sliders.forEach(function(slider) {
-        var visibleCards = parseInt(slider.getAttribute('data-visible-cards'), 10);
         var slides = slider.querySelectorAll('.slide');
-        var totalSlides = slides.length;
-        var slideWidthPercentage = 100 / visibleCards;
-        var currentScrollLeft = 0;
-        var maxScrollWidth = slider.scrollWidth - slider.clientWidth;
-
-        // Set the width of each slide based on visibleCards
-        slides.forEach(function(slide) {
-            slide.style.width = slideWidthPercentage + '%';
-        });
-
-        // Find the previous and next arrow buttons, and check if they exist
         var arrowPrev = slider.closest('.slider-container').querySelector('.arrow-prev');
         var arrowNext = slider.closest('.slider-container').querySelector('.arrow-next');
 
-        // Scroll the slider to the next/previous set of cards
         function scrollSlider(offset) {
-            currentScrollLeft = slider.scrollLeft + offset;
+            const currentScrollLeft = slider.scrollLeft + offset;
 
             slider.scrollTo({
                 left: currentScrollLeft,
@@ -33,69 +19,73 @@ export function initSlider() {
             toggleArrows();
         }
 
-        // Toggle arrow buttons based on scroll position
         function toggleArrows() {
+            const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+            const nearStart = slider.scrollLeft <= 1;
+            const nearEnd = slider.scrollLeft >= (maxScrollLeft - 1); 
+
             if (arrowPrev && arrowNext) {
-                arrowPrev.classList.toggle('disabled', slider.scrollLeft <= 0);
-                arrowNext.classList.toggle('disabled', slider.scrollLeft >= maxScrollWidth);
+                arrowPrev.classList.toggle('disabled', nearStart);
+                arrowNext.classList.toggle('disabled', nearEnd);
             }
         }
 
-        // Add event listeners only if the arrows are present
         if (arrowPrev && arrowNext) {
             arrowPrev.addEventListener('click', function() {
                 if (!arrowPrev.classList.contains('disabled')) {
-                    scrollSlider(-1 * slider.clientWidth / visibleCards);  // Scroll back by one card
+                    scrollSlider(-1 * slider.clientWidth);
                 }
             });
 
             arrowNext.addEventListener('click', function() {
                 if (!arrowNext.classList.contains('disabled')) {
-                    scrollSlider(1 * slider.clientWidth / visibleCards);  // Scroll forward by one card
+                    scrollSlider(1 * slider.clientWidth);
                 }
             });
 
-            // Initial setup
             toggleArrows();
         }
 
-        // Handle manual scroll interactions
         slider.addEventListener('scroll', function() {
             toggleArrows();
         });
-    });
 
-    // accordion
-    const accordionTriggers = document.querySelectorAll('.accordion-trigger');
-    const closeButtons = document.querySelectorAll('.slide-out .close');
+        window.addEventListener('resize', function () {
+            toggleArrows();
+        });
 
-    accordionTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function (e) {
-            e.preventDefault();
-            const slide = trigger.closest('.accordion-slide');
+        // Accordion functionality
+        const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+        const closeButtons = document.querySelectorAll('.slide-out .close');
 
-            // Add active class to trigger animations
-            slide.classList.add('active');
+        accordionTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
+                const slide = trigger.closest('.accordion-slide');
 
-            // Calculate the position to scroll to, considering the navigation height
-            const slideTop = slide.getBoundingClientRect().top + window.scrollY;
-            const scrollToPosition = slideTop - ((window.innerHeight - slide.offsetHeight) / 2) - (navHeight / 1.9 );
+                // Add active class to trigger animations
+                slide.classList.add('active');
 
-            // Scroll the slide into the center of the viewport, minus the nav height
-            window.scrollTo({
-                top: scrollToPosition,
-                behavior: 'smooth'
+                // Calculate the position to scroll to, considering the navigation height
+                const slideTop = slide.getBoundingClientRect().top + window.scrollY;
+                const scrollToPosition = slideTop - ((window.innerHeight - slide.offsetHeight) / 2) - (navHeight / 1.9 );
+
+                // Scroll the slide into the center of the viewport, minus the nav height
+                window.scrollTo({
+                    top: scrollToPosition,
+                    behavior: 'smooth'
+                });
             });
         });
-    });
 
-    closeButtons.forEach(close => {
-        close.addEventListener('click', function (e) {
-            e.preventDefault();
-            const slide = close.closest('.accordion-slide');
+        closeButtons.forEach(close => {
+            close.addEventListener('click', function (e) {
+                e.preventDefault();
+                const slide = close.closest('.accordion-slide');
 
-            // Reverse the animation by removing the active class
-            slide.classList.remove('active');
+                // Reverse the animation by removing the active class
+                slide.classList.remove('active');
+            });
         });
     });
 }
