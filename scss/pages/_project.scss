@@ -97,7 +97,7 @@
         margin: auto;
         left: 0;
         width: 100%;
-        height: calc(100vh - 350px);
+        height: calc(100svh - 350px);
     }
     .slider {
         display: grid !important;
@@ -105,7 +105,7 @@
         height: inherit;
         .slide {
             width: 100%;
-            height: calc((100vh - 350px) / 2);
+            height: calc((100svh - 350px) / 2);
             picture {
                 cursor: pointer;
                 height: 100% !important;
@@ -157,9 +157,9 @@
         .slider-container {
             bottom: unset;
             top: 100px;
-            height: calc(100vh - 250px);
+            height: calc(100svh - 250px);
             .slider .slide {
-                height: calc((100vh - 250px) / 2);
+                height: calc((100svh - 250px) / 2);
             }
         }
         .inner.active .project-info {

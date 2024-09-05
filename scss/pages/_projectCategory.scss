@@ -13,7 +13,7 @@
     .project {
         position: relative;
         overflow: hidden;
-        height: calc(100vh - 250px);
+        height: calc(100svh - 250px);
         min-height: 400px;
         max-height: 750px;
         &:first-of-type {

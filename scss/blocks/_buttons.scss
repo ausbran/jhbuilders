@@ -220,3 +220,8 @@
     font-size: .85rem;
   }
 }
+@include respond-to-max($mobile) {
+  .back {
+    display: none !important;
+  }
+}

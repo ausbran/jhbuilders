@@ -26,7 +26,7 @@
         border-radius: $box-radius;
         overflow: hidden;
         object-fit: cover;
-        height: 80vh;
+        height: 80svh;
         min-height: 500px;
         max-height: 1000px;
         width: 100%;
@@ -59,7 +59,7 @@
     }
     canvas,
     .website-image {
-        height: calc(100vh - 150px);
+        height: calc(100svh - 150px);
         box-shadow: $box-shadow;
     }
     .website-link {
