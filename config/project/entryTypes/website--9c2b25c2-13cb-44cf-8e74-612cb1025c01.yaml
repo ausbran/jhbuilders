@@ -38,7 +38,7 @@ fieldLayouts:
           -
             dateAdded: '2024-08-08T02:03:02+00:00'
             elementCondition: null
-            fieldUid: 5a4ca78e-efcf-4c8c-81c1-2464038d63b8 # Button Link
+            fieldUid: 5a4ca78e-efcf-4c8c-81c1-2464038d63b8
             handle: websiteLink
             includeInCards: false
             instructions: null

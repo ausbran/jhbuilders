@@ -16,9 +16,14 @@
                 link: featuredProject.url,
                 label: buttonLabel
             } %}
-            {% include '_includes/_blocks/buttons' with {
-                buttons: entry.buttons.all()
-            } %}
+            {% if entry.buttons|length %}
+                {% for button in entry.buttons.all() %}
+                        {% include '_includes/_blocks/button' with {
+                            link: button.buttonLink,
+                            label: button.buttonLabel
+                        } %}
+                {% endfor %}
+            {% endif %}
         </div>
     {% endif %}
 {% endblock %}

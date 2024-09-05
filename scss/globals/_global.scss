@@ -16,7 +16,7 @@ body {
       * {
         color: $white;
       }
-      svg * {
+      .social-link svg * {
         fill: $white;
       }
     }
@@ -73,6 +73,22 @@ ul {
   margin-inline-start: 0;
   margin-inline-end: 0;
   padding-inline-start: 0;
+}
+img,
+picture,
+figure {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
 }
 .scroll {
   overflow: scroll;
@@ -224,7 +240,7 @@ ul {
 // highlight locations
 .highlight:hover:before,
 .slide:hover .highlight:before,
-.project-overview:hover .highlight:before,
+.one-column:hover .highlight:before,
 .projects .project .text .btn:hover ~ .project-info .highlight:before {
   right: 0;
   left: 0;

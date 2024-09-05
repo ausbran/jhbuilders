@@ -1,6 +1,6 @@
 <div class="buttons">
     {% for button in buttons %}
-        {% set link = button.buttonLink.one() %}
+        {% set link = button.buttonLink %}
         {% if link %}
             {% set link = link.getUrl() %}
             {% set firstArrow = firstArrow is defined ? firstArrow : 'white-arrow' %}
@@ -8,6 +8,7 @@
             {% include '_includes/_blocks/button' with { 
                 link: link, 
                 label: button.buttonLabel, 
+                class: button.buttonClass, 
                 firstArrow: firstArrow, 
                 secondArrow: secondArrow 
             } %}

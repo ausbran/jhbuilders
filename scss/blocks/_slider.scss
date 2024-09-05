@@ -247,7 +247,8 @@
                     }
                 }
                 p {
-                    max-width: 75%;
+                    width: 90%;
+                    max-width: 450px;
                 }
             }
         }
@@ -320,12 +321,29 @@
     }
 }
 
+@include respond-to-max(1300px) {
+    .slider-container .slider {
+        &.visible-cards-3 .slide {
+            width: 50%;
+            max-width: unset;
+        }
+        .slide.career .text {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $gap;
+        }
+    }
+}
+
 @include respond-to-max($desktop-large) {
     .slider-container .slide.project .project-info h3:last-of-type {
         display: none;
     }
-    .slider-container .slider.accordion .accordion-slide .slide-out .inner .inner-header h2 {
-        font-size: 1.75rem;
+    .slider-container .slider.accordion .accordion-slide .slide-out .inner {
+        padding: 50px;
+        .inner-header h2 {
+            font-size: 1.75rem;
+        }
     }
 }
 
@@ -339,19 +357,30 @@
             min-width: 80% !important;
         }
         .slider.accordion {
+            .text {
+                gap: $gap;
+            }
             .accordion-slide {
                 min-width: 100% !important;
-                border-radius: $box-radius;
+                .image {
+                    border-radius: $box-radius !important;
+                }
                 .slide-out {
                     @include transform(translate3d(0, 0, 0),!important);
                     pointer-events: none;
+                    &:before {
+                        border-radius: $box-radius !important;
+                    }
+                }
+                &.active {
+                    .slide-out {
+                        pointer-events: initial;
+                    }
                 }
             }
-            &.active {
-                .slide-out {
-                    pointer-events: initial;
-                }
-            }
+        }
+        .slide.career {
+            padding: 50px;
         }
     }
 }
@@ -361,10 +390,25 @@
         .slide:not(.project-slide) {
             min-width: 100% !important;
         }
+        .slider.accordion .accordion-slide .slide-out .inner {
+            padding: 30px;
+            .inner-header {
+                gap: $gap-medium;
+                h2 {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+        .slide.career {
+            padding: 30px;
+        }
     }
 }
 
 @include respond-to-max($mobile) {
+    .position {
+        display: none;
+    }
     .slider-container .slide.project .text {
         gap: $gap-small;
     }

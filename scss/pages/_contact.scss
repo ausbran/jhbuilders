@@ -1,13 +1,11 @@
-.project-overview.contact {
-    &:first-of-type {
-        padding-left: $scroll-padding;
-    }
+.contact {
     .text {
         max-width: unset;
         gap: $gap-small;
         div {
             flex-direction: row;
-            gap: $gap;
+            gap: 8px $gap;
+            flex-wrap: wrap;
         }
         .btn {
             margin-top: $margin-medium;
@@ -56,5 +54,8 @@
                 @include transform(translate3d(0,0,0));
             }
         }
+    }
+    @include respond-to-max($mobile) {
+        
     }
 }

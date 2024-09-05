@@ -1,19 +1,16 @@
-<div class="landing project-gate">
-    <div class="project-overview project-wrapper">
+<div class="two-column fade-in" data-cascade>
+    <div class="one-column project-wrapper">
         <div class="text fade-in" data-cascade>
             <div>
                 {{ entry.newBuildsText|replace({'<h2>': '<h2 class="highlight">'})|raw }}
             </div>
-            {% set newBuildsButton = entry.newBuildsButton.one() %}
-            {% if newBuildsButton %}
-                {% set linkEntry = newBuildsButton.buttonLink.one() %}
-                {% if linkEntry %}
-                    {% set link = linkEntry.getUrl() %}
-                    {% include '_includes/_blocks/button' with { 
-                        link: link, 
-                        label: newBuildsButton.buttonLabel
-                    } %}
-                {% endif %}
+            {% if entry.newBuildsButton|length %}
+                {% for button in entry.newBuildsButton.all() %}
+                        {% include '_includes/_blocks/button' with {
+                            link: button.buttonLink,
+                            label: button.buttonLabel
+                        } %}
+                {% endfor %}
             {% endif %}
         </div>
         <div class="background gradient bw">
@@ -22,21 +19,18 @@
             {% endfor %}
         </div>
     </div>
-    <div class="project-overview project-wrapper">
+    <div class="one-column project-wrapper">
         <div class="text fade-in" data-cascade>
             <div>
                 {{ entry.remodelsText|replace({'<h2>': '<h2 class="highlight">'})|raw }}
             </div>
-            {% set remodelsButton = entry.remodelsButton.one() %}
-            {% if remodelsButton %}
-                {% set linkEntry = remodelsButton.buttonLink.one() %}
-                {% if linkEntry %}
-                    {% set link = linkEntry.getUrl() %}
-                    {% include '_includes/_blocks/button' with { 
-                        link: link, 
-                        label: remodelsButton.buttonLabel
-                    } %}
-                {% endif %}
+            {% if entry.remodelsButton|length %}
+                {% for button in entry.remodelsButton.all() %}
+                        {% include '_includes/_blocks/button' with {
+                            link: button.buttonLink,
+                            label: button.buttonLabel
+                        } %}
+                {% endfor %}
             {% endif %}
         </div>
         <div class="background gradient bw">

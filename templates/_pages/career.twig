@@ -9,9 +9,17 @@
         secondArrow: 'white-arrow'
     } %}
 </div>
-<div class="careers-outer fade-in" data-cascade>
+<div class="careers-outer fade-in margin-top-xl margin-bottom" data-cascade>
     <div class="text center-left">
-        <h1>{{ entry.title }}</h1>
+        {% set title = entry.title %}
+        {% set words = title|split(' ') %}
+
+        {% if words|length == 1 %}
+            <h1 class="one-word">{{ title }}</h1>
+        {% else %}
+            <h1>{{ title }}</h1>
+        {% endif %}
+        <h2>{{ entry.office.label }}</h2>
         <div>
             <h3>Description</h3>
             {{ entry.description|replace({'<p>': '<p class="thin">'})|raw }}

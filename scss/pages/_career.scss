@@ -1,7 +1,8 @@
 .careers-outer {
     max-width: $max-width;
-    padding: $margin-xlarge $padding $padding $padding;
-    margin: auto;
+    padding: 75px;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     align-items: flex-start;
     gap: $gap-large;
@@ -20,6 +21,12 @@
             margin-left: -.04em;
             margin-top: -.15em;
             // to align large header with body copy
+            &.one-word {
+                font-size: clamp(3.25rem, 6vw, 5.5rem);
+            }
+        }
+        h2 {
+            margin-top: -10px;
             margin-bottom: $margin-small;
         }
         h3 {
@@ -48,6 +55,25 @@
         top: 125px;
         .fui-heading.fui-heading-h2 {
             max-width: 76%;
+        }
+    }
+    @include respond-to-max($desktop-xlarge) {
+        padding: 50px;
+    }
+    @include respond-to-max($desktop) {
+        flex-direction: column;
+        .text,
+        .fui-i {
+            width: 100%;
+        }
+        .text p {
+            max-width: 700px;
+        }
+    }
+    @include respond-to-max($mobile) {
+        padding: 25px;
+        .text h1.one-word {
+            font-size: clamp(2rem, 10vw, 5.5rem);
         }
     }
 }

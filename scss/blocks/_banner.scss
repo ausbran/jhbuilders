@@ -1,5 +1,5 @@
 .banner {
-    padding: $padding;
+    padding: $padding 75px;
     box-sizing: content-box;
     &.text {
         gap: $gap-xlarge;
@@ -13,6 +13,11 @@
         }
          p {
             padding-top: 26px;
+         }
+         .inner {
+            gap: $gap;
+            display: flex;
+            flex-direction: column;
          }
     }
     &.box {

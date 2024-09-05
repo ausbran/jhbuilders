@@ -11,11 +11,13 @@
                     fadeIn: true
                     }
                 %}
+                <a href="{{ project.url }}">
                 {% include '_projects/projectInfo' with {
                     entry: project,
                     class: 'highlight',
                     fadeIn: true
                 } %}
+                </a>
             </div>
             {% set asset = project.projectImages.one() %}
             {% if asset %}

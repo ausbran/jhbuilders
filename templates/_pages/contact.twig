@@ -1,12 +1,13 @@
 {% extends "index" %}
 
 {% block content %}
-<div class="landing project-gate">
-    <div class="project-overview contact">
+<div class="two-column fade-in" data-cascade>
+    <div class="one-column contact">
         <div class="form-wrapper">
             {% include '_includes/_icons/close' %}
             {{ craft.formie.renderForm('jacksonForm') }}
             {{ craft.formie.renderFormJs('jacksonForm') }}
+            {{ craft.formie.renderFormCss('jacksonForm') }}
         </div>
         <div class="text fade-in" data-cascade>
             <h2 class="highlight">Jackson Office</h2>
@@ -37,11 +38,12 @@
             {% endfor %}
         </div>
     </div>
-    <div class="project-overview contact">
+    <div class="one-column contact">
         <div class="form-wrapper">
             {% include '_includes/_icons/close' %}
             {{ craft.formie.renderForm('driggsForm') }}
             {{ craft.formie.renderFormJs('driggsForm') }}
+            {{ craft.formie.renderFormCss('driggsForm') }}
         </div>
         <div class="text fade-in" data-cascade>
             <h2 class="highlight">Driggs Office</h2>

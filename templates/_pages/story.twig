@@ -6,7 +6,8 @@
     {% include '_includes/_blocks/bannerText' with {
         block: entry,
         handle: 'text',
-        maxWidth: entry.topMaxWidth
+        maxWidth: entry.topMaxWidth,
+        class: 'anchor'
     } %}
 
     {% set partners = craft.entries.section('staff').type('partner').all() %}
@@ -34,8 +35,8 @@
     {% include '_includes/_blocks/banner' with {
         block: entry,
         handle: 'bannerText',
-        link: entry.buttonLink,
-        label: entry.buttonLabel,
+        link: entry.bannerLink,
+        label: entry.bannerLabel,
         maxWidth: entry.bottomMaxWidth
     } %}
 {% endblock %}

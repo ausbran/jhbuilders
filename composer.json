@@ -23,7 +23,7 @@
   "require": {
     "craftcms/ckeditor": "4.2.0",
     "craftcms/cloud": "*",
-    "craftcms/cms": "5.4.0.1",
+    "craftcms/cms": "5.4.1",
     "craftsnippets/craft-image-toolbox": "3.0.1",
     "nystudio107/craft-seomatic": "5.1.2",
     "vaersaagod/dospaces": "3.0.0",

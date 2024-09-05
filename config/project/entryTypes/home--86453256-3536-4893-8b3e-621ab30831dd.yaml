@@ -109,7 +109,7 @@ fieldLayouts:
             dateAdded: '2024-08-22T05:25:46+00:00'
             elementCondition: null
             fieldUid: b7977904-1581-4bf1-a440-242e4c34840a # Button Label
-            handle: null
+            handle: bannerLabel
             includeInCards: false
             instructions: null
             label: null
@@ -125,7 +125,7 @@ fieldLayouts:
             dateAdded: '2024-08-22T05:26:47+00:00'
             elementCondition: null
             fieldUid: 26fa7b55-e9e5-4fbb-a5e1-0cc31f223c1e # Button Link
-            handle: null
+            handle: bannerLink
             includeInCards: false
             instructions: null
             label: null

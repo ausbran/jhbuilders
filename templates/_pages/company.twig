@@ -4,7 +4,8 @@
     {% include '_includes/_blocks/bannerText' with {
         block: entry,
         marginTop: entry.marginTop,
-        maxWidth: entry.maxWidth
+        maxWidth: entry.maxWidth,
+        class: 'anchor'
     } %}
 
     {% set press = craft.entries.section('press').all() %}

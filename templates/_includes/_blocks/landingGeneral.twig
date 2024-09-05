@@ -6,9 +6,12 @@
             {% case 'text' %}
                 {% include '_includes/_blocks/text' %}
             {% case 'buttons' %}
-                {% include '_includes/_blocks/buttons' with {
-                    buttons: block.buttons.all()
-                } %}
+                {% for button in block.buttons.all() %}
+                    {% include '_includes/_blocks/button' with {
+                        link: button.buttonLink,
+                        label: button.buttonLabel
+                    } %}
+                {% endfor %}
             {% case 'iframe' %}
                 {% include '_includes/_blocks/iframe' %}
         {% endswitch %}

@@ -149,10 +149,10 @@
     }
     @include respond-to-max($desktop) {
         .inner {
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-            gap: $gap-medium;
+            // flex-direction: column;
+            // justify-content: flex-end;
+            // align-items: flex-start;
+            // gap: $gap-medium;
         }
         .slider-container {
             bottom: unset;
@@ -172,6 +172,9 @@
         .project-info h3:nth-of-type(2),
         span.label {
             display: none;
+        }
+        .project-buttons {
+            gap: 15px;
         }
         .inner.active{
             .project-buttons,

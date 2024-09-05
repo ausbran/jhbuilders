@@ -28,6 +28,11 @@
     @include transform(rotate(180deg));
   }
 }
+.anchor {
+  .btn-arrow {
+    @include transform(rotate(90deg))
+  }
+}
 .red .back {
   .btn {
     color: $white;
@@ -200,8 +205,11 @@
   .btn {
     &.icon {
       padding: 17px;
-      margin: 0 -.5px;
+      &:not(.arrow) {
+        margin: 0 -.5px;
+      }
     }
+
   }
   .buttons {
     gap: 40px;

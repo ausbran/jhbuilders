@@ -2,8 +2,10 @@
 
 <div class="projects">
     {% include '_projects/projectCategoryHeader' %}
-    {% set projects = entry.getDescendants().all() %}
-    {% include '_projects/projectCategoryInner' with { projects: projects } %}
+    <div class="fade-in">
+        {% set projects = entry.getDescendants().all() %}
+        {% include '_projects/projectCategoryInner' with { projects: projects } %}
+    </div>
 </div>
 
 {% endblock %}

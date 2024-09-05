@@ -4,11 +4,13 @@
 
 <div class="projects">
     {% include '_projects/projectCategoryHeader' %}
-    {% set projects = craft.entries()
-        .section('projects')
-        .type('project')
-        .all() %}
-    {% include '_projects/projectCategoryInner' with { projects: projects } %}
+    <div class="fade-in">
+        {% set projects = craft.entries()
+            .section('projects')
+            .type('project')
+            .all() %}
+        {% include '_projects/projectCategoryInner' with { projects: projects } %}
+    </div>
 </div>
 
 {% endblock %}
