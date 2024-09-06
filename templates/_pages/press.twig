@@ -57,6 +57,7 @@
 
 {% set press = craft.entries()
     .section('press')
+    .id(['not', entry.id])
     .limit(6)
     .orderBy('RAND()')
     .all() %}
