@@ -3,7 +3,10 @@
         {% if slide.staffImage is defined %}
             {% set asset = slide.staffImage.one() %}
             {% if asset %}
-                {% include '_includes/_blocks/asset' with { asset: asset } %}
+                {% include '_includes/_blocks/asset' with {
+                    asset: asset,
+                    ratio:'1:1'
+                } %}
             {% endif %}
         {% endif %}
     </div>

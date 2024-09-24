@@ -588,8 +588,8 @@ a {
   h3, .h3 {
     font-size: 1.25rem;
   }
-  h4, .h4 {
-    font-size: 1rem;
+  h4, .h4, .h4 h3 {
+    font-size: 1.15rem;
   }
   p {
     font-size: 0.9rem;
@@ -1176,6 +1176,11 @@ footer .social-link svg {
 .landing.story video {
   object-position: top left;
 }
+@media (max-width: 768px) {
+  .landing.story video {
+    object-position: center;
+  }
+}
 
 .contact .text {
   max-width: unset;
@@ -1232,6 +1237,20 @@ footer .social-link svg {
 }
 .contact .form-wrapper .fui-i .fui-form {
   width: 100%;
+}
+.contact .form-wrapper .fui-i .fui-alert-success {
+  height: initial;
+  width: 100%;
+  display: block;
+  border: unset;
+  margin: unset;
+  padding: unset;
+  font-size: 3rem;
+}
+.contact .form-wrapper .fui-i .fui-alert-success p {
+  max-width: 80%;
+  text-align: left;
+  font-size: 2rem;
 }
 .contact .form-wrapper.active {
   -moz-transform: translate3d(0, 0, 0);
@@ -1419,7 +1438,7 @@ footer .social-link svg {
 }
 .project .project-info {
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px 30px;
 }
 .project .project-info.h4 {
   gap: 20px;
@@ -1530,6 +1549,9 @@ footer .social-link svg {
   .project .project-info h3:nth-of-type(2),
   .project span.label {
     display: none;
+  }
+  .project .inner .project-info h3 {
+    font-size: 1.5rem;
   }
   .project .project-buttons {
     gap: 15px;
@@ -2144,6 +2166,9 @@ footer .social-link svg {
   display: flex;
   gap: 20px;
 }
+.slider-container .slide.press .text {
+  flex-wrap: wrap;
+}
 
 @media (max-width: 1700px) {
   .slider-header,
@@ -2252,6 +2277,9 @@ footer .social-link svg {
   }
   .slider-container .slide.career {
     padding: 30px;
+  }
+  .slider-container .slide {
+    gap: 15px;
   }
 }
 @media (max-width: 576px) {
@@ -2527,6 +2555,7 @@ select:-webkit-autofill:focus {
 }
 
 .btn {
+  gap: 8px;
   width: fit-content;
   position: relative;
   display: inline-flex;
@@ -2550,7 +2579,6 @@ select:-webkit-autofill:focus {
 .btn .btn-arrow {
   position: relative;
   bottom: -0.5px;
-  right: -8px;
   display: inline-flex;
   justify-content: center;
   align-items: center;

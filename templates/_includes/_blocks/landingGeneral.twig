@@ -21,7 +21,10 @@
 {% block background %}
     {% for block in blocks %}
         {% if block.type.handle == 'asset' %}
-            {% include '_includes/_blocks/asset' with { asset: block.asset.one() } %}
+            {% include '_includes/_blocks/asset' with { 
+                asset: block.asset.one(),
+                assetMobile: block.assetMobile.one()
+            } %}
         {% endif %}
     {% endfor %}
 {% endblock %}

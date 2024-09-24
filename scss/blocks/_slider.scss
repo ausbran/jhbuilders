@@ -274,6 +274,9 @@
                 display: flex;
                 gap: $gap-medium;
             }
+            .text {
+                flex-wrap: wrap;
+            }
         }
     }
 }
@@ -401,6 +404,9 @@
         }
         .slide.career {
             padding: 30px;
+        }
+        .slide {
+            gap: 15px;
         }
     }
 }

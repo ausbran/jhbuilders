@@ -36,8 +36,10 @@
     </div>
 
     {% if entry.type == 'magazine' %}
-        <div id="pdf-viewer" class="pdf-viewer" data-url="{{ entry.magazineFile.one().url }}"></div>
-
+        {% set magazineFile = entry.magazineFile.one() %}
+        {% if magazineFile %}
+            <div id="pdf-viewer" class="pdf-viewer" data-url="{{ magazineFile.url }}"></div>
+        {% endif %}
     {% elseif entry.type == 'website' %}
         <a href="{{ entry.websiteLink }}" target="_blank" class="website-image fade-in" data-cascade>
             <h2>View website</h2>

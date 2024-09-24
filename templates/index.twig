@@ -14,7 +14,7 @@
 </head>
 {# {% set bodyClass = class ?? null %} #}
 <body data-barba="wrapper" {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
-    {% include '_includes/_globals/load' %}
+    {# {% include '_includes/_globals/load' %} #}
     {% include '_includes/_globals/navigation' %}
     <main data-barba="container" {% if entry.type is defined %}data-barba-namespace="{{ entry.type }}"{% else %}data-barba-namespace="projectCategory"{% endif %}>
         {% block content %}{% endblock %}

@@ -45,6 +45,20 @@
             .fui-form {
                 width: 100%;
             }
+            .fui-alert-success {
+                height: initial;
+                width: 100%;
+                display: block;
+                border: unset;
+                margin: unset;
+                padding: unset;
+                font-size: 3rem;
+                p {
+                    max-width: 80%;
+                    text-align: left;
+                    font-size: 2rem;
+                }
+            }
         }
         &.active {
             @include transform(translate3d(0,0,0));

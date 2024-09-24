@@ -20,18 +20,24 @@
             <h1>{{ title }}</h1>
         {% endif %}
         <h2>{{ entry.office.label }}</h2>
-        <div>
-            <h3>Description</h3>
-            {{ entry.description|replace({'<p>': '<p class="thin">'})|raw }}
-        </div>
-        <div>
-            <h3>Requirements</h3>
-            {{ entry.requirements|replace({'<p>': '<p class="thin">'})|raw }}
-        </div>
-        <div>
-            <h3>Duties</h3>
-            {{ entry.duties|replace({'<p>': '<p class="thin">'})|raw }}
-        </div>
+        {% if entry.description %}
+            <div>
+                <h3>Description</h3>
+                {{ entry.description|replace({'<p>': '<p class="thin">'})|raw }}
+            </div>
+        {% endif %}
+        {% if entry.responsibilities %}
+            <div>
+                <h3>Responsibilities</h3>
+                {{ entry.responsibilities|replace({'<p>': '<p class="thin">'})|raw }}
+            </div>
+        {% endif %}
+        {% if entry.skills %}
+            <div>
+                <h3>Qualifications and Skills</h3>
+                {{ entry.skills|replace({'<p>': '<p class="thin">'})|raw }}
+            </div>
+        {% endif %}
     </div>
     {{ craft.formie.renderForm('careerForm') }}
     {{ craft.formie.renderFormJs('careerForm') }}

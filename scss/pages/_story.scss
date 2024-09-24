@@ -1,5 +1,8 @@
 .landing.story {
   video {
     object-position: top left;
+    @include respond-to-max($tablet) {
+      object-position: center;
+    }
   }
 }

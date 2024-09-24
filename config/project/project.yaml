@@ -1,4 +1,4 @@
-dateModified: 1725643598
+dateModified: 1727213199
 elementSources:
   craft\elements\Asset:
     -
@@ -248,7 +248,7 @@ meta:
     08212732-97cb-4fe1-80d5-22da0da1d83a: Partner # Partner
     86453256-3536-4893-8b3e-621ab30831dd: Home # Home
     98531642-0cb8-4a38-a70c-ddd5f537d751: Buttons # Buttons
-    a0ea378e-9a4f-431f-990c-2e021a25849f: 'Driggs Location' # Driggs Location
+    a0ea378e-9a4f-431f-990c-2e021a25849f: 'Teton Valley Location' # Teton Valley Location
     a4d89015-cc42-4dfe-9b5d-4709925e659f: 'Remodels Image' # Remodels Image
     a8f5f4f5-00ed-4701-a12b-eda576eb0326: Date # Date
     a13e25fc-5eb6-46ae-a677-3b785baa9288: 'Phone Number' # Phone Number

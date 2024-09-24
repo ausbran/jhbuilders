@@ -109,14 +109,14 @@ fieldLayouts:
           -
             dateAdded: '2024-08-22T22:13:32+00:00'
             elementCondition: null
-            heading: 'Driggs Office'
+            heading: 'Teton Valley Office'
             type: craft\fieldlayoutelements\Heading
             uid: 13ef2433-3530-45b3-82ac-136c5c6978ad
             userCondition: null
           -
             dateAdded: '2024-08-22T23:02:21+00:00'
             elementCondition: null
-            fieldUid: a0ea378e-9a4f-431f-990c-2e021a25849f # Driggs Location
+            fieldUid: a0ea378e-9a4f-431f-990c-2e021a25849f # Teton Valley Location
             handle: null
             includeInCards: false
             instructions: null
@@ -133,10 +133,10 @@ fieldLayouts:
             dateAdded: '2024-08-22T22:13:32+00:00'
             elementCondition: null
             fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
-            handle: driggsImage
+            handle: tetonImage
             includeInCards: false
             instructions: null
-            label: 'Driggs Image'
+            label: 'Teton Valley Image'
             providesThumbs: false
             required: false
             tip: null
@@ -149,10 +149,10 @@ fieldLayouts:
             dateAdded: '2024-08-22T23:46:18+00:00'
             elementCondition: null
             fieldUid: 5590a4d0-6aea-460c-af02-904f547f51d8 # Google Maps Link
-            handle: driggsGoogle
+            handle: tetonGoogle
             includeInCards: false
             instructions: null
-            label: 'Driggs Google Maps Link'
+            label: 'Teton Valley Google Maps Link'
             providesThumbs: false
             required: false
             tip: null
@@ -165,10 +165,10 @@ fieldLayouts:
             dateAdded: '2024-08-22T23:06:41+00:00'
             elementCondition: null
             fieldUid: a13e25fc-5eb6-46ae-a677-3b785baa9288 # Phone Number
-            handle: driggsPhone
+            handle: tetonPhone
             includeInCards: false
             instructions: null
-            label: 'Driggs Phone'
+            label: 'Teton Valley Phone'
             providesThumbs: false
             required: false
             tip: null

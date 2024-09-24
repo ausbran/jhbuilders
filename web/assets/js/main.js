@@ -8,19 +8,21 @@ import { initProject } from './project.js';
 import { initLoad } from './load.js';
 import { initScroll } from './scroll.js';
 import { initContact } from './contact.js';
-import { body, nav } from './globals.js';
+import { initAnchor } from './anchor.js';
+import { body, nav, navHeight } from './globals.js';
 
 // loading screen
-window.addEventListener('DOMContentLoaded', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.classList.add('visible');
-    body.classList.add('hidden-content');
-});
+// window.addEventListener('DOMContentLoaded', () => {
+//     const loadingScreen = document.getElementById('loading-screen');
+//     loadingScreen.classList.add('visible');
+//     body.classList.add('hidden-content');
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
     initLogo();
-    initLoad();
+    // initLoad(); commenting out until further experimentation with logo animation on page load
+    initAnchor();
     const namespace = document.querySelector('main').dataset.barbaNamespace;
     initializeComponents(document, namespace);
 });
@@ -107,6 +109,7 @@ barba.init({
             window.scrollTo(0, 0);
             initScroll(); 
             initLogo();
+            initAnchor();
         }
     }]
 });

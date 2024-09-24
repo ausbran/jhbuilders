@@ -46,6 +46,7 @@
   }
 }
 .btn {
+  gap: 8px;
   width: fit-content;
   position: relative;
   display: inline-flex;
@@ -68,7 +69,6 @@
   .btn-arrow {
     position: relative;
     bottom: -.5px;
-    right: -8px;
     display: inline-flex;
     justify-content: center;
     align-items: center;

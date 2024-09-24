@@ -55,7 +55,7 @@ fieldLayouts:
             dateAdded: '2024-09-05T19:36:43+00:00'
             elementCondition: null
             fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
-            handle: mobileAsset
+            handle: assetMobile
             includeInCards: false
             instructions: 'Display a different asset on smaller screen sizes.'
             label: 'Mobile Asset'
